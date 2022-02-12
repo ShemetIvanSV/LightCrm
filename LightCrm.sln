@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightCrm", "LightCrm.csproj", "{62491CA1-22FF-402D-96EA-1BAEF2131C54}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D46C2412-6FC5-4BD8-9397-AFD5BB15F21E} = {D46C2412-6FC5-4BD8-9397-AFD5BB15F21E}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{211CA2E8-0511-420F-81D7-ABBF1569A713}"
 EndProject
@@ -14,6 +17,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightCrmData", "LightCrmData\LightCrmData.csproj", "{E9E715B6-6ABB-48D7-ABB8-FCFC558E8C08}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrmServices", "CrmServices\CrmServices.csproj", "{D46C2412-6FC5-4BD8-9397-AFD5BB15F21E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServiceLibrary1", "..\WcfServiceLibrary1\WcfServiceLibrary1.csproj", "{5D65A150-912A-4D7D-B703-45088575DA2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +38,10 @@ Global
 		{D46C2412-6FC5-4BD8-9397-AFD5BB15F21E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D46C2412-6FC5-4BD8-9397-AFD5BB15F21E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D46C2412-6FC5-4BD8-9397-AFD5BB15F21E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D65A150-912A-4D7D-B703-45088575DA2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D65A150-912A-4D7D-B703-45088575DA2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D65A150-912A-4D7D-B703-45088575DA2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D65A150-912A-4D7D-B703-45088575DA2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +50,7 @@ Global
 		{62491CA1-22FF-402D-96EA-1BAEF2131C54} = {211CA2E8-0511-420F-81D7-ABBF1569A713}
 		{E9E715B6-6ABB-48D7-ABB8-FCFC558E8C08} = {1BC35810-361B-4D70-83E3-9A70EEA53E27}
 		{D46C2412-6FC5-4BD8-9397-AFD5BB15F21E} = {1631AFBE-3139-4B4B-9631-7BB88FB46BFD}
+		{5D65A150-912A-4D7D-B703-45088575DA2E} = {1631AFBE-3139-4B4B-9631-7BB88FB46BFD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {09B1C17F-491F-4D29-80F4-C209DC39AB4A}

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LightCrm.ServiceReference;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,15 @@ namespace LightCrm
         public MainWindow()
         {
             InitializeComponent();
+
+            using (var service = new UsersServiceClient())
+            {
+                service.AddNewUser(new UserDto
+                {
+                    Name = "Test",
+                    Password = "Test"
+                });
+            }
         }
     }
 }
