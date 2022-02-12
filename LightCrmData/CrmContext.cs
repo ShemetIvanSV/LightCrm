@@ -10,7 +10,7 @@ namespace LightCrmData
 {
     public class CrmContext : DbContext
     {
-        public CrmContext() : base("CrmContext")
+        public CrmContext() : base("CrmDataBase")
         {
 
         }
