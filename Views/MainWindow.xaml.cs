@@ -1,4 +1,5 @@
 ﻿using LightCrm.ServiceReference;
+using LightCrm.ViewModels;
 using System.Windows;
 
 namespace LightCrm
@@ -11,15 +12,7 @@ namespace LightCrm
         public MainWindow()
         {
             InitializeComponent();
-
-            using (var service = new UsersServiceClient())
-            {
-                service.AddNewUser(new UserDto
-                {
-                    Name = "Test",
-                    Password = "Test"
-                });
-            }
+            DataContext = new MainWindowViewModel();
         }
     }
 }
