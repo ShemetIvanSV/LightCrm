@@ -2,8 +2,15 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:LightCrm"
-             StartupUri="Views/MainWindow.xaml">
+             xmlns:viewModels="clr-namespace:LightCrm.ViewModels"
+             xmlns:views="clr-namespace:LightCrm.Views"
+             StartupUri="Views/AuthorizationWindow.xaml">
     <Application.Resources>
-         
+        <DataTemplate DataType="{x:Type viewModels:UsersAdministrationViewModel}">
+            <views:UserAdministrationPage />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:PatientsViewModel}">
+            <views:PatientsPage />
+        </DataTemplate>
     </Application.Resources>
 </Application>

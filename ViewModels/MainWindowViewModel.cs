@@ -1,43 +1,78 @@
 ﻿using LightCrm.Commands;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace LightCrm.ViewModels
 {
+    /// <summary>
+    /// Модель представления главного окна, 
+    /// включает в себя так же логику перемещения между страницами
+    /// </summary>
     public class MainWindowViewModel : BaseViewModel
     {
-        private BaseViewModel _currentPage;
-        private readonly ICommand _fooExecuteCommand;
+        private ICommand _changePageCommand;
+        private IPageViewModel _currentPageViewModel;
+        private List<IPageViewModel> _pageViewModels;
 
-        public BaseViewModel CurrentPage
+        //Передаём пользователя через конструктор
+        public MainWindowViewModel()
         {
-            get => _currentPage;
-            set 
-            { 
-                _currentPage = value; 
-                OnPropertyChanged(); 
+            // Здесь будет логика того - какие окна отображать конкретному пользователю
+            PageViewModels.Add(new UsersAdministrationViewModel());
+            PageViewModels.Add(new PatientsViewModel());
+            CurrentPageViewModel = PageViewModels[0];
+        }
+
+        public ICommand ChangePageCommand
+        {
+            get
+            {
+                if (_changePageCommand == null)
+                {
+                    _changePageCommand = new RelayCommand(
+                        p => ChangeViewModel((IPageViewModel)p),
+                        p => p is IPageViewModel);
+                }
+
+                return _changePageCommand;
             }
         }
 
-        public ICommand FooExecuteCommand
+        public List<IPageViewModel> PageViewModels
         {
-            get => _fooExecuteCommand;
+            get
+            {
+                if (_pageViewModels == null)
+                    _pageViewModels = new List<IPageViewModel>();
+
+                return _pageViewModels;
+            }
         }
 
-        public MainWindowViewModel()
+        public IPageViewModel CurrentPageViewModel
         {
-            _fooExecuteCommand = new RelayCommand(FooExecute);
+            get
+            {
+                return _currentPageViewModel;
+            }
+            set
+            {
+                if (_currentPageViewModel != value)
+                {
+                    _currentPageViewModel = value;
+                    OnPropertyChanged();
+                }
+            }
         }
 
-        private void FooExecute(object obj = null)
+        private void ChangeViewModel(IPageViewModel viewModel)
         {
-            //TODO: Использование сервисов для выполнения бизнес логики
-        }
+            if (!PageViewModels.Contains(viewModel))
+                PageViewModels.Add(viewModel);
 
-        //TODO: Команды для выбора страницы
+            CurrentPageViewModel = PageViewModels
+                .FirstOrDefault(vm => vm == viewModel);
+        }
     }
 }

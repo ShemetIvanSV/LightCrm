@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using LightCrm.ViewModels;
+using LightCrm.Views;
+using System;
+using System.Threading;
 using System.Windows;
 
 namespace LightCrm
@@ -12,6 +10,6 @@ namespace LightCrm
     /// Логика взаимодействия для App.xaml
     /// </summary>
     public partial class App : Application
-    {
+    {  
     }
 }
