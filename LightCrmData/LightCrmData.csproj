@@ -57,6 +57,13 @@
       <DependentUpon>202202121450328_AddUserTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Patient.cs" />
+    <Compile Include="Models\PatientContext\PatientContext.cs" />
+    <Compile Include="Models\Reservation.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Service.cs" />
+    <Compile Include="Models\Timetables.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

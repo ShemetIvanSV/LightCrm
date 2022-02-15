@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace LightCrmData.Models
 {
-    public class User
+    public class Patient
     {
         public int Id { get; set; }
 
@@ -17,19 +18,17 @@ namespace LightCrmData.Models
         public string Patronymic { get; set; }
 
         [Required]
-        public string Username { get; set; }
+        public DateTime DoB { get; set; }
 
         [Required]
-        public string Password { get; set; }
+        public bool Gender { get; set; }
 
         [Required]
-        public int RoleId { get; set; }
-        public Role Role { get; set; }
-        
-        [Required]
-        public int DepartmentId { get; set; }
-        public Department Department { get; set; }
+        public string Phone { get; set; }
 
-        public List<Timetables> Timetables { get; set; }
+        [Required]
+        public string Email { get; set; }
+
+       public List<Reservation> Reservations { get; set; }
     }
 }
