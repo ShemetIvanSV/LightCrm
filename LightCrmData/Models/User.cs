@@ -24,7 +24,7 @@ namespace LightCrmData.Models
 
         [Required]
         public int RoleId { get; set; }
-        public Role Role { get; set; }
+        public Roles Role { get; set; }
         
         [Required]
         public int DepartmentId { get; set; }

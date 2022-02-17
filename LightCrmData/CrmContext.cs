@@ -17,7 +17,7 @@ namespace LightCrmData
 
         public DbSet<User> Users { get; set; }
         public DbSet<Timetables> Timetables { get; set; }
-        public DbSet<Role> Roles { get; set; }
+        public DbSet<Roles> Roles { get; set; }
         public DbSet<Department> Departments { get; set; }
     }
 }
