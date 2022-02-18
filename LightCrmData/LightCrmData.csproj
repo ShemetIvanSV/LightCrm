@@ -56,9 +56,9 @@
     <Compile Include="Migrations\202202121450328_AddUserTable.designer.cs">
       <DependentUpon>202202121450328_AddUserTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202202181446112_AddMoreExchange.cs" />
-    <Compile Include="Migrations\202202181446112_AddMoreExchange.designer.cs">
-      <DependentUpon>202202181446112_AddMoreExchange.cs</DependentUpon>
+    <Compile Include="Migrations\202202181748334_MoreEx.cs" />
+    <Compile Include="Migrations\202202181748334_MoreEx.designer.cs">
+      <DependentUpon>202202181748334_MoreEx.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Department.cs" />
@@ -75,8 +75,8 @@
     <EmbeddedResource Include="Migrations\202202121450328_AddUserTable.resx">
       <DependentUpon>202202121450328_AddUserTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202202181446112_AddMoreExchange.resx">
-      <DependentUpon>202202181446112_AddMoreExchange.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202202181748334_MoreEx.resx">
+      <DependentUpon>202202181748334_MoreEx.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -71,13 +71,22 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Services\RolesService.svc" />
     <Content Include="Services\UsersService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dtos\DepartmentDto.cs" />
+    <Compile Include="Dtos\RoleDto.cs" />
+    <Compile Include="Dtos\TimetablesDto.cs" />
     <Compile Include="Dtos\UserDto.cs" />
+    <Compile Include="Helpers\Cripto.cs" />
     <Compile Include="Interfaces\IUsersService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IRolesService.cs" />
+    <Compile Include="Services\RolesService.svc.cs">
+      <DependentUpon>RolesService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Services\UsersService.svc.cs">
       <DependentUpon>UsersService.svc</DependentUpon>
     </Compile>

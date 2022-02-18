@@ -9,10 +9,10 @@ namespace LightCrm
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(UserDto user)
         {
             InitializeComponent();
-            DataContext = new MainWindowViewModel();
+            DataContext = new MainWindowViewModel(user);
         }
     }
 }

@@ -1,56 +1,57 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Web;
 
-namespace LightCrmData.Models
+namespace CrmServices.Dtos
 {
     /// <summary>
     /// График работы 
     /// </summary>
-    public class Timetables
+    [DataContract]
+    public class TimetablesDto
     {
         /// <summary>
         /// Идентификатор графика
         /// </summary>
+        [DataMember]
         public int Id { get; set; }
 
         /// <summary>
         /// День недели
         /// </summary>
-        [Required]
-        [Range(1,7)]
+        [DataMember]
         public int DayOfWeek { get; set; }
 
         /// <summary>
         /// Время начала рабочего дня
         /// </summary>
+        [DataMember]
         public DateTime StartTime { get; set; }
 
         /// <summary>
         /// Время окончания рабочего дня
         /// </summary>
+        [DataMember]
         public DateTime EndTime { get; set; }
 
         /// <summary>
         /// Закончен ли рабочий день
         /// </summary>
-        [Required]
+        [DataMember]
         public bool DayOff { get; set; }
-
-        [Required]
-        public bool UserId { get; set; }
 
         /// <summary>
         /// Пользователь за которым закреплено данное расписание
         /// </summary>
-        public User User { get; set; }
-
-        [Required]
-        public bool DepartmentId { get; set; }
+        [DataMember]
+        public UserDto User { get; set; }
 
         /// <summary>
         /// Рабочее место
         /// </summary>
-        [Required]
-        public Department Department { get; set; }
+        [DataMember]
+        public DepartmentDto Department { get; set; }
     }
 }

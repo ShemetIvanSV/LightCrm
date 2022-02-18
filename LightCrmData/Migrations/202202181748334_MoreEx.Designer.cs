@@ -7,13 +7,13 @@ namespace LightCrmData.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class AddMoreExchange : IMigrationMetadata
+    public sealed partial class MoreEx : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddMoreExchange));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(MoreEx));
         
         string IMigrationMetadata.Id
         {
-            get { return "202202181446112_AddMoreExchange"; }
+            get { return "202202181748334_MoreEx"; }
         }
         
         string IMigrationMetadata.Source

@@ -1,4 +1,5 @@
 ﻿using LightCrm.Commands;
+using LightCrm.ServiceReference;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
@@ -16,8 +17,9 @@ namespace LightCrm.ViewModels
         private List<IPageViewModel> _pageViewModels;
 
         //Передаём пользователя через конструктор
-        public MainWindowViewModel()
+        public MainWindowViewModel(UserDto user)
         {
+            
             // Здесь будет логика того - какие окна отображать конкретному пользователю
             PageViewModels.Add(new UsersAdministrationViewModel());
             PageViewModels.Add(new PatientsViewModel());

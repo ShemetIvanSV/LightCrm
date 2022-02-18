@@ -1,5 +1,7 @@
 ﻿using LightCrm.Commands;
+using LightCrm.ServiceReference;
 using System;
+using System.Windows;
 using System.Windows.Input;
 
 namespace LightCrm.ViewModels
@@ -15,18 +17,49 @@ namespace LightCrm.ViewModels
 
         public ICommand LoginCommand { get => _loginCommand; }
 
-        public AuthorizationViewModel()
+        private string _login;
+        public string Login
         {
-            _loginCommand = new RelayCommand(Login);
+            get => _login;
+            set
+            {
+                _login = value;
+                OnPropertyChanged();
+            }
         }
 
-        private void Login(object obj = null)
+        private string _password;
+        public string Password
         {
-            //TODO: логика авторизации
-            //Делаем грязь, чтобы сильно не заморачиваться
-            var view = new MainWindow();
-            view.Show();
-            CloseAction();
+            get => _password;
+            set
+            {
+                _password = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public AuthorizationViewModel()
+        {
+            _loginCommand = new RelayCommand(Authorization);
+        }
+
+        private void Authorization(object obj = null)
+        {
+            try
+            {
+                using (var service = new UsersServiceClient())
+                {
+                    var user = service.GetUserByLoginData(Login, Password);
+                    var view = new MainWindow(user);
+                    view.Show();
+                    CloseAction();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="CrmServices.Services.RolesService" CodeBehind="RolesService.svc.cs" %>

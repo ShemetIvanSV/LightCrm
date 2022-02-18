@@ -19,5 +19,8 @@ namespace CrmServices
 
         [OperationContract]
         IEnumerable<UserDto> GetUsers();
+
+        [OperationContract]
+        UserDto GetUserByLoginData(string login, string password);
     }
 }

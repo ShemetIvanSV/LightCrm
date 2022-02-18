@@ -7,6 +7,21 @@
         mc:Ignorable="d"
         Title="AuthorizationWindow" Height="348.854" Width="314.908">
     <Grid>
-        <Button Command="{Binding LoginCommand}"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Логин" Grid.Row="1"/>
+        <TextBox Text="{Binding Login}" Grid.Row="1" Grid.Column="1"/>
+        <TextBlock Text="Пароль" Grid.Row="2"/>
+        <TextBox Text="{Binding Password}" Grid.Row="2" Grid.Column="1"/>
+        <Button Command="{Binding LoginCommand}" Content="Войти" Grid.Row="4" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

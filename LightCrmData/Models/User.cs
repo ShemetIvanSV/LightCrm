@@ -43,16 +43,20 @@ namespace LightCrmData.Models
         [Required]
         public string Password { get; set; }
 
+        [Required]
+        public int RoleId { get; set; }
+
         /// <summary>
         /// Роль
         /// </summary>
-        [Required]
         public Role Role { get; set; }
-        
+
+        [Required]
+        public int DepartmentId { get; set; }
+
         /// <summary>
         /// Рабочее место
         /// </summary>
-        [Required]
         public Department Department { get; set; }
 
         /// <summary>
