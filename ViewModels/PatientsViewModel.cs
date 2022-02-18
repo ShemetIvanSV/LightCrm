@@ -1,4 +1,6 @@
-﻿namespace LightCrm.ViewModels
+﻿using LightCrm.Commands;
+
+namespace LightCrm.ViewModels
 {
     public class PatientsViewModel : BaseViewModel, IPageViewModel
     {
@@ -13,9 +15,19 @@
             }
         }
 
+
+        private RelayCommand _savePatient;
+        public RelayCommand SavePatient;
+
+        private RelayCommand _changePatient;
+        public RelayCommand ChangePatient;
+
+        private RelayCommand _deletePatient;
+        public RelayCommand DeletePatient;
+
         public PatientsViewModel()
         {
-            Name = "Пациенты";
+            Name = "Запись пациентов";
         }
     }
 }
