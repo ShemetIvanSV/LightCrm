@@ -12,5 +12,8 @@
         <DataTemplate DataType="{x:Type viewModels:PatientsViewModel}">
             <views:PatientsPage />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:UsersOrdersViewModel}">
+            <views:UserOrderPage/>
+        </DataTemplate>
     </Application.Resources>
 </Application>
