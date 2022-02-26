@@ -60,10 +60,21 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Connected Services\TimeTablesServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TimeTableControlModel.cs" />
     <Compile Include="ViewModels\AuthorizationViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\Class1.cs" />
     <Compile Include="ViewModels\Interfaces\IPageViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\TimeTableViewModel.cs" />
+    <Compile Include="Views\TimeTableControlPage.xaml.cs">
+      <DependentUpon>TimeTableControlPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserOrderPage.xaml.cs">
       <DependentUpon>UserOrderPage.xaml</DependentUpon>
     </Compile>
@@ -72,6 +83,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PatientsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TimeTableControlPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -144,6 +159,19 @@
     <None Include="Connected Services\ServiceReference\UsersService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\TimeTablesServiceReference\LightCrm.TimeTablesServiceReference.TimeTableDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TimeTablesServiceReference\TimeTablesService.wsdl" />
+    <None Include="Connected Services\TimeTablesServiceReference\TimeTablesService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\TimeTablesServiceReference\TimeTablesService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\TimeTablesServiceReference\TimeTablesService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -156,10 +184,8 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\TimeTablesServiceReference\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServiceReference\UsersService.disco" />
@@ -172,6 +198,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\TimeTablesServiceReference\TimeTablesService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\TimeTablesServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\TimeTablesServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\TimeTablesServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cace4f89-a40c-476d-8a92-b02690fee5eb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55255/Services/TimeTablesService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TimeTablesService.xsd" MetadataType="Schema" ID="c2e1eaee-fef6-41b9-933b-1d52fdd60373" SourceId="1" SourceUrl="http://localhost:55255/Services/TimeTablesService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TimeTablesService.wsdl" MetadataType="Wsdl" ID="3b217123-8fbe-4789-8546-b95dd2a7861c" SourceId="1" SourceUrl="http://localhost:55255/Services/TimeTablesService.svc?wsdl" />
+    <MetadataFile FileName="TimeTablesService1.xsd" MetadataType="Schema" ID="1669869b-a6ec-44c9-86bb-e3f27bd54fa0" SourceId="1" SourceUrl="http://localhost:55255/Services/TimeTablesService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TimeTablesService.disco" MetadataType="Disco" ID="1a5ffa94-af17-43ef-b8aa-8f917c0a271b" SourceId="1" SourceUrl="http://localhost:55255/Services/TimeTablesService.svc?disco" />
+    <MetadataFile FileName="TimeTablesService2.xsd" MetadataType="Schema" ID="bec8ee91-dbcf-4821-a5a0-060ad3c7acf5" SourceId="1" SourceUrl="http://localhost:55255/Services/TimeTablesService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

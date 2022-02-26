@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="CrmServices.TimeTablesService" CodeBehind="TimeTablesService.svc.cs" %>

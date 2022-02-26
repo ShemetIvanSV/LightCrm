@@ -71,13 +71,19 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Services\TimeTablesService.svc" />
     <Content Include="Services\UsersService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dtos\TimeTableDto.cs" />
     <Compile Include="Dtos\UserDto.cs" />
+    <Compile Include="Interfaces\ITimeTablesService.cs" />
     <Compile Include="Interfaces\IUsersService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\TimeTablesService.svc.cs">
+      <DependentUpon>TimeTablesService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Services\UsersService.svc.cs">
       <DependentUpon>UsersService.svc</DependentUpon>
     </Compile>
