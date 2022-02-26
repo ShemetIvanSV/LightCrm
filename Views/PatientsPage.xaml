@@ -54,20 +54,27 @@
             <TextBlock Text="Пол:" Grid.Row="5" Margin="10"/>
             <TextBlock Text="Телефон:" Grid.Row="6" Margin="10"/>
             
-            <TextBox Grid.Row="1" Grid.Column="1" Margin="13"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="1" Margin="13"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="1" Margin="13"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="1" 
+                     Margin="13" Text="{Binding PatientName}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="1" 
+                     Margin="13" Text="{Binding PatientSurname}"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="1" 
+                     Margin="13" Text="{Binding PatientEmail}"></TextBox>
             <DatePicker Grid.Row="4" Grid.Column="1" 
-                        Margin="13" FontSize="15"></DatePicker>
+                        Margin="13" FontSize="15"
+                       SelectedDate="{Binding Date}"
+                        SelectedDateFormat="Short"></DatePicker>
 
             <ComboBox Grid.Row="5" Grid.Column="1" Margin="13" 
                       MaxWidth="100" HorizontalAlignment="Left"
-                      FontSize="15">
+                      FontSize="15" Text="{Binding PatientSex}">
                 <TextBlock Text="Мужской"></TextBlock>
                 <TextBlock Text="Женский"></TextBlock>
-                <TextBlock Text="Другое:"></TextBlock>
+                <TextBlock Text="Другое"></TextBlock>
             </ComboBox>
-            <TextBox Grid.Row="6" Grid.Column="1" Margin="13"></TextBox>
+
+            <TextBox Grid.Row="6" Grid.Column="1" 
+                     Margin="13" Text="{Binding PatientNumber}"></TextBox>
             
             <StackPanel Grid.Row="7" Orientation="Horizontal"
                         Grid.ColumnSpan="2">
