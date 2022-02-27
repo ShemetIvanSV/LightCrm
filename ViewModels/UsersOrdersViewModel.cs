@@ -8,6 +8,7 @@ namespace LightCrm.ViewModels
 {
     internal class UsersOrdersViewModel : BaseViewModel, IPageViewModel
     {
+        #region Пробные данные 
         private string _name;
 
         public string Name 
@@ -19,6 +20,13 @@ namespace LightCrm.ViewModels
                 OnPropertyChanged();
             }
         }
+        #endregion
+
+
+
+
+
+
 
         public UsersOrdersViewModel() 
         {
