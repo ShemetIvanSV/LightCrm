@@ -10,7 +10,7 @@ namespace LightCrm.Models
     {
         public void SelectTableTime()
         {
-            //CrmContext db = new CrmContext
+            
         }
     }
 }
