@@ -6,8 +6,39 @@
       xmlns:local="clr-namespace:LightCrm.Views"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
-
+    <ContentControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+    </ContentControl.Resources>
     <Grid>
-        <TextBlock Text="{Binding Name}"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="101*"/>
+            <RowDefinition Height="349*"/>
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Command="" Height="32">Сохранить</Button>
+            <Button Command="" Height="32">Изменить</Button>
+            <Button Command="" Height="32">Удалить</Button>
+        </StackPanel>
+
+        <ListView Grid.Row="2" Margin="20">
+            <ListView.View>
+                <GridView >
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Id"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Пациент"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Сервис"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Дата"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Доктор/Медсестра"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Полаченный"/>
+                    <GridViewColumn Width="90" DisplayMemberBinding="{Binding Name}" Header="Выполненый"/>
+                    <GridViewColumn Width="90" DisplayMemberBinding="{Binding Name}" Header="Цена"/>
+                </GridView>
+            </ListView.View>
+            <ListView.Resources></ListView.Resources>
+        </ListView>
     </Grid>
 </ContentControl>
