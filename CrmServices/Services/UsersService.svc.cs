@@ -64,20 +64,20 @@ namespace CrmServices
                 if (findedUser == null)
                     throw new FaultException("Такого пользователя не существует!");
 
-                if (findedUser.Password == Cripto.Sha256(password))
+                if (findedUser.Password != Cripto.Sha256(password))
                 {
-                    return new UserDto
-                    {
-                        Id = findedUser.Id,
-                        Name = findedUser.Name,
-                        Surname = findedUser.Surname,
-                        Password = findedUser.Password,
-                        Patronymic = findedUser.Patronymic,
-                        Username = findedUser.Username
-                    };
+                    throw new FaultException("Не верный пароль!");
                 }
 
-                return null;
+                return new UserDto
+                {
+                    Id = findedUser.Id,
+                    Name = findedUser.Name,
+                    Surname = findedUser.Surname,
+                    Password = findedUser.Password,
+                    Patronymic = findedUser.Patronymic,
+                    Username = findedUser.Username
+                };
             }
         }
     }
