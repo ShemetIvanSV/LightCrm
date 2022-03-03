@@ -5,23 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LightCrm.Views"
         mc:Ignorable="d"
-        Title="AuthorizationWindow" Height="348.854" Width="314.908">
+        Title="Авторизация" Height="231.854" Width="314.908" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.2*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="0.3*"/>
-            <RowDefinition Height="0.3*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="60*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Логин" Grid.Row="1"/>
-        <TextBox Text="{Binding Login}" Grid.Row="1" Grid.Column="1"/>
-        <TextBlock Text="Пароль" Grid.Row="2"/>
-        <TextBox Text="{Binding Password}" Grid.Row="2" Grid.Column="1"/>
-        <Button Command="{Binding LoginCommand}" Content="Войти" Grid.Row="4" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Логин" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="16" Margin="0" Width="34" />
+        <TextBox Text="{Binding Login}" Grid.Row="1" Grid.Column="1" Margin="10,0" BorderThickness="1" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="30" VerticalAlignment="Center"/>
+        <TextBlock Text="Пароль" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" Height="16" Margin="0" Width="41"/>
+        <TextBox Text="{Binding Password}" Grid.Row="2" Grid.Column="1" Margin="10,0" BorderThickness="1" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="30" VerticalAlignment="Center"/>
+        <Button Command="{Binding LoginCommand}" Content="Войти" Grid.Row="4" Margin="0" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="100" MinHeight="29.6" BorderThickness="2" Height="30" Width="100" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>
