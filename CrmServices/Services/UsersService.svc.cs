@@ -44,7 +44,18 @@ namespace CrmServices
         {
             using (var context = new CrmContext())
             {
-                var users = context.Users.Select(u => u).ToList();
+                var users = context.Users.Select(u => new UserDto 
+                { 
+                    Id = u.Id, 
+                    Name = u.Name, 
+                    Surname = u.Surname, 
+                    Patronymic = u.Patronymic, 
+                    Username = u.Username, 
+                    Password = u.Password, 
+                    //Role = u.Role { }, 
+                    //Department = u.Department, 
+                    //Timetables = u.Timetables                     
+                }).ToList();
 
                 return (IEnumerable<UserDto>)users;
             }
