@@ -3,13 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:LightCrm.Views"
-             mc:Ignorable="d" 
+             xmlns:local="clr-namespace:LightCrm.Views" xmlns:viewmodels="clr-namespace:LightCrm.ViewModels"              
+                mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <TextBlock Text="{Binding Name}" Margin="0,0,0,0" Height="30" VerticalAlignment="Top"/>
-        <Button Content="Создать" HorizontalAlignment="Left" Height="30" Margin="8,46,0,0" VerticalAlignment="Top" Width="90"/>
-        <Button Content="Редактировать" HorizontalAlignment="Left" Height="30" Margin="105,46,0,0" VerticalAlignment="Top" Width="90"/>
-        <Button Content="Удалить" HorizontalAlignment="Left" Height="30" Margin="206,45,0,0" VerticalAlignment="Top" Width="90"/>
+        <Button Name="ButtonCreate" Content="Создать" Command="{Binding ButtonCreateClickCommand}" HorizontalAlignment="Left" Height="30" Margin="10,36,0,0" VerticalAlignment="Top" Width="90"/>
+        <Button Name="ButtonEdit" Content="Редактировать" Command="{Binding ButtonEditClickCommand}" HorizontalAlignment="Left" Height="30" Margin="106,36,0,0" VerticalAlignment="Top" Width="90"/>
+        <Button Name="ButtonDelete" Content="Удалить" Command="{Binding ButtonDeleteClickCommand}" HorizontalAlignment="Left" Height="30" Margin="206,36,0,0" VerticalAlignment="Top" Width="90" RenderTransformOrigin="0.267,0.4"/>
+        <DataGrid Name="DataGrigUser" Margin="8,73,8,10"
+                  ItemsSource="{Binding UserData}"/>
     </Grid>
 </ContentControl>

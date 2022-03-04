@@ -42,7 +42,12 @@ namespace CrmServices
 
         public IEnumerable<UserDto> GetUsers()
         {
-            throw new NotImplementedException();
+            using (var context = new CrmContext())
+            {
+                var users = context.Users.Select(u => u).ToList();
+
+                return (IEnumerable<UserDto>)users;
+            }
         }
 
         public void UpdateUser(UserDto user)
