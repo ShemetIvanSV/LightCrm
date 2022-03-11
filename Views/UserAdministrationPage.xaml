@@ -19,8 +19,8 @@
                 <DataGridTextColumn Header="Фамилия" Binding="{Binding Path=Surname}" />
                 <DataGridTextColumn Header="Отчество" Binding="{Binding Path=Patronymic}"  />
                 <DataGridTextColumn Header="Логин" Binding="{Binding Path=Username}" />
+                <DataGridTextColumn Header="Роли" Binding="{Binding Path=Role.Name}" />
                 <DataGridTextColumn Header="Рабочее место" Binding="{Binding Path=Department.Name}" />
-                <DataGridTextColumn Header="Роли" Binding="{Binding Path=Roles.Name}" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

@@ -1,5 +1,6 @@
 ﻿using LightCrm.Commands;
 using LightCrm.ServiceReference;
+using LightCrm.Views;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -73,7 +74,7 @@ namespace LightCrm.ViewModels
                 if (_buttonCreateClickCommand == null)
                 {
                     _buttonCreateClickCommand = new RelayCommand(
-                        p => ButtonCreateClick());
+                        p => ButtonCreateUserClick());
                 }
 
                 return _buttonCreateClickCommand;
@@ -87,7 +88,7 @@ namespace LightCrm.ViewModels
                 if (_buttonEditeClickCommand == null)
                 {
                     _buttonEditeClickCommand = new RelayCommand(
-                        p => ButtonEditClick());
+                        p => ButtonEditUserClick());
                 }
 
                 return _buttonEditeClickCommand;
@@ -101,27 +102,43 @@ namespace LightCrm.ViewModels
                 if (_buttonDeleteClickCommand == null)
                 {
                     _buttonDeleteClickCommand = new RelayCommand(
-                        p => ButtonDeleteClick());
+                        p => ButtonDeleteUserClick());
                 }
 
                 return _buttonDeleteClickCommand;
             }
         }
 
-        public void ButtonCreateClick()
+        public void ButtonCreateUserClick(UserDto user=null)
         {
-            MessageBox.Show("Create");
+            var view = new UserEditorWindow("Создать пользователя", user);
+            view.ShowDialog();
+            //CloseAction();
         }
 
-        public void ButtonEditClick()
+        public void ButtonEditUserClick(UserDto user = null)
         {
-            MessageBox.Show("Edit");
+            if (user == null)
+            {
+                MessageBox.Show("Пользователь для редактирования не выбран!", "Внимание!");
+                return;
+            }
+            var view = new UserEditorWindow("Редактировать пользователя", user);
+            view.ShowDialog();
+            //CloseAction();
         }
 
 
-        public void ButtonDeleteClick()
+        public void ButtonDeleteUserClick(UserDto user = null)
         {
-            MessageBox.Show("Delete");
+            if (user==null)
+            {
+                MessageBox.Show("Пользователь для удаления не выбран!", "Внимание!");
+                return;
+            }
+            var view = new UserEditorWindow("Удалить пользователя", user);
+            view.ShowDialog();
+            //CloseAction();
         }        
     }
 }

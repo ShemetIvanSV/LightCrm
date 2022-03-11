@@ -52,7 +52,7 @@ namespace CrmServices
                     Patronymic = u.Patronymic,
                     Username = u.Username,
                     Password = u.Password,
-                    Role = new RoleDto { Id = u.Role.Id, Name = u.Role.Name }, 
+                    Role = new RoleDto { Id = u.RoleId, Name = u.Role.Name }, 
                     Department = new DepartmentDto { Id = u.DepartmentId, Name = u.Department.Name}, 
                     //Timetables = u.Timetables                     
                 }).ToList();
