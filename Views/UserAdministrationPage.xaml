@@ -11,7 +11,17 @@
         <Button Name="ButtonCreate" Content="Создать" Command="{Binding ButtonCreateClickCommand}" HorizontalAlignment="Left" Height="30" Margin="10,36,0,0" VerticalAlignment="Top" Width="90"/>
         <Button Name="ButtonEdit" Content="Редактировать" Command="{Binding ButtonEditClickCommand}" HorizontalAlignment="Left" Height="30" Margin="106,36,0,0" VerticalAlignment="Top" Width="90"/>
         <Button Name="ButtonDelete" Content="Удалить" Command="{Binding ButtonDeleteClickCommand}" HorizontalAlignment="Left" Height="30" Margin="206,36,0,0" VerticalAlignment="Top" Width="90" RenderTransformOrigin="0.267,0.4"/>
-        <DataGrid Name="DataGrigUser" Margin="8,73,8,10"
-                  ItemsSource="{Binding UserData}"/>
+        
+        <DataGrid Name="DataGrigUser" Margin="8,73,10,10" AutoGenerateColumns="False"
+                  ItemsSource="{Binding UserData}" RowBackground="#FFCDC8C8" AlternatingRowBackground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя пользователя" Binding="{Binding Path=Name}" />
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Path=Surname}" />
+                <DataGridTextColumn Header="Отчество" Binding="{Binding Path=Patronymic}"  />
+                <DataGridTextColumn Header="Логин" Binding="{Binding Path=Username}" />
+                <DataGridTextColumn Header="Рабочее место" Binding="{Binding Path=Department.Name}" />
+                <DataGridTextColumn Header="Роли" Binding="{Binding Path=Roles.Name}" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </ContentControl>

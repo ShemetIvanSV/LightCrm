@@ -44,16 +44,16 @@ namespace CrmServices
         {
             using (var context = new CrmContext())
             {
-                var users = context.Users.Select(u => new UserDto 
-                { 
-                    Id = u.Id, 
-                    Name = u.Name, 
-                    Surname = u.Surname, 
-                    Patronymic = u.Patronymic, 
-                    Username = u.Username, 
-                    Password = u.Password, 
-                    //Role = u.Role { }, 
-                    //Department = u.Department, 
+                var users = context.Users.Select(u => new UserDto
+                {
+                    Id = u.Id,
+                    Name = u.Name,
+                    Surname = u.Surname,
+                    Patronymic = u.Patronymic,
+                    Username = u.Username,
+                    Password = u.Password,
+                    Role = new RoleDto { Id = u.Role.Id, Name = u.Role.Name }, 
+                    Department = new DepartmentDto { Id = u.DepartmentId, Name = u.Department.Name}, 
                     //Timetables = u.Timetables                     
                 }).ToList();
 
