@@ -21,10 +21,10 @@ namespace LightCrm.Views
     /// </summary>
     public partial class UserEditorWindow : Window
     {
-        public UserEditorWindow(string name, UserDto user)
+        public UserEditorWindow(string action, UserDto user=null)
         {
             InitializeComponent();
-            DataContext = new UserEditorWindowViewModel(name, user);
+            DataContext = new UserEditorWindowViewModel(action, user);
         }
     }
 }

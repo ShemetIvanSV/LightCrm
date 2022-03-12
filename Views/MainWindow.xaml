@@ -14,13 +14,13 @@
                             <Button Content="{Binding Name}"
                                 Command="{Binding DataContext.ChangePageCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
                                 CommandParameter="{Binding }"
-                                Margin="2,5"/>
+                                Margin="2,5" Padding="1" ScrollViewer.CanContentScroll="False"/>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
             </Border>
 
-            <ContentControl Content="{Binding CurrentPageViewModel}" />
+            <ContentControl Content="{Binding CurrentPageViewModel}" Padding="0" />
         </DockPanel>
     </Grid>
 </Window>
