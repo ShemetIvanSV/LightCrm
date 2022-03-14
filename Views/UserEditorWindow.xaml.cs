@@ -1,4 +1,5 @@
-﻿using LightCrm.ServiceReference;
+﻿using LightCrm.Models;
+using LightCrm.ServiceReference;
 using LightCrm.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace LightCrm.Views
     /// </summary>
     public partial class UserEditorWindow : Window
     {
-        public UserEditorWindow(string action, UserDto user=null)
+        public UserEditorWindow(UserAction action, UserDto user=null)
         {
             InitializeComponent();
             DataContext = new UserEditorWindowViewModel(action, user);

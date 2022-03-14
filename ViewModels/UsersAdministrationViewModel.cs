@@ -122,7 +122,7 @@ namespace LightCrm.ViewModels
 
         public void ButtonCreateUserClick()
         {            
-            var view = new UserEditorWindow("Создать пользователя");
+            var view = new UserEditorWindow(Models.UserAction.Create);
             view.ShowDialog();
         }
 
@@ -133,7 +133,7 @@ namespace LightCrm.ViewModels
                 MessageBox.Show("Пользователь для редактирования не выбран!", "Внимание!");
                 return;
             }
-            var view = new UserEditorWindow("Редактировать пользователя", User);
+            var view = new UserEditorWindow(Models.UserAction.Edit, User);
             view.ShowDialog();
         }
 
@@ -146,7 +146,7 @@ namespace LightCrm.ViewModels
                 return;
             }
 
-            var view = new UserEditorWindow("Удалить пользователя", User);
+            var view = new UserEditorWindow(Models.UserAction.Delete, User);
             view.ShowDialog();
         }        
     }

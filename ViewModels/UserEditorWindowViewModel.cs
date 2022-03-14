@@ -3,6 +3,8 @@ using LightCrm.ServiceReference;
 using System.Windows;
 using System.Windows.Input;
 using LightCrm.Views;
+using LightCrm.Models;
+using System;
 
 namespace LightCrm.ViewModels
 {
@@ -34,9 +36,21 @@ namespace LightCrm.ViewModels
             }
         }
 
-        public UserEditorWindowViewModel(string name, UserDto user)
+        public UserEditorWindowViewModel(UserAction name, UserDto user)
         {
-            Name = name;
+            switch (name)
+            {
+                case UserAction.Create:
+                    Name = "Создание пользователя";
+                    break;
+                case UserAction.Edit:
+                    Name = "Редактирование пользователя";
+                    break;
+                case UserAction.Delete:
+                    Name = "Удаление пользователя";
+                    break;
+            }
+
             User = user;
             if (user==null)
             {                
@@ -47,7 +61,7 @@ namespace LightCrm.ViewModels
             //GetUserData();
             //_dataBaseReadCommand = new RelayCommand(DataBaseRead);
         }
-
+                
         public ICommand ButtonOkClickCommand
         {
             get
