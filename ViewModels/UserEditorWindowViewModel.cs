@@ -15,7 +15,9 @@ namespace LightCrm.ViewModels
     {
         private string _name;
         private UserDto _user;
+        private bool _isEnable = false;
         private ICommand _buttonOkClickCommand;
+        private string _buttonOk;
 
         public string Name
         {
@@ -36,18 +38,48 @@ namespace LightCrm.ViewModels
             }
         }
 
+        public bool IsEnable
+        {
+
+            get { return _isEnable; }
+
+            set
+            {
+                _isEnable = value;
+                OnPropertyChanged("IsEnable");
+            }
+        }
+
+        public string ButtonOk
+        {
+
+            get { return _buttonOk; }
+
+            set
+            {
+                _buttonOk = value;
+                OnPropertyChanged("ButtonOk");
+            }
+        }
+
         public UserEditorWindowViewModel(UserAction name, UserDto user)
         {
             switch (name)
             {
                 case UserAction.Create:
                     Name = "Создание пользователя";
+                    IsEnable = true;
+                    ButtonOk = "Сохранить";
                     break;
                 case UserAction.Edit:
                     Name = "Редактирование пользователя";
+                    IsEnable = true;
+                    ButtonOk = "Сохранить";
                     break;
                 case UserAction.Delete:
                     Name = "Удаление пользователя";
+                    IsEnable = false;
+                    ButtonOk = "Удалить";
                     break;
             }
 
@@ -56,7 +88,6 @@ namespace LightCrm.ViewModels
             {                
                 return;
             }
-
 
             //GetUserData();
             //_dataBaseReadCommand = new RelayCommand(DataBaseRead);

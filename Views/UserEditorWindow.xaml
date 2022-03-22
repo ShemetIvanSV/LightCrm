@@ -29,17 +29,17 @@
         <Label Content="Имя" HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" />
         <Label Content="Отчество" HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2" />
 
-        <TextBox Name="Username" Text ="{Binding Path=User.Username}" Height="23" Grid.Column="0" Grid.Row="1" Margin="10,3" />
-        <TextBox Name="Password" Text ="{Binding Path=UserPassword}" Height="23" Grid.Column="1" Grid.Row="1" Margin="10,3" />
-        <TextBox Name="PasswordConfirm" Height="23" Grid.Column="2" Grid.Row="1" Margin="10,3" />
+        <TextBox Name="Username" Text ="{Binding Path=User.Username}" IsEnabled ="{Binding Path=IsEnable}" Height="23" Grid.Column="0" Grid.Row="1" Margin="10,3" />
+        <TextBox Name="Password" Text ="{Binding Path=User.Password}" IsEnabled ="{Binding Path=IsEnable}" Height="23" Grid.Column="1" Grid.Row="1" Margin="10,3" />
+        <TextBox Name="PasswordConfirm" Text ="{Binding Path=User.PasswordConfirm}" IsEnabled ="{Binding Path=IsEnable}" Height="23" Grid.Column="2" Grid.Row="1" Margin="10,3" />
 
-        <TextBox Name="Surname" Text ="{Binding Path=User.Surname}" Height="23" Grid.Column="0" Grid.Row="3" Margin="10,3" />
-        <TextBox Name="Name" Text ="{Binding Path=User.Name}" Height="23" Grid.Column="1" Grid.Row="3" Margin="10,3" />
-        <TextBox Name="Patronymic" Text ="{Binding Path=User.Patronymic}" Height="23" Grid.Column="2" Grid.Row="3" Margin="10,3" />
+        <TextBox Name="Surname" Text ="{Binding Path=User.Surname}" IsEnabled ="{Binding Path=IsEnable}" Height="23" Grid.Column="0" Grid.Row="3" Margin="10,3" />
+        <TextBox Name="Name" Text ="{Binding Path=User.Name}" IsEnabled ="{Binding Path=IsEnable}" Height="23" Grid.Column="1" Grid.Row="3" Margin="10,3" />
+        <TextBox Name="Patronymic" Text ="{Binding Path=User.Patronymic}" IsEnabled ="{Binding Path=IsEnable}" Height="23" Grid.Column="2" Grid.Row="3" Margin="10,3" />
 
-        <ListBox Height="23"  Grid.Row="5" Width="185" Margin="10,3" />
-        
-        <Button Name="ButtonOk" Content="Сохранить" IsDefault="True" Grid.Column="2" HorizontalAlignment="Left" Margin="40,0,10,0" Grid.Row="6" VerticalAlignment="Center" Width="75"
+        <ListBox IsEnabled ="{Binding Path=IsEnable}" Height="23"  Grid.Row="5" Width="185" Margin="10,3" />
+
+        <Button Name="ButtonOk" Content="{Binding Path=ButtonOk}" IsDefault="True" Grid.Column="2" HorizontalAlignment="Left" Margin="40,0,10,0" Grid.Row="6" VerticalAlignment="Center" Width="75"
                 Command="{Binding ButtonOkClickCommand}" />
         <Button Name="ButtonCancel" Content="Отмена" IsCancel="True" Grid.Column="2" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="6" VerticalAlignment="Center" Width="75" />
 
