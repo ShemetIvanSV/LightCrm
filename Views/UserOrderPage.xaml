@@ -2,10 +2,10 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:LightCrm.Views"
-      mc:Ignorable="d" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:viewmodels="clr-namespace:LightCrm.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:UsersOrdersViewModel}"
+                mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
+   
     <ContentControl.Resources>
         <Style TargetType="Button">
             <Setter Property="Width" Value="100" />
@@ -18,6 +18,7 @@
             <RowDefinition Height="349*"/>
         </Grid.RowDefinitions>
 
+        <Label Content="{Binding Path= Titel}"></Label>
 
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <Button Command="" Height="32">Сохранить</Button>
@@ -25,17 +26,17 @@
             <Button Command="" Height="32">Удалить</Button>
         </StackPanel>
 
-        <ListView Grid.Row="2" Margin="20">
+        <ListView Grid.Row="2" Margin="20" ItemsSource="{Binding Path= Orders}">
             <ListView.View>
                 <GridView >
-                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Id"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Пациент"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Сервис"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Дата"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Доктор/Медсестра"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Полаченный"/>
-                    <GridViewColumn Width="90" DisplayMemberBinding="{Binding Name}" Header="Выполненый"/>
-                    <GridViewColumn Width="90" DisplayMemberBinding="{Binding Name}" Header="Цена"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path= Id}" Header="Id"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path= Patient}" Header="Пациент"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path= Servise}" Header="Сервис"/>
+                    <!---  <GridViewColumn DisplayMemberBinding="{Binding Date}" Header="Дата"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Doctor}" Header="Доктор/Медсестра"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Paid}" Header="Проплаченный"/>
+                    <GridViewColumn Width="90" DisplayMemberBinding="{Binding Status}" Header="Выполненый"/>
+                    <GridViewColumn Width="90" DisplayMemberBinding="{Binding Price}" Header="Цена"/>-->
                 </GridView>
             </ListView.View>
             <ListView.Resources></ListView.Resources>
