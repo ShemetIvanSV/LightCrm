@@ -14,19 +14,19 @@ namespace LightCrmData.Models
         public int Id { get; set; }
 
         /// <summary>
-        /// Имя 
+        /// Имя Пользователя
         /// </summary>
         [Required]
         public string Name { get; set; }
 
         /// <summary>
-        /// Фамилия 
+        /// Фамилия Пользователя
         /// </summary>
         [Required]
         public string Surname { get; set; }
 
         /// <summary>
-        /// Отчество
+        /// Отчество Пользователя
         /// </summary>
         [Required]
         public string Patronymic { get; set; }

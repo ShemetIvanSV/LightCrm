@@ -10,8 +10,11 @@ namespace LightCrm.ViewModels
 {
     internal class UsersOrdersViewModel : BaseViewModel, IPageViewModel
     {
+        public ObservableCollection<ModelOrder> Orders { get; set; }
+
         #region Пробные данные 
         private string _name;
+
 
         public string Name 
         {
@@ -23,57 +26,19 @@ namespace LightCrm.ViewModels
             }
         }
 
-        private  string _titel;
-
-        public string Titel 
+        private  string _title;
+        public string Title
         {
-            get => _titel;
+            get => _title;
             set
             {
-                _titel = value;
-                OnPropertyChanged();
-            }
-        }
-
-
-
-        private int _Id;
-        public int Id 
-        {
-            get => _Id;
-            set 
-            {
-                _Id = value;
-                OnPropertyChanged();
-            }
-        }
-
-
-        private string _patient;
-        public string Patient
-        {
-            get => _patient;
-            set
-            {
-                _patient = value;
-                OnPropertyChanged();
-            }
-        }
-
-
-        private string _servise;
-        public string Servise
-        {
-            get => _servise;
-            set
-            {
-                _servise = value;
+                _title = value;
                 OnPropertyChanged();
             }
         }
         #endregion
 
-        public ObservableCollection<ModelOrder> Orders { get; set; }
+        
 
 
 
@@ -82,13 +47,13 @@ namespace LightCrm.ViewModels
         {
             Orders = new ObservableCollection<ModelOrder> 
             {
-                new ModelOrder {Id = 1, Patient="Tom", Servise = "Обсмотр"}
-            
+                new ModelOrder {Id = 1, Patient="Tom", Servise = "Обсмотр", Date=DateTime.Now, Doctor="Bob", Paid="no", Price=1000, Status="Complited"} // тестовые данные
+                
             };
             
 
             Name = "Заказы";
-            Titel = "Страница заказов";
+            Title = "Страница заказов";
         }
     }
 }
