@@ -15,5 +15,8 @@
         <DataTemplate DataType="{x:Type viewModels:UsersOrdersViewModel}">
             <views:UserOrderPage/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:TimeTableViewModel}">
+            <views:TimeTablePage/>
+        </DataTemplate>
     </Application.Resources>
 </Application>
