@@ -72,6 +72,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Models\ModelOrder.cs" />
+    <Compile Include="Models\Patient.cs" />
     <Compile Include="ViewModels\AuthorizationViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\Interfaces\IPageViewModel.cs" />
