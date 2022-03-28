@@ -2,6 +2,7 @@
 using LightCrm.ServiceReference;
 using System;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace LightCrm.ViewModels
@@ -16,6 +17,7 @@ namespace LightCrm.ViewModels
         public Action CloseAction { get; set; }
 
         public ICommand LoginCommand { get => _loginCommand; }
+
 
         private string _login;
         public string Login
@@ -44,12 +46,13 @@ namespace LightCrm.ViewModels
             _loginCommand = new RelayCommand(Authorization);
         }
 
-        private void Authorization(object obj = null)
+        private void Authorization(object commandParameter)
         {
             try
             {
                 using (var service = new UsersServiceClient())
                 {
+                    Password = ((PasswordBox)commandParameter).Password;
                     var user = service.GetUserByLoginData(Login, Password);
                     var view = new MainWindow(user);
                     view.Show();

@@ -5,6 +5,7 @@ using System.Windows.Input;
 using LightCrm.Views;
 using LightCrm.Models;
 using System;
+using System.Windows.Controls;
 
 namespace LightCrm.ViewModels
 {
@@ -15,9 +16,22 @@ namespace LightCrm.ViewModels
     {
         private string _name;
         private UserDto _user;
-        private bool _isEnable = false;
-        private ICommand _buttonOkClickCommand;
+        private bool _isEnable = false;        
         private string _buttonOk;
+
+        private ICommand _buttonOkClickCommand;
+
+
+        private string _password;
+        public string Password
+        {
+            get => _password;
+            set
+            {
+                _password = value;
+                OnPropertyChanged();
+            }
+        }
 
         public string Name
         {
@@ -97,19 +111,27 @@ namespace LightCrm.ViewModels
         {
             get
             {
-                if (_buttonOkClickCommand == null)
+                /*if (_buttonOkClickCommand == null)
                 {
-                    _buttonOkClickCommand = new RelayCommand(
-                        p => ButtonOkClick());
-                }
+                    _buttonOkClickCommand = new RelayCommand(p => ButtonOkClick());                    
+                }*/
+
+                _buttonOkClickCommand = new RelayCommand(ButtonOkClick);
 
                 return _buttonOkClickCommand;
             }
         }
 
-        public void ButtonOkClick(UserDto user = null)
+        public void ButtonOkClick(object commandParameter)
         {
-            MessageBox.Show("Ok");
+            Password = ((PasswordBox)commandParameter).Password;
+            if (String.IsNullOrEmpty(Password))
+            {
+                MessageBox.Show("Пароль не может быть пустым", "Внимание!");
+                return;
+            }
+            MessageBox.Show("Ok, password = " + Password);
+            
         }
     }
 }

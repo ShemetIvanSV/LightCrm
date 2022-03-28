@@ -21,7 +21,10 @@
         <TextBlock Text="Логин" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="16" Margin="0" Width="34" />
         <TextBox Text="{Binding Login}" Grid.Row="1" Grid.Column="1" Margin="10,0" BorderThickness="1" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="30" VerticalAlignment="Center"/>
         <TextBlock Text="Пароль" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" Height="16" Margin="0" Width="41"/>
-        <TextBox Text="{Binding Password}" Grid.Row="2" Grid.Column="1" Margin="10,0" BorderThickness="1" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="30" VerticalAlignment="Center"/>
-        <Button Command="{Binding LoginCommand}" Content="Войти" Grid.Row="4" Margin="0" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="100" MinHeight="29.6" BorderThickness="2" Height="30" Width="100" Grid.ColumnSpan="2"/>
+
+        <PasswordBox Name="PasswordBox" Grid.Row="2" Grid.Column="1" Margin="10,0" BorderThickness="1" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="30" VerticalAlignment="Center"/>
+        
+        <Button Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=PasswordBox}" IsDefault="True"
+                Content="Войти" Grid.Row="4" Margin="0" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="100" MinHeight="29.6" BorderThickness="2" Height="30" Width="100" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>
