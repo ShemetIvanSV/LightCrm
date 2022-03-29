@@ -72,17 +72,23 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Services\PatientsService.svc" />
+    <Content Include="Services\Service.svc" />
     <Content Include="Services\UsersService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dtos\PatientDto.cs" />
+    <Compile Include="Dtos\ServiceDto.cs" />
     <Compile Include="Dtos\UserDto.cs" />
     <Compile Include="Interfaces\IUsersService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\IPatientsService.cs" />
+    <Compile Include="Interfaces\IService.cs" />
     <Compile Include="Services\PatientsService.svc.cs">
       <DependentUpon>PatientsService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Service.svc.cs">
+      <DependentUpon>Service.svc</DependentUpon>
     </Compile>
     <Compile Include="Services\UsersService.svc.cs">
       <DependentUpon>UsersService.svc</DependentUpon>

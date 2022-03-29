@@ -36,9 +36,22 @@ namespace CrmServices.Services
 
         public void DeletePatient(PatientDto patient)
         {
-            throw new NotImplementedException();
+            using (var context = new CrmContext())
+            {
+                context.Patients.Remove(new Patient
+                {
+                    Name = patient.Name,
+                    Sername = patient.Sername,
+                    Patronymic = patient.Patronymic,
+                    Birthday = patient.Birthday,
+                    Gender = patient.Gender,
+                    Phone = patient.Phone,
+                    Email = patient.Email,
+                    Allergies = patient.Allergies,
+                });
+                context.SaveChanges();
+            }
         }
-
         public void UpdatePatient(PatientDto patient)
         {
             throw new NotImplementedException();

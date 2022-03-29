@@ -12,8 +12,8 @@ namespace CrmServices
         {
             using (var context = new CrmContext())
             {
-                context.Users.Add(new User 
-                { 
+                context.Users.Add(new User
+                {
                     Name = user.Name,
                     Password = user.Password,
                 });

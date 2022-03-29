@@ -65,6 +65,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\Service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Models\ModelOrder.cs" />
     <Compile Include="ViewModels\AuthorizationViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
@@ -163,6 +168,19 @@
     <None Include="Connected Services\ServiceReference\UsersService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\Service\LightCrm.Service.ServiceDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Service.wsdl" />
+    <None Include="Connected Services\Service\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Service\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Service\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -177,6 +195,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServicePatietn\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\Service\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServiceReference\UsersService.disco" />
@@ -204,6 +223,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServicePatietn\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Service\Service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Service\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Service\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Service\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
