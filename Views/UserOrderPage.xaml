@@ -22,12 +22,12 @@
         <Label Content="{Binding Path=Title}"></Label>
 
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button Command="" Height="32">Сохранить</Button>
+            <Button Command="{Binding AddOrderCommand}" Height="32">Сохранить</Button>
             <Button Command="" Height="32">Изменить</Button>
-            <Button Command="" Height="32">Удалить</Button>
+            <Button Command="{Binding RemoveOrderCommand}" CommandParameter="{Binding SelectedOrder}" Height="32">Удалить</Button>
         </StackPanel>
 
-        <ListView Grid.Row="2" Margin="20" ItemsSource="{Binding Path= Orders}">
+        <ListView Grid.Row="2" ItemsSource="{Binding Path= Orders}" SelectedItem="{Binding SelectedOrder}">
             <ListView.View>
                 <GridView >
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Id}" Header="Id"/>
