@@ -6,6 +6,7 @@ using LightCrm.Views;
 using LightCrm.Models;
 using System;
 using System.Windows.Controls;
+using System.Collections.Generic;
 
 namespace LightCrm.ViewModels
 {
@@ -14,9 +15,6 @@ namespace LightCrm.ViewModels
     /// </summary>
     public class UserEditorWindowViewModel : BaseViewModel, IPageViewModel
     {
-        private string _name;
-        private UserDto _user;
-        private bool _isEnable = false;        
         private string _buttonOk;
 
         private ICommand _buttonOkClickCommand;
@@ -33,6 +31,18 @@ namespace LightCrm.ViewModels
             }
         }
 
+        private string _passwordConfirm;
+        public string PasswordConfirm
+        {
+            get => _passwordConfirm;
+            set
+            {
+                _passwordConfirm = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _name;
         public string Name
         {
             get => _name;
@@ -43,6 +53,7 @@ namespace LightCrm.ViewModels
             }
         }
 
+        private UserDto _user;
         public UserDto User
         {
             get => _user;
@@ -52,6 +63,17 @@ namespace LightCrm.ViewModels
             }
         }
 
+        private RoleDto _role;
+        public RoleDto Role
+        {
+            get => _role;
+            set
+            {
+                _role = value;
+            }
+        }
+
+        private bool _isEnable = false;
         public bool IsEnable
         {
 
@@ -73,6 +95,17 @@ namespace LightCrm.ViewModels
             {
                 _buttonOk = value;
                 OnPropertyChanged("ButtonOk");
+            }
+        }
+
+        private IEnumerable<RoleDto> _roleData;
+        public IEnumerable<RoleDto> RoleData
+        {
+            get => _roleData;
+            set
+            {
+                _roleData = value;
+                OnPropertyChanged();
             }
         }
 
@@ -103,10 +136,28 @@ namespace LightCrm.ViewModels
                 return;
             }
 
-            //GetUserData();
+            GetRoleData();
             //_dataBaseReadCommand = new RelayCommand(DataBaseRead);
         }
-                
+
+        private void GetRoleData(object obj = null)
+        {
+            try
+            {
+                using (var service = new RolesServiceClient())
+                {
+                    RoleData = service.GetRoles();
+                    //var view = new MainWindow(user);
+                    //view.Show();
+                    //CloseAction();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         public ICommand ButtonOkClickCommand
         {
             get
@@ -132,6 +183,13 @@ namespace LightCrm.ViewModels
             }
             MessageBox.Show("Ok, password = " + Password);
             
+        }
+
+        private void ComboBox_Selected(object sender, RoutedEventArgs e)
+        {
+            ComboBox comboBox = (ComboBox)sender;
+            ComboBoxItem selectedItem = (ComboBoxItem)comboBox.SelectedItem;
+            MessageBox.Show(selectedItem.Content.ToString());
         }
     }
 }

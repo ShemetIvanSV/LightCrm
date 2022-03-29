@@ -81,9 +81,9 @@
     <Compile Include="Dtos\TimetablesDto.cs" />
     <Compile Include="Dtos\UserDto.cs" />
     <Compile Include="Helpers\Cripto.cs" />
+    <Compile Include="Interfaces\IRolesService.cs" />
     <Compile Include="Interfaces\IUsersService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\IRolesService.cs" />
     <Compile Include="Services\RolesService.svc.cs">
       <DependentUpon>RolesService.svc</DependentUpon>
     </Compile>

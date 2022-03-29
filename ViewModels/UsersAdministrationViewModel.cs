@@ -15,15 +15,13 @@ namespace LightCrm.ViewModels
     /// </summary>
     public class UsersAdministrationViewModel : BaseViewModel, IPageViewModel
     {
-        private string _name;
-        private UserDto _user;
-        private IEnumerable<UserDto> _userData;
         private ICommand _buttonCreateClickCommand;
         private ICommand _buttonEditeClickCommand;
         private ICommand _buttonDeleteClickCommand;
         
         public Action CloseAction { get; set; }
-
+        
+        private string _name;
         public string Name
         {
             get => _name;
@@ -34,6 +32,7 @@ namespace LightCrm.ViewModels
             }
         }
 
+        private UserDto _user;
         public UserDto User
         {
             get => _user;
@@ -43,6 +42,7 @@ namespace LightCrm.ViewModels
             }
         }
 
+        private IEnumerable<UserDto> _userData;
         public IEnumerable<UserDto> UserData
         {
             get => _userData;
