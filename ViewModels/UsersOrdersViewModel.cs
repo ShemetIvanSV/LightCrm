@@ -8,9 +8,20 @@ using System.Threading.Tasks;
 
 namespace LightCrm.ViewModels
 {
-    internal class UsersOrdersViewModel : BaseViewModel, IPageViewModel
+    public class UsersOrdersViewModel : BaseViewModel, IPageViewModel
     {
-        public ObservableCollection<ModelOrder> Orders { get; set; }
+
+        private ObservableCollection<ModelOrder> _orders;
+        public ObservableCollection<ModelOrder> Orders 
+        {
+            get => _orders;
+            set 
+            {
+                _orders = value;
+                OnPropertyChanged();
+            }
+        }
+
 
         #region Пробные данные 
         private string _name;
