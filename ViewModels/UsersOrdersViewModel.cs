@@ -49,7 +49,6 @@ namespace LightCrm.ViewModels
             }
         }
         #endregion
-
         #region Команда Добавление закакза 
         private RelayCommand _addOrderCommand;
         public RelayCommand AddOrderCommand
@@ -76,7 +75,6 @@ namespace LightCrm.ViewModels
         }
 
         #endregion
-
         #region Команда удаление заказа
         private RelayCommand _removeOrderCommand;
         public RelayCommand RemoveOrderCommand
@@ -108,17 +106,26 @@ namespace LightCrm.ViewModels
         }
         #endregion
 
+        #region Команда Открытия окна 
+        public OpenWindowCommand OpenWindowCommand { get; private set; }
+
+        #endregion
 
 
         public UsersOrdersViewModel() 
         {
             Orders = new ObservableCollection<ModelOrder> 
             {
+                
                 new ModelOrder {Id = 1, Patient="Tom", Servise = "Обсмотр", Date=DateTime.Now, Doctor="Bob", Paid="no", Price=1000, Status="Complited"} // тестовые данные
                 
             };
-            
+            /*using (var client = new ServiceClient())
+            {
+                client.AddNewService(new ServiceDto());
 
+            }*/
+            OpenWindowCommand = new OpenWindowCommand();
             Name = "Заказы";
             Title = "Страница заказов";
         }

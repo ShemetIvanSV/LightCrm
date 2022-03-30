@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
                 xmlns:viewmodels="clr-namespace:LightCrm.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:UsersOrdersViewModel}"
                 mc:Ignorable="d" 
+      xmlns:l="clr-namespace:LightCrm.Views"
       d:DesignHeight="450" d:DesignWidth="800">
    
     <ContentControl.Resources>
@@ -22,7 +23,7 @@
         <Label Content="{Binding Path=Title}"></Label>
 
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button Command="{Binding AddOrderCommand}" Height="32">Сохранить</Button>
+            <Button Command="{Binding OpenWindowCommand}" CommandParameter="{x:Type l:CreateOrderWindow }" Height="32">Добавить</Button>
             <Button Command="" Height="32">Изменить</Button>
             <Button Command="{Binding RemoveOrderCommand}" CommandParameter="{Binding SelectedOrder}" Height="32">Удалить</Button>
         </StackPanel>
