@@ -1,6 +1,6 @@
 ﻿using LightCrm.Commands;
 using LightCrm.Models;
-using LightCrm.Service;
+using LightCrm.DoctorService;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
