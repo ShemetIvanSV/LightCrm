@@ -61,12 +61,12 @@
     </ApplicationDefinition>
     <Compile Include="Commands\OpenWindowCommand.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
-    <Compile Include="Connected Services\ServicePatietn\Reference.cs">
+    <Compile Include="Connected Services\DoctorService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\Service\Reference.cs">
+    <Compile Include="Connected Services\ServicePatietn\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -150,6 +150,19 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Connected Services\DoctorService\DoctorService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DoctorService\DoctorService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DoctorService\DoctorService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DoctorService\LightCrm.DoctorService.DoctorServiceDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DoctorService\Service.wsdl" />
     <None Include="Connected Services\ServicePatietn\LightCrm.ServicePatietn.PatientDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -176,19 +189,6 @@
     <None Include="Connected Services\ServiceReference\UsersService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\Service\LightCrm.Service.ServiceDto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\Service\Service.wsdl" />
-    <None Include="Connected Services\Service\Service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\Service\Service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\Service\Service2.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -201,9 +201,9 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\DoctorService\" />
     <WCFMetadataStorage Include="Connected Services\ServicePatietn\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReference\" />
-    <WCFMetadataStorage Include="Connected Services\Service\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServiceReference\UsersService.disco" />
@@ -236,16 +236,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\Service\Service.disco" />
+    <None Include="Connected Services\DoctorService\DoctorService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\Service\configuration91.svcinfo" />
+    <None Include="Connected Services\DoctorService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\Service\configuration.svcinfo" />
+    <None Include="Connected Services\DoctorService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\Service\Reference.svcmap">
+    <None Include="Connected Services\DoctorService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

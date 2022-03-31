@@ -120,14 +120,18 @@ namespace LightCrm.ViewModels
                 new ModelOrder {Id = 1, Patient="Tom", Servise = "Обсмотр", Date=DateTime.Now, Doctor="Bob", Paid="no", Price=1000, Status="Complited"} // тестовые данные
                 
             };
-            /*using (var client = new ServiceClient())
-            {
-                client.AddNewService(new ServiceDto());
-
-            }*/
+           
             OpenWindowCommand = new OpenWindowCommand();
             Name = "Заказы";
             Title = "Страница заказов";
+         /*using (var client = new ServiceClient())
+           {
+               client.AddNewService(new ServiceDto());
+
+           }
+         */
         }
     }
 }
+
+

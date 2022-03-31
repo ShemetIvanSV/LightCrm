@@ -7,7 +7,7 @@ using System.Web;
 namespace CrmServices.Dtos
 {
     [DataContract]
-    public class ServiceDto
+    public class DoctorServiceDto
     {
         [DataMember]
         public int Id { get; set; }

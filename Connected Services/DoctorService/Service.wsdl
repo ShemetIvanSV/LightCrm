@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:55255/Services/DoctorService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:55255/Services/DoctorService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:55255/Services/DoctorService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CrmServices.Dtos" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDoctorService_AddNewDoctorService_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewDoctorService" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorService_AddNewDoctorService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewDoctorServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorService_UpdateDoctorService_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDoctorService" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorService_UpdateDoctorService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDoctorServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorService_DeleteDoctorService_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDoctorService" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorService_DeleteDoctorService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDoctorServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorService_GetService_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetService" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorService_GetService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDoctorService">
+    <wsdl:operation name="AddNewDoctorService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctorService/AddNewDoctorService" message="tns:IDoctorService_AddNewDoctorService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctorService/AddNewDoctorServiceResponse" message="tns:IDoctorService_AddNewDoctorService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDoctorService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctorService/UpdateDoctorService" message="tns:IDoctorService_UpdateDoctorService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctorService/UpdateDoctorServiceResponse" message="tns:IDoctorService_UpdateDoctorService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDoctorService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctorService/DeleteDoctorService" message="tns:IDoctorService_DeleteDoctorService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctorService/DeleteDoctorServiceResponse" message="tns:IDoctorService_DeleteDoctorService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctorService/GetService" message="tns:IDoctorService_GetService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctorService/GetServiceResponse" message="tns:IDoctorService_GetService_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IDoctorService" type="tns:IDoctorService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddNewDoctorService">
+      <soap:operation soapAction="http://tempuri.org/IDoctorService/AddNewDoctorService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDoctorService">
+      <soap:operation soapAction="http://tempuri.org/IDoctorService/UpdateDoctorService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDoctorService">
+      <soap:operation soapAction="http://tempuri.org/IDoctorService/DeleteDoctorService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetService">
+      <soap:operation soapAction="http://tempuri.org/IDoctorService/GetService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IDoctorService" binding="tns:BasicHttpBinding_IDoctorService">
+      <soap:address location="http://localhost:55255/Services/DoctorService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

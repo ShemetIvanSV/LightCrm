@@ -7,13 +7,13 @@ using LightCrmData.Models;
 namespace CrmServices.Services
 {
 
-    public class Service : IService
+    public class Service : IDoctorService
     {
-        public void AddNewService(ServiceDto service)
+        public void AddNewDoctorService(DoctorServiceDto service)
         {
             using (var context = new CrmContext())
             {
-                context.Services.Add(new LightCrmData.Models.Service
+                context.Services.Add(new LightCrmData.Models.DoctorService
                 {
                      Name = service.Name,
                      Price = service.Price,
@@ -23,11 +23,11 @@ namespace CrmServices.Services
                 context.SaveChanges();
             }
         }
-        public void DeleteService(ServiceDto service)
+        public void DeleteDoctorService(DoctorServiceDto service)
         {
             using (var context = new CrmContext())
             {
-                context.Services.Remove(new LightCrmData.Models.Service
+                context.Services.Remove(new LightCrmData.Models.DoctorService
                 {
                     Name = service.Name,
                     Price = service.Price,
@@ -38,12 +38,12 @@ namespace CrmServices.Services
             }
         }
 
-        public IEnumerable<ServiceDto> GetService()
+        public IEnumerable<DoctorServiceDto> GetService()
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateService(ServiceDto service)
+        public void UpdateDoctorService(DoctorServiceDto service)
         {
             throw new NotImplementedException();
         }

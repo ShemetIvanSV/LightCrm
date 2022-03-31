@@ -10,19 +10,19 @@ namespace CrmServices.Services
 {
     
     [ServiceContract]
-    public interface IService
+    public interface IDoctorService
     {
      
         [OperationContract]
-        void AddNewService(ServiceDto service);
+        void AddNewDoctorService(DoctorServiceDto service);
 
         [OperationContract]
-        void UpdateService(ServiceDto service);
+        void UpdateDoctorService(DoctorServiceDto service);
 
         [OperationContract]
-        void DeleteService(ServiceDto service);
+        void DeleteDoctorService(DoctorServiceDto service);
 
         [OperationContract]
-        IEnumerable<ServiceDto> GetService();
+        IEnumerable<DoctorServiceDto> GetService();
     }
 }

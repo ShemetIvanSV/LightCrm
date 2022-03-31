@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 namespace LightCrmData.Models
 {
     /// <summary>
-    /// Услуги, которые предоставляются пациенту 
+    /// Услуги, которые предоставляются пациенту врачами
     /// </summary>
-    public class Service
+    public class DoctorService
     {
         /// <summary>
         /// Индетификатор услуги  
