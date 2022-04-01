@@ -9,7 +9,7 @@
     <Grid>
         <GroupBox Header="Пациент" Margin="64,46,549,138">
             <StackPanel>
-                <TextBox Width="134" Height="20" Margin="10,10,10,10" Text=""/>
+                <TextBox x:Name="PatientName" Height="20" Margin="10,10,10,10" Text=""/>
                 <ListBox Height="171" d:ItemsSource="{d:SampleData ItemCount=4}" Width="145"/>
             </StackPanel>
         </GroupBox>
@@ -26,9 +26,17 @@
                 <ListBox Height="171" d:ItemsSource="{d:SampleData ItemCount=4}" Width="149"/>
             </StackPanel>
         </GroupBox>
-        <GroupBox Header="Отчет услуги" Margin="10,301,42,23">
+        <GroupBox Header="Отчет услуги" Margin="10,301,10,23">
             <Grid>
-                <Button Margin="612,26,10,29" Content="Сохранить"/>
+                <Button Margin="589,23,10,21" Content="Сохранить"/>
+                <Label Content="Пациент:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+                <Label Content="Услуга:" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top"/>
+                <Label Content="Доктор:" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top"/>
+                <Label Content="Дата:" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top"/>
+                <Label Content="test" HorizontalAlignment="Left" Margin="76,0,0,0" VerticalAlignment="Top"/>
+                <Label Content="test" HorizontalAlignment="Left" Margin="76,13,0,0" VerticalAlignment="Top"/>
+                <Label Content="test" HorizontalAlignment="Left" Margin="76,26,0,0" VerticalAlignment="Top"/>
+                <Label Content="test" HorizontalAlignment="Left" Margin="76,39,0,0" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
         <Label Content="Бронирование" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="31" Width="141" FontWeight="Bold" FontSize="14"/>
