@@ -1,27 +1,25 @@
 ﻿using CrmServices.Dtos;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.Web;
 
 namespace CrmServices.Interfaces
 {
+    [ServiceContract]
     public interface IRolesService
     {
         [OperationContract]
-        void AddNewRole(RoleDto user);
+        void AddNewRole(RoleDto role);
 
         [OperationContract]
-        void UpdateRole(UserDto user);
+        void UpdateRole(RoleDto role);
 
         [OperationContract]
-        void DeleteRole(UserDto user);
+        void DeleteRole(RoleDto role);
 
         [OperationContract]
         IEnumerable<RoleDto> GetRoles();
 
         [OperationContract]
-        RoleDto GetRoleById(string login, string password);
+        RoleDto GetRoleById(int id);
     }
 }

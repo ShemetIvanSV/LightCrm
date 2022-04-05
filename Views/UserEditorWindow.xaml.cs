@@ -1,19 +1,6 @@
 ﻿using LightCrm.Models;
-using LightCrm.ServiceReference;
 using LightCrm.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace LightCrm.Views
 {
@@ -22,7 +9,7 @@ namespace LightCrm.Views
     /// </summary>
     public partial class UserEditorWindow : Window
     {
-        public UserEditorWindow(UserAction action, UserDto user=null)
+        public UserEditorWindow(UserAction action, ServiceReferenceUsers.UserDto user =null)
         {
             InitializeComponent();
             DataContext = new UserEditorWindowViewModel(action, user);

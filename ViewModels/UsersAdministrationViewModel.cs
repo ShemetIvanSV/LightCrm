@@ -1,12 +1,9 @@
 ﻿using LightCrm.Commands;
-using LightCrm.ServiceReference;
 using LightCrm.Views;
 using System;
 using System.Collections.Generic;
-using LightCrm.ViewModels;
 using System.Windows;
 using System.Windows.Input;
-using System.Windows.Controls;
 
 namespace LightCrm.ViewModels
 {
@@ -32,8 +29,8 @@ namespace LightCrm.ViewModels
             }
         }
 
-        private UserDto _user;
-        public UserDto User
+        private ServiceReferenceUsers.UserDto _user;
+        public ServiceReferenceUsers.UserDto User
         {
             get => _user;
             set
@@ -42,8 +39,8 @@ namespace LightCrm.ViewModels
             }
         }
 
-        private IEnumerable<UserDto> _userData;
-        public IEnumerable<UserDto> UserData
+        private IEnumerable<ServiceReferenceUsers.UserDto> _userData;
+        public IEnumerable<ServiceReferenceUsers.UserDto> UserData
         {
             get => _userData;
             set
@@ -64,7 +61,7 @@ namespace LightCrm.ViewModels
         {
             try
             {
-                using (var service = new UsersServiceClient())
+                using (var service = new ServiceReferenceUsers.UsersServiceClient())
                 {
                     UserData = service.GetUsers();
                     //var view = new MainWindow(user);

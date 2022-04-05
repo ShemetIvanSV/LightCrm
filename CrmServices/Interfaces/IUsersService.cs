@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ServiceModel;
 
-namespace CrmServices
+namespace CrmServices.Interfaces
 {
 
     [ServiceContract]

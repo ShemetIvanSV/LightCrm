@@ -1,12 +1,10 @@
 ﻿using LightCrm.Commands;
-using LightCrm.ServiceReference;
-using System.Windows;
-using System.Windows.Input;
-using LightCrm.Views;
 using LightCrm.Models;
 using System;
-using System.Windows.Controls;
 using System.Collections.Generic;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace LightCrm.ViewModels
 {
@@ -53,8 +51,8 @@ namespace LightCrm.ViewModels
             }
         }
 
-        private UserDto _user;
-        public UserDto User
+        private ServiceReferenceUsers.UserDto _user;
+        public ServiceReferenceUsers.UserDto User
         {
             get => _user;
             set
@@ -63,8 +61,8 @@ namespace LightCrm.ViewModels
             }
         }
 
-        private RoleDto _role;
-        public RoleDto Role
+        private ServiceReferenceRoles.RoleDto _role;
+        public ServiceReferenceRoles.RoleDto Role
         {
             get => _role;
             set
@@ -98,8 +96,8 @@ namespace LightCrm.ViewModels
             }
         }
 
-        private IEnumerable<RoleDto> _roleData;
-        public IEnumerable<RoleDto> RoleData
+        private IEnumerable<ServiceReferenceRoles.RoleDto> _roleData;
+        public IEnumerable<ServiceReferenceRoles.RoleDto> RoleData
         {
             get => _roleData;
             set
@@ -109,7 +107,7 @@ namespace LightCrm.ViewModels
             }
         }
 
-        public UserEditorWindowViewModel(UserAction name, UserDto user)
+        public UserEditorWindowViewModel(UserAction name, ServiceReferenceUsers.UserDto user)
         {
             switch (name)
             {
@@ -144,7 +142,7 @@ namespace LightCrm.ViewModels
         {
             try
             {
-                using (var service = new RolesServiceClient())
+                using (var service = new ServiceReferenceRoles.RolesServiceClient())
                 {
                     RoleData = service.GetRoles();
                     //var view = new MainWindow(user);

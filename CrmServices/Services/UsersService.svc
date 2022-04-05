@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="CrmServices.UsersService" CodeBehind="UsersService.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="CrmServices.Services.UsersService" CodeBehind="UsersService.svc.cs" %>

@@ -1,5 +1,6 @@
 ﻿using CrmServices.Dtos;
 using CrmServices.Helpers;
+using CrmServices.Interfaces;
 using LightCrmData;
 using LightCrmData.Models;
 using System;
@@ -7,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 
-namespace CrmServices
+namespace CrmServices.Services
 {
     public class UsersService : IUsersService
     {

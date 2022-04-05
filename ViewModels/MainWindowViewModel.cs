@@ -1,5 +1,5 @@
 ﻿using LightCrm.Commands;
-using LightCrm.ServiceReference;
+using LightCrm.ServiceReferenceUsers;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
