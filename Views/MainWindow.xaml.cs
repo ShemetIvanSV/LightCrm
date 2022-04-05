@@ -1,4 +1,5 @@
-﻿using LightCrm.ViewModels;
+﻿using CrmModels;
+using LightCrm.ViewModels;
 using System.Windows;
 
 namespace LightCrm
@@ -8,7 +9,7 @@ namespace LightCrm
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow(ServiceReferenceUsers.UserDto user)
+        public MainWindow(UserDto user)
         {
             InitializeComponent();
             DataContext = new MainWindowViewModel(user);

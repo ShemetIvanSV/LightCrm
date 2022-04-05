@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace CrmServices.Dtos
+namespace CrmModels
 {
     /// <summary>
     /// Роль пользователя

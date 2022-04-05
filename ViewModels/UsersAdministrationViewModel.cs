@@ -1,4 +1,5 @@
-﻿using LightCrm.Commands;
+﻿using CrmModels;
+using LightCrm.Commands;
 using LightCrm.Views;
 using System;
 using System.Collections.Generic;
@@ -29,8 +30,8 @@ namespace LightCrm.ViewModels
             }
         }
 
-        private ServiceReferenceUsers.UserDto _user;
-        public ServiceReferenceUsers.UserDto User
+        private UserDto _user;
+        public UserDto User
         {
             get => _user;
             set
@@ -39,8 +40,8 @@ namespace LightCrm.ViewModels
             }
         }
 
-        private IEnumerable<ServiceReferenceUsers.UserDto> _userData;
-        public IEnumerable<ServiceReferenceUsers.UserDto> UserData
+        private IEnumerable<UserDto> _userData;
+        public IEnumerable<UserDto> UserData
         {
             get => _userData;
             set

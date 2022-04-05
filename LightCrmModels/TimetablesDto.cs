@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
 
-namespace CrmServices.Dtos
+namespace LightCrmModels
 {
     /// <summary>
     /// График работы 

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace CrmServices.Dtos
+namespace LightCrmModels
 {
     /// <summary>
     /// Пользователь системы

@@ -159,9 +159,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\ServiceReferenceRoles\LightCrm.ServiceReferenceRoles.RoleDto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\ServiceReferenceRoles\RolesService.wsdl" />
     <None Include="Connected Services\ServiceReferenceRoles\RolesService.xsd">
       <SubType>Designer</SubType>
@@ -171,9 +168,6 @@
     </None>
     <None Include="Connected Services\ServiceReferenceRoles\RolesService2.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiceReferenceUsers\LightCrm.ServiceReferenceUsers.UserDto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReferenceUsers\UsersService.wsdl" />
     <None Include="Connected Services\ServiceReferenceUsers\UsersService.xsd">
@@ -186,6 +180,8 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CrmModels.RoleDto.datasource" />
+    <None Include="Properties\DataSources\CrmModels.UserDto.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -196,6 +192,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="CrmModels\CrmModels.csproj">
+      <Project>{4cd6802c-85ee-4f86-8cd1-a57fd265a298}</Project>
+      <Name>CrmModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceRoles\" />

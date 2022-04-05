@@ -1,5 +1,5 @@
-﻿using LightCrm.Commands;
-using LightCrm.ServiceReferenceUsers;
+﻿using CrmModels;
+using LightCrm.Commands;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;

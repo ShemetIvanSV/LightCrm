@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:55255/Services/UsersService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CrmServices.Dtos" />
+  <xs:import schemaLocation="http://localhost:55255/Services/UsersService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CrmModels" />
   <xs:element name="AddNewUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CrmServices.Dtos" minOccurs="0" name="user" nillable="true" type="q1:UserDto" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CrmModels" minOccurs="0" name="user" nillable="true" type="q1:UserDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -16,7 +16,7 @@
   <xs:element name="UpdateUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CrmServices.Dtos" minOccurs="0" name="user" nillable="true" type="q2:UserDto" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CrmModels" minOccurs="0" name="user" nillable="true" type="q2:UserDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -28,7 +28,7 @@
   <xs:element name="DeleteUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CrmServices.Dtos" minOccurs="0" name="user" nillable="true" type="q3:UserDto" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CrmModels" minOccurs="0" name="user" nillable="true" type="q3:UserDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -45,7 +45,7 @@
   <xs:element name="GetUsersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CrmServices.Dtos" minOccurs="0" name="GetUsersResult" nillable="true" type="q4:ArrayOfUserDto" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CrmModels" minOccurs="0" name="GetUsersResult" nillable="true" type="q4:ArrayOfUserDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -60,7 +60,7 @@
   <xs:element name="GetUserByLoginDataResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CrmServices.Dtos" minOccurs="0" name="GetUserByLoginDataResult" nillable="true" type="q5:UserDto" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CrmModels" minOccurs="0" name="GetUserByLoginDataResult" nillable="true" type="q5:UserDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

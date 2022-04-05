@@ -1,4 +1,4 @@
-﻿using CrmServices.Dtos;
+﻿using CrmModels;
 using System.Collections.Generic;
 using System.ServiceModel;
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:55255/Services/RolesService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CrmServices.Dtos" />
+  <xs:import schemaLocation="http://localhost:55255/Services/RolesService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CrmModels" />
   <xs:element name="AddNewRole">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CrmServices.Dtos" minOccurs="0" name="role" nillable="true" type="q1:RoleDto" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CrmModels" minOccurs="0" name="role" nillable="true" type="q1:RoleDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -16,7 +16,7 @@
   <xs:element name="UpdateRole">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CrmServices.Dtos" minOccurs="0" name="role" nillable="true" type="q2:RoleDto" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CrmModels" minOccurs="0" name="role" nillable="true" type="q2:RoleDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -28,7 +28,7 @@
   <xs:element name="DeleteRole">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CrmServices.Dtos" minOccurs="0" name="role" nillable="true" type="q3:RoleDto" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CrmModels" minOccurs="0" name="role" nillable="true" type="q3:RoleDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -45,7 +45,7 @@
   <xs:element name="GetRolesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CrmServices.Dtos" minOccurs="0" name="GetRolesResult" nillable="true" type="q4:ArrayOfRoleDto" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CrmModels" minOccurs="0" name="GetRolesResult" nillable="true" type="q4:ArrayOfRoleDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -59,7 +59,7 @@
   <xs:element name="GetRoleByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CrmServices.Dtos" minOccurs="0" name="GetRoleByIdResult" nillable="true" type="q5:RoleDto" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CrmModels" minOccurs="0" name="GetRoleByIdResult" nillable="true" type="q5:RoleDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

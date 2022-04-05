@@ -1,4 +1,5 @@
-﻿using LightCrm.Models;
+﻿using CrmModels;
+using LightCrm.Models;
 using LightCrm.ViewModels;
 using System.Windows;
 
@@ -9,7 +10,7 @@ namespace LightCrm.Views
     /// </summary>
     public partial class UserEditorWindow : Window
     {
-        public UserEditorWindow(UserAction action, ServiceReferenceUsers.UserDto user =null)
+        public UserEditorWindow(UserAction action, UserDto user =null)
         {
             InitializeComponent();
             DataContext = new UserEditorWindowViewModel(action, user);

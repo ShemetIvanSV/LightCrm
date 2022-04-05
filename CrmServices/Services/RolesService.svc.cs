@@ -1,4 +1,4 @@
-﻿using CrmServices.Dtos;
+﻿using CrmModels;
 using CrmServices.Interfaces;
 using LightCrmData;
 using System;

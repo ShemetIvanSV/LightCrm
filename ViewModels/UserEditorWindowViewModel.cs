@@ -1,5 +1,7 @@
-﻿using LightCrm.Commands;
+﻿using CrmModels;
+using LightCrm.Commands;
 using LightCrm.Models;
+using LightCrm.ServiceReferenceRoles;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -51,8 +53,8 @@ namespace LightCrm.ViewModels
             }
         }
 
-        private ServiceReferenceUsers.UserDto _user;
-        public ServiceReferenceUsers.UserDto User
+        private UserDto _user;
+        public UserDto User
         {
             get => _user;
             set
@@ -61,8 +63,8 @@ namespace LightCrm.ViewModels
             }
         }
 
-        private ServiceReferenceRoles.RoleDto _role;
-        public ServiceReferenceRoles.RoleDto Role
+        private RoleDto _role;
+        public RoleDto Role
         {
             get => _role;
             set
@@ -96,8 +98,8 @@ namespace LightCrm.ViewModels
             }
         }
 
-        private IEnumerable<ServiceReferenceRoles.RoleDto> _roleData;
-        public IEnumerable<ServiceReferenceRoles.RoleDto> RoleData
+        private IEnumerable<RoleDto> _roleData;
+        public IEnumerable<RoleDto> RoleData
         {
             get => _roleData;
             set
@@ -107,7 +109,7 @@ namespace LightCrm.ViewModels
             }
         }
 
-        public UserEditorWindowViewModel(UserAction name, ServiceReferenceUsers.UserDto user)
+        public UserEditorWindowViewModel(UserAction name, UserDto user)
         {
             switch (name)
             {
@@ -142,7 +144,7 @@ namespace LightCrm.ViewModels
         {
             try
             {
-                using (var service = new ServiceReferenceRoles.RolesServiceClient())
+                using (var service = new RolesServiceClient())
                 {
                     RoleData = service.GetRoles();
                     //var view = new MainWindow(user);

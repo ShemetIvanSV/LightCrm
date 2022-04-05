@@ -76,10 +76,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dtos\DepartmentDto.cs" />
-    <Compile Include="Dtos\RoleDto.cs" />
-    <Compile Include="Dtos\TimetablesDto.cs" />
-    <Compile Include="Dtos\UserDto.cs" />
     <Compile Include="Helpers\Cripto.cs" />
     <Compile Include="Interfaces\IRolesService.cs" />
     <Compile Include="Interfaces\IUsersService.cs" />
@@ -104,6 +100,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CrmModels\CrmModels.csproj">
+      <Project>{4cd6802c-85ee-4f86-8cd1-a57fd265a298}</Project>
+      <Name>CrmModels</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LightCrmData\LightCrmData.csproj">
       <Project>{e9e715b6-6abb-48d7-abb8-fcfc558e8c08}</Project>
       <Name>LightCrmData</Name>
