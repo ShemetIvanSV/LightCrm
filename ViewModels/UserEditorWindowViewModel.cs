@@ -2,6 +2,8 @@
 using LightCrm.Commands;
 using LightCrm.Models;
 using LightCrm.ServiceReferenceRoles;
+using LightCrm.ServiceReferenceUsers;
+using LightCrm.Views;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -176,13 +178,50 @@ namespace LightCrm.ViewModels
         public void ButtonOkClick(object commandParameter)
         {
             Password = ((PasswordBox)commandParameter).Password;
+
             if (String.IsNullOrEmpty(Password))
             {
                 MessageBox.Show("Пароль не может быть пустым", "Внимание!");
                 return;
             }
-            MessageBox.Show("Ok, password = " + Password);
-            
+
+            try 
+            {
+                using (var service = new UsersServiceClient())
+                {
+                    switch (Name)
+                    {
+                        case "Создание пользователя":
+                            User = new UserDto()
+                            {
+                                Name = "1",
+                                Password = "2",
+                                Username = "3",
+                                Surname = "4",
+                                Patronymic = "5",
+                                Department = new DepartmentDto() { Id = 1 },
+                                Role = new RoleDto() { Id = 1 },
+                                Timetables = new List<TimetablesDto>(),
+                            };
+                            service.AddNewUser(User);
+                            break;
+                        case "Редактирование пользователя":
+                            service.UpdateUser(User);
+                            break;
+                        case "Удаление пользователя":
+                            service.DeleteUser(User);
+                            break;
+                    }
+
+                    GetRoleData();
+
+                    UserEditorWindow.Owner.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void ComboBox_Selected(object sender, RoutedEventArgs e)

@@ -8,13 +8,13 @@ namespace CrmServices.Interfaces
     public interface IRolesService
     {
         [OperationContract]
-        void AddNewRole(RoleDto role);
+        void AddNewRole(RoleDto roleDto);
 
         [OperationContract]
-        void UpdateRole(RoleDto role);
+        void UpdateRole(RoleDto roleDto);
 
         [OperationContract]
-        void DeleteRole(RoleDto role);
+        void DeleteRole(RoleDto roleDto);
 
         [OperationContract]
         IEnumerable<RoleDto> GetRoles();

@@ -12,33 +12,40 @@ namespace CrmServices.Services
 {
     public class UsersService : IUsersService
     {
-        public void AddNewUser(UserDto user)
+        public void AddNewUser(UserDto userDto)
         {
             using (var context = new CrmContext())
             {
-                var department = context.Departments.Find(user.Department.Id);
-                var role = context.Roles.Find(user.Role.Id);
-                var timetables = context.Timetables.Where(x => user.Timetables.Select(y => y.Id).Contains(x.Id)).ToList();
+                var department = context.Departments.Find(userDto.Department.Id);
+                var role = context.Roles.Find(userDto.Role.Id);
+                //var timetables = context.Timetables.Where(x => userDto.Timetables.Select(y => y.Id).Contains(x.Id)).ToList();
 
                 context.Users.Add(new User 
                 { 
-                    Name = user.Name,
-                    Password = user.Password,
-                    Patronymic = user.Patronymic,
-                    Surname = user.Surname,
-                    Username = user.Username,
+                    Name = userDto.Name,
+                    Password = userDto.Password,
+                    Patronymic = userDto.Patronymic,
+                    Surname = userDto.Surname,
+                    Username = userDto.Username,
                     Department = department,
                     Role = role,
-                    Timetables = timetables
+                    //Timetables = timetables
                 });
 
                 context.SaveChanges();
             }
         }
 
-        public void DeleteUser(UserDto user)
+        public void DeleteUser(UserDto userDto)
         {
-            throw new NotImplementedException();
+            using (var context = new CrmContext())
+            {
+
+                User user = context.Users.FirstOrDefault(u => u.Id == userDto.Id);
+                context.Users.Remove(user);
+
+                context.SaveChanges();
+            }
         }
 
         public IEnumerable<UserDto> GetUsers()
@@ -62,7 +69,7 @@ namespace CrmServices.Services
             }
         }
 
-        public void UpdateUser(UserDto user)
+        public void UpdateUser(UserDto userDto)
         {
             throw new NotImplementedException();
         }

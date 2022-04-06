@@ -9,13 +9,13 @@ namespace CrmServices.Interfaces
     public interface IUsersService
     {
         [OperationContract]
-        void AddNewUser(UserDto user);
+        void AddNewUser(UserDto userDto);
 
         [OperationContract]
-        void UpdateUser(UserDto user);
+        void UpdateUser(UserDto userDto);
 
         [OperationContract]
-        void DeleteUser(UserDto user);
+        void DeleteUser(UserDto userDto);
 
         [OperationContract]
         IEnumerable<UserDto> GetUsers();

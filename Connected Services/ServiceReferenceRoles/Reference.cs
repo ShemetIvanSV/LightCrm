@@ -16,22 +16,22 @@ namespace LightCrm.ServiceReferenceRoles {
     public interface IRolesService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolesService/AddNewRole", ReplyAction="http://tempuri.org/IRolesService/AddNewRoleResponse")]
-        void AddNewRole(CrmModels.RoleDto role);
+        void AddNewRole(CrmModels.RoleDto roleDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolesService/AddNewRole", ReplyAction="http://tempuri.org/IRolesService/AddNewRoleResponse")]
-        System.Threading.Tasks.Task AddNewRoleAsync(CrmModels.RoleDto role);
+        System.Threading.Tasks.Task AddNewRoleAsync(CrmModels.RoleDto roleDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolesService/UpdateRole", ReplyAction="http://tempuri.org/IRolesService/UpdateRoleResponse")]
-        void UpdateRole(CrmModels.RoleDto role);
+        void UpdateRole(CrmModels.RoleDto roleDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolesService/UpdateRole", ReplyAction="http://tempuri.org/IRolesService/UpdateRoleResponse")]
-        System.Threading.Tasks.Task UpdateRoleAsync(CrmModels.RoleDto role);
+        System.Threading.Tasks.Task UpdateRoleAsync(CrmModels.RoleDto roleDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolesService/DeleteRole", ReplyAction="http://tempuri.org/IRolesService/DeleteRoleResponse")]
-        void DeleteRole(CrmModels.RoleDto role);
+        void DeleteRole(CrmModels.RoleDto roleDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolesService/DeleteRole", ReplyAction="http://tempuri.org/IRolesService/DeleteRoleResponse")]
-        System.Threading.Tasks.Task DeleteRoleAsync(CrmModels.RoleDto role);
+        System.Threading.Tasks.Task DeleteRoleAsync(CrmModels.RoleDto roleDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRolesService/GetRoles", ReplyAction="http://tempuri.org/IRolesService/GetRolesResponse")]
         CrmModels.RoleDto[] GetRoles();
@@ -73,28 +73,28 @@ namespace LightCrm.ServiceReferenceRoles {
                 base(binding, remoteAddress) {
         }
         
-        public void AddNewRole(CrmModels.RoleDto role) {
-            base.Channel.AddNewRole(role);
+        public void AddNewRole(CrmModels.RoleDto roleDto) {
+            base.Channel.AddNewRole(roleDto);
         }
         
-        public System.Threading.Tasks.Task AddNewRoleAsync(CrmModels.RoleDto role) {
-            return base.Channel.AddNewRoleAsync(role);
+        public System.Threading.Tasks.Task AddNewRoleAsync(CrmModels.RoleDto roleDto) {
+            return base.Channel.AddNewRoleAsync(roleDto);
         }
         
-        public void UpdateRole(CrmModels.RoleDto role) {
-            base.Channel.UpdateRole(role);
+        public void UpdateRole(CrmModels.RoleDto roleDto) {
+            base.Channel.UpdateRole(roleDto);
         }
         
-        public System.Threading.Tasks.Task UpdateRoleAsync(CrmModels.RoleDto role) {
-            return base.Channel.UpdateRoleAsync(role);
+        public System.Threading.Tasks.Task UpdateRoleAsync(CrmModels.RoleDto roleDto) {
+            return base.Channel.UpdateRoleAsync(roleDto);
         }
         
-        public void DeleteRole(CrmModels.RoleDto role) {
-            base.Channel.DeleteRole(role);
+        public void DeleteRole(CrmModels.RoleDto roleDto) {
+            base.Channel.DeleteRole(roleDto);
         }
         
-        public System.Threading.Tasks.Task DeleteRoleAsync(CrmModels.RoleDto role) {
-            return base.Channel.DeleteRoleAsync(role);
+        public System.Threading.Tasks.Task DeleteRoleAsync(CrmModels.RoleDto roleDto) {
+            return base.Channel.DeleteRoleAsync(roleDto);
         }
         
         public CrmModels.RoleDto[] GetRoles() {

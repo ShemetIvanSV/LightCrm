@@ -16,22 +16,22 @@ namespace LightCrm.ServiceReferenceUsers {
     public interface IUsersService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/AddNewUser", ReplyAction="http://tempuri.org/IUsersService/AddNewUserResponse")]
-        void AddNewUser(CrmModels.UserDto user);
+        void AddNewUser(CrmModels.UserDto userDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/AddNewUser", ReplyAction="http://tempuri.org/IUsersService/AddNewUserResponse")]
-        System.Threading.Tasks.Task AddNewUserAsync(CrmModels.UserDto user);
+        System.Threading.Tasks.Task AddNewUserAsync(CrmModels.UserDto userDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/UpdateUser", ReplyAction="http://tempuri.org/IUsersService/UpdateUserResponse")]
-        void UpdateUser(CrmModels.UserDto user);
+        void UpdateUser(CrmModels.UserDto userDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/UpdateUser", ReplyAction="http://tempuri.org/IUsersService/UpdateUserResponse")]
-        System.Threading.Tasks.Task UpdateUserAsync(CrmModels.UserDto user);
+        System.Threading.Tasks.Task UpdateUserAsync(CrmModels.UserDto userDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/DeleteUser", ReplyAction="http://tempuri.org/IUsersService/DeleteUserResponse")]
-        void DeleteUser(CrmModels.UserDto user);
+        void DeleteUser(CrmModels.UserDto userDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/DeleteUser", ReplyAction="http://tempuri.org/IUsersService/DeleteUserResponse")]
-        System.Threading.Tasks.Task DeleteUserAsync(CrmModels.UserDto user);
+        System.Threading.Tasks.Task DeleteUserAsync(CrmModels.UserDto userDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/GetUsers", ReplyAction="http://tempuri.org/IUsersService/GetUsersResponse")]
         CrmModels.UserDto[] GetUsers();
@@ -73,28 +73,28 @@ namespace LightCrm.ServiceReferenceUsers {
                 base(binding, remoteAddress) {
         }
         
-        public void AddNewUser(CrmModels.UserDto user) {
-            base.Channel.AddNewUser(user);
+        public void AddNewUser(CrmModels.UserDto userDto) {
+            base.Channel.AddNewUser(userDto);
         }
         
-        public System.Threading.Tasks.Task AddNewUserAsync(CrmModels.UserDto user) {
-            return base.Channel.AddNewUserAsync(user);
+        public System.Threading.Tasks.Task AddNewUserAsync(CrmModels.UserDto userDto) {
+            return base.Channel.AddNewUserAsync(userDto);
         }
         
-        public void UpdateUser(CrmModels.UserDto user) {
-            base.Channel.UpdateUser(user);
+        public void UpdateUser(CrmModels.UserDto userDto) {
+            base.Channel.UpdateUser(userDto);
         }
         
-        public System.Threading.Tasks.Task UpdateUserAsync(CrmModels.UserDto user) {
-            return base.Channel.UpdateUserAsync(user);
+        public System.Threading.Tasks.Task UpdateUserAsync(CrmModels.UserDto userDto) {
+            return base.Channel.UpdateUserAsync(userDto);
         }
         
-        public void DeleteUser(CrmModels.UserDto user) {
-            base.Channel.DeleteUser(user);
+        public void DeleteUser(CrmModels.UserDto userDto) {
+            base.Channel.DeleteUser(userDto);
         }
         
-        public System.Threading.Tasks.Task DeleteUserAsync(CrmModels.UserDto user) {
-            return base.Channel.DeleteUserAsync(user);
+        public System.Threading.Tasks.Task DeleteUserAsync(CrmModels.UserDto userDto) {
+            return base.Channel.DeleteUserAsync(userDto);
         }
         
         public CrmModels.UserDto[] GetUsers() {
