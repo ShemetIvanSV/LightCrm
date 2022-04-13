@@ -4,7 +4,7 @@
     {
         private string _name;
 
-        public string Name 
+        public string Title 
         {
             get => _name;
             set
@@ -16,7 +16,7 @@
 
         public UsersOrdersViewModel() 
         {
-            Name = "Заказы";
+            Title = "Заказы";
         }
     }
 }

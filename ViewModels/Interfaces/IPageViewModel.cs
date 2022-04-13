@@ -2,6 +2,6 @@
 {
     public interface IPageViewModel
     {
-        string Name { get; set; }
+        string Title { get; set; }
     }
 }

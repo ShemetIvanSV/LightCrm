@@ -19,24 +19,24 @@ namespace LightCrm.ViewModels
         
         public Action CloseAction { get; set; }
         
-        private string _name;
-        public string Name
+        private string _title;
+        public string Title
         {
-            get => _name;
+            get => _title;
             set
             {
-                _name = value;
+                _title = value;
                 OnPropertyChanged();
             }
         }
 
-        private UserDto _user;
-        public UserDto User
+        private UserDto _userDto;
+        public UserDto UserDto
         {
-            get => _user;
+            get => _userDto;
             set
             {
-                _user = value;
+                _userDto = value;
             }
         }
 
@@ -53,7 +53,7 @@ namespace LightCrm.ViewModels
 
         public UsersAdministrationViewModel()
         {
-            Name = "Пользователи";
+            Title = "Пользователи";
             GetUserData();
             //_dataBaseReadCommand = new RelayCommand(DataBaseRead);
         }
@@ -122,30 +122,33 @@ namespace LightCrm.ViewModels
         {            
             var view = new UserEditorWindow(Models.UserAction.Create);
             view.ShowDialog();
+            //CloseAction();
         }
 
         public void ButtonEditUserClick()
         {
-            if (User == null)
+            if (UserDto == null)
             {
                 MessageBox.Show("Пользователь для редактирования не выбран!", "Внимание!");
                 return;
             }
-            var view = new UserEditorWindow(Models.UserAction.Edit, User);
+            var view = new UserEditorWindow(Models.UserAction.Edit, UserDto);
             view.ShowDialog();
+            //CloseAction();
         }
 
 
         public void ButtonDeleteUserClick()
         {
-            if (User==null)
+            if (UserDto==null)
             {
                 MessageBox.Show("Пользователь для удаления не выбран!", "Внимание!");
                 return;
             }
 
-            var view = new UserEditorWindow(Models.UserAction.Delete, User);
+            var view = new UserEditorWindow(Models.UserAction.Delete, UserDto);
             view.ShowDialog();
+            CloseAction();
         }        
     }
 }

@@ -3,7 +3,7 @@
     public class PatientsViewModel : BaseViewModel, IPageViewModel
     {
         private string _name;
-        public string Name
+        public string Title
         {
             get => _name;
             set
@@ -15,7 +15,7 @@
 
         public PatientsViewModel()
         {
-            Name = "Пациенты";
+            Title = "Пациенты";
         }
     }
 }

@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="{Binding Name}" Height="303.878" Width="625.431" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" BorderThickness="1">
+        Title="{Binding Title}" Height="303.878" Width="625.431" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" BorderThickness="1">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -21,41 +21,48 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <Label Content="Логин" HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" />
-        <Label Content="Пароль" HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" />
+        <Label Content="Логин"                HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" />
+        <Label Content="Пароль"               HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" />
         <Label Content="Подтверждение пароля" HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="2" Grid.Row="0" />
 
-        <Label Content="Фамилия" HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2" />
-        <Label Content="Имя" HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" />
+        <Label Content="Фамилия"  HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2" />
+        <Label Content="Имя"      HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" />
         <Label Content="Отчество" HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2" />
 
-        <TextBox x:Name="Username" Text ="{Binding Path=User.Username}" IsEnabled ="{Binding Path=IsEnable}" Height="23" Grid.Column="0" Grid.Row="1" Margin="10,3" />
-        <PasswordBox x:Name="Password" IsEnabled ="{Binding Path=IsEnable}" Height="23" Grid.Column="1" Grid.Row="1" Margin="10,3" />
-        <PasswordBox x:Name="PasswordConfirm" IsEnabled ="{Binding Path=IsEnable}" Height="23" Grid.Column="2" Grid.Row="1" Margin="10,3" />
+        <TextBox     x:Name="Username"        IsEnabled ="{Binding Path=IsEnable}" 
+                     Text ="{Binding Path=Username}"
+                     Height="23" Grid.Column="0" Grid.Row="1" Margin="10,3" />
+        <PasswordBox x:Name="Password"        IsEnabled ="{Binding Path=IsEnable}" 
+                     Height="23" Grid.Column="1" Grid.Row="1" Margin="10,3" />
+        <TextBox     x:Name="PasswordConfirm" IsEnabled ="{Binding Path=IsEnable}" 
+                     Text ="{Binding Path=PasswordConfirm, UpdateSourceTrigger=PropertyChanged}"                   
+                     Height="23" Grid.Column="2" Grid.Row="1" Margin="10,3" />
 
-        <TextBox x:Name="Surname" Text ="{Binding Path=User.Surname}" IsEnabled ="{Binding Path=IsEnable}" Height="23" Grid.Column="0" Grid.Row="3" Margin="10,3" />
-        <TextBox x:Name="Name" Text ="{Binding Path=User.Name}" IsEnabled ="{Binding Path=IsEnable}" Height="23" Grid.Column="1" Grid.Row="3" Margin="10,3" />
-        <TextBox x:Name="Patronymic" Text ="{Binding Path=User.Patronymic}" IsEnabled ="{Binding Path=IsEnable}" Height="23" Grid.Column="2" Grid.Row="3" Margin="10,3" />
+        <TextBox x:Name="Surname"    Text ="{Binding Path=Surname}"    IsEnabled ="{Binding Path=IsEnable}" 
+                 Height="23" Grid.Column="0" Grid.Row="3" Margin="10,3" />
+        <TextBox x:Name="Name"       Text ="{Binding Path=Name}"       IsEnabled ="{Binding Path=IsEnable}" 
+                 Height="23" Grid.Column="1" Grid.Row="3" Margin="10,3" />
+        <TextBox x:Name="Patronymic" Text ="{Binding Path=Patronymic}" IsEnabled ="{Binding Path=IsEnable}"  
+                 Height="23" Grid.Column="2" Grid.Row="3" Margin="10,3" />
+
 
         <ComboBox IsEnabled ="{Binding Path=IsEnable}" IsSelected="True" 
                   Height="23"  Grid.Column="0" Grid.Row="5" Width="185" Margin="10,3">
-            
-            <TextBlock Text="{Binding Path=User.Role.Name}" />
-            
+
+            <TextBlock Text="{Binding Path=UserDto.Role.Name}" />
         </ComboBox>
 
         <ComboBox IsEnabled ="{Binding Path=IsEnable}" IsSelected="True" ItemsSource="{Binding Path=RoleData}"
                   Height="23"  Grid.Column="1" Grid.Row="5" Width="185" Margin="10,3">
-
-            
-
         </ComboBox>
 
+        <Button x:Name="ButtonOk"     Content="{Binding Path=ButtonOk}" IsDefault="True"  
+                Grid.Column="2" HorizontalAlignment="Left" Margin="40,0,0,0" Grid.Row="6" VerticalAlignment="Center" Width="75"
+                Command="{Binding ButtonOkClickCommand}" CommandParameter="{Binding ElementName=Password}" Height="20" />
 
-        <Button x:Name="ButtonOk" Content="{Binding Path=ButtonOk}" IsDefault="True" Grid.Column="2" HorizontalAlignment="Left" Margin="40,0,10,0" Grid.Row="6" VerticalAlignment="Center" Width="75"
-                Command="{Binding ButtonOkClickCommand}" CommandParameter="{Binding ElementName=Password}" />
-        
-        <Button x:Name="ButtonCancel" Content="Отмена" IsCancel="True" Grid.Column="2" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="6" VerticalAlignment="Center" Width="75" />
+
+        <Button x:Name="ButtonCancel" Content="Отмена"                  IsCancel="True" 
+                Grid.Column="2" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="6" VerticalAlignment="Center" Width="75" Height="20" />
 
     </Grid>
 </Window>

@@ -6,9 +6,12 @@ using LightCrm.ServiceReferenceUsers;
 using LightCrm.Views;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Input;
+
 
 namespace LightCrm.ViewModels
 {
@@ -19,7 +22,80 @@ namespace LightCrm.ViewModels
     {
         private string _buttonOk;
 
+        public Action CloseAction { get; set; }
+
         private ICommand _buttonOkClickCommand;
+
+        public string ButtonOk
+        {
+
+            get { return _buttonOk; }
+
+            set
+            {
+                _buttonOk = value;
+                OnPropertyChanged("ButtonOk");
+            }
+        }
+
+        private string _title;
+        public string Title
+        {
+            get => _title;
+            set
+            {
+                _title = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _username;
+
+        public string Username
+        {
+            get => _username;
+            set
+            {
+                _username = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _surname;
+
+        public string Surname
+        {
+            get => _surname;
+            set
+            {
+                _surname = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _name;
+
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                _name = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _patronymic;
+
+        public string Patronymic
+        {
+            get => _patronymic;
+            set
+            {
+                _patronymic = value;
+                OnPropertyChanged();
+            }
+        }
 
 
         private string _password;
@@ -34,44 +110,39 @@ namespace LightCrm.ViewModels
         }
 
         private string _passwordConfirm;
+
+        private string _passwordDisplayed
+        {
+            get => new string('*', _passwordConfirm == null ? 0 : _passwordConfirm.Length);
+        }
+
         public string PasswordConfirm
         {
-            get => _passwordConfirm;
+            get => _passwordDisplayed;
             set
             {
                 _passwordConfirm = value;
-                OnPropertyChanged();
+                OnPropertyChanged("PasswordConfirm");
             }
         }
 
-        private string _name;
-        public string Name
+        private UserDto _userDto;
+        public UserDto UserDto
         {
-            get => _name;
+            get => _userDto;
             set
             {
-                _name = value;
-                OnPropertyChanged();
+                _userDto = value;
             }
         }
 
-        private UserDto _user;
-        public UserDto User
+        private RoleDto _roleDto;
+        public RoleDto RoleDto
         {
-            get => _user;
+            get => _roleDto;
             set
             {
-                _user = value;
-            }
-        }
-
-        private RoleDto _role;
-        public RoleDto Role
-        {
-            get => _role;
-            set
-            {
-                _role = value;
+                _roleDto = value;
             }
         }
 
@@ -88,18 +159,6 @@ namespace LightCrm.ViewModels
             }
         }
 
-        public string ButtonOk
-        {
-
-            get { return _buttonOk; }
-
-            set
-            {
-                _buttonOk = value;
-                OnPropertyChanged("ButtonOk");
-            }
-        }
-
         private IEnumerable<RoleDto> _roleData;
         public IEnumerable<RoleDto> RoleData
         {
@@ -111,30 +170,33 @@ namespace LightCrm.ViewModels
             }
         }
 
-        public UserEditorWindowViewModel(UserAction name, UserDto user)
+        public UserEditorWindowViewModel(UserAction title, UserDto userDto)
         {
-            switch (name)
+            switch (title)
             {
                 case UserAction.Create:
-                    Name = "Создание пользователя";
+                    Title = "Создание пользователя";
                     IsEnable = true;
                     ButtonOk = "Сохранить";
                     break;
+
                 case UserAction.Edit:
-                    Name = "Редактирование пользователя";
+                    Title = "Редактирование пользователя";
                     IsEnable = true;
                     ButtonOk = "Сохранить";
                     break;
+
                 case UserAction.Delete:
-                    Name = "Удаление пользователя";
+                    Title = "Удаление пользователя";
                     IsEnable = false;
                     ButtonOk = "Удалить";
                     break;
             }
 
-            User = user;
-            if (user==null)
-            {                
+            UserDto = userDto;
+
+            if (userDto == null)
+            {
                 return;
             }
 
@@ -164,11 +226,6 @@ namespace LightCrm.ViewModels
         {
             get
             {
-                /*if (_buttonOkClickCommand == null)
-                {
-                    _buttonOkClickCommand = new RelayCommand(p => ButtonOkClick());                    
-                }*/
-
                 _buttonOkClickCommand = new RelayCommand(ButtonOkClick);
 
                 return _buttonOkClickCommand;
@@ -178,50 +235,87 @@ namespace LightCrm.ViewModels
         public void ButtonOkClick(object commandParameter)
         {
             Password = ((PasswordBox)commandParameter).Password;
+            //PasswordConfirm = UserEditorWindow.PassConf();
 
-            if (String.IsNullOrEmpty(Password))
-            {
-                MessageBox.Show("Пароль не может быть пустым", "Внимание!");
-                return;
-            }
-
-            try 
+            try
             {
                 using (var service = new UsersServiceClient())
                 {
-                    switch (Name)
+                    switch (Title)
                     {
                         case "Создание пользователя":
-                            User = new UserDto()
+                            UserDto = new UserDto()
                             {
-                                Name = "1",
-                                Password = "2",
-                                Username = "3",
-                                Surname = "4",
-                                Patronymic = "5",
+                                Name = Name,
+                                Password = Password,
+                                Username = Username,
+                                Surname = Surname,
+                                Patronymic = Patronymic,
+                                //TODO
                                 Department = new DepartmentDto() { Id = 1 },
                                 Role = new RoleDto() { Id = 1 },
                                 Timetables = new List<TimetablesDto>(),
                             };
-                            service.AddNewUser(User);
+
+                            if (!PasswordVerify())
+                            {
+                                break;
+                            }
+
+                            service.AddNewUser(UserDto);
                             break;
+
                         case "Редактирование пользователя":
-                            service.UpdateUser(User);
+                            UserDto = new UserDto()
+                            {
+                                Name = Name,
+                                Password = Password,
+                                Username = Username,
+                                Surname = Surname,
+                                Patronymic = Patronymic,
+                                //TODO
+                                Department = new DepartmentDto() { Id = 1 },
+                                Role = new RoleDto() { Id = 1 },
+                                Timetables = new List<TimetablesDto>(),
+                            };
+
+                            if (!PasswordVerify())
+                            {
+                                break;
+                            }
+
+                            service.UpdateUser(UserDto);
                             break;
+
                         case "Удаление пользователя":
-                            service.DeleteUser(User);
+                            service.DeleteUser(UserDto);
                             break;
                     }
 
                     GetRoleData();
-
-                    UserEditorWindow.Owner.Close();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private bool PasswordVerify()
+        {
+            if (String.IsNullOrEmpty(Password))
+            {
+                MessageBox.Show("Пароль не может быть пустым", "Внимание!");
+                return false;
+            }
+
+            if (Password != PasswordConfirm)
+            {
+                MessageBox.Show("Подтверждение пароля не совпадает", "Внимание!");
+                return false;
+            }
+
+            return true;
         }
 
         private void ComboBox_Selected(object sender, RoutedEventArgs e)

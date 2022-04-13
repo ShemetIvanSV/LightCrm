@@ -16,7 +16,7 @@
                     HorizontalAlignment="Left" Height="30" Margin="10,36,0,0" VerticalAlignment="Top" Width="90" RenderTransformOrigin="0.267,0.4"/>
         </StackPanel>
         <DataGrid Name="DataGrigUser" Margin="8,73,10,10" AutoGenerateColumns="False"
-                  ItemsSource="{Binding UserData}" SelectedItem="{Binding User}"
+                  ItemsSource="{Binding UserData}" SelectedItem="{Binding UserDto}"
                   RowBackground="#FFCDC8C8" AlternatingRowBackground="White" 
                   HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" CanUserResizeRows="False" SelectionMode="Single" RowHeight="NaN">
             <DataGrid.Columns>
