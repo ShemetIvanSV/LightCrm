@@ -34,9 +34,9 @@
                      Height="23" Grid.Column="0" Grid.Row="1" Margin="10,3" />
         <PasswordBox x:Name="Password"        IsEnabled ="{Binding Path=IsEnable}" 
                      Height="23" Grid.Column="1" Grid.Row="1" Margin="10,3" />
-        <TextBox     x:Name="PasswordConfirm" IsEnabled ="{Binding Path=IsEnable}" 
-                     Text ="{Binding Path=PasswordConfirm, UpdateSourceTrigger=PropertyChanged}"                   
+        <TextBox     x:Name="PasswordConfirm" IsEnabled ="{Binding Path=IsEnable}" Text="{Binding PasswordConfirm}"                  
                      Height="23" Grid.Column="2" Grid.Row="1" Margin="10,3" />
+        <!--, UpdateSourceTrigger=PropertyChanged-->
 
         <TextBox x:Name="Surname"    Text ="{Binding Path=Surname}"    IsEnabled ="{Binding Path=IsEnable}" 
                  Height="23" Grid.Column="0" Grid.Row="3" Margin="10,3" />

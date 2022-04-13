@@ -16,7 +16,11 @@ namespace LightCrm.Views
         public UserEditorWindow(UserAction action, UserDto userDto = null)
         {
             InitializeComponent();
-            DataContext = new UserEditorWindowViewModel(action, userDto);            
+            var vm = new UserEditorWindowViewModel(action, userDto);
+            DataContext = vm;
+
+            if (vm.CloseAction == null)
+                vm.CloseAction = new Action(this.Close);
         }
     }
 }

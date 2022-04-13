@@ -122,7 +122,7 @@ namespace LightCrm.ViewModels
         {            
             var view = new UserEditorWindow(Models.UserAction.Create);
             view.ShowDialog();
-            //CloseAction();
+            GetUserData();
         }
 
         public void ButtonEditUserClick()
@@ -134,7 +134,7 @@ namespace LightCrm.ViewModels
             }
             var view = new UserEditorWindow(Models.UserAction.Edit, UserDto);
             view.ShowDialog();
-            //CloseAction();
+            GetUserData();
         }
 
 
@@ -148,7 +148,7 @@ namespace LightCrm.ViewModels
 
             var view = new UserEditorWindow(Models.UserAction.Delete, UserDto);
             view.ShowDialog();
-            CloseAction();
+            GetUserData();
         }        
     }
 }

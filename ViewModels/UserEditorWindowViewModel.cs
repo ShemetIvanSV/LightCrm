@@ -122,7 +122,7 @@ namespace LightCrm.ViewModels
             set
             {
                 _passwordConfirm = value;
-                OnPropertyChanged("PasswordConfirm");
+                OnPropertyChanged();
             }
         }
 
@@ -293,6 +293,7 @@ namespace LightCrm.ViewModels
                     }
 
                     GetRoleData();
+                    CloseAction();
                 }
             }
             catch (Exception ex)
@@ -309,7 +310,7 @@ namespace LightCrm.ViewModels
                 return false;
             }
 
-            if (Password != PasswordConfirm)
+            if (Password != _passwordConfirm)
             {
                 MessageBox.Show("Подтверждение пароля не совпадает", "Внимание!");
                 return false;
