@@ -20,12 +20,11 @@ namespace LightCrm.ViewModels
     /// </summary>
     public class UserEditorWindowViewModel : BaseViewModel, IPageViewModel
     {
-        private string _buttonOk;
-
         public Action CloseAction { get; set; }
 
         private ICommand _buttonOkClickCommand;
 
+        private string _buttonOk;
         public string ButtonOk
         {
 
@@ -50,7 +49,6 @@ namespace LightCrm.ViewModels
         }
 
         private string _username;
-
         public string Username
         {
             get => _username;
@@ -62,7 +60,6 @@ namespace LightCrm.ViewModels
         }
 
         private string _surname;
-
         public string Surname
         {
             get => _surname;
@@ -74,7 +71,6 @@ namespace LightCrm.ViewModels
         }
 
         private string _name;
-
         public string Name
         {
             get => _name;
@@ -86,7 +82,6 @@ namespace LightCrm.ViewModels
         }
 
         private string _patronymic;
-
         public string Patronymic
         {
             get => _patronymic;
@@ -110,12 +105,10 @@ namespace LightCrm.ViewModels
         }
 
         private string _passwordConfirm;
-
         private string _passwordDisplayed
         {
             get => new string('*', _passwordConfirm == null ? 0 : _passwordConfirm.Length);
         }
-
         public string PasswordConfirm
         {
             get => _passwordDisplayed;
@@ -146,6 +139,17 @@ namespace LightCrm.ViewModels
             }
         }
 
+        private IEnumerable<RoleDto> _roleData;
+        public IEnumerable<RoleDto> RoleData
+        {
+            get => _roleData;
+            set
+            {
+                _roleData = value;
+                OnPropertyChanged();
+            }
+        }
+
         private bool _isEnable = false;
         public bool IsEnable
         {
@@ -156,17 +160,6 @@ namespace LightCrm.ViewModels
             {
                 _isEnable = value;
                 OnPropertyChanged("IsEnable");
-            }
-        }
-
-        private IEnumerable<RoleDto> _roleData;
-        public IEnumerable<RoleDto> RoleData
-        {
-            get => _roleData;
-            set
-            {
-                _roleData = value;
-                OnPropertyChanged();
             }
         }
 
@@ -193,14 +186,21 @@ namespace LightCrm.ViewModels
                     break;
             }
 
-            UserDto = userDto;
-
             if (userDto == null)
             {
                 return;
             }
 
-            GetRoleData();
+            UserDto = userDto;
+            Username = userDto.Username;
+            Name = userDto.Name;
+            Surname = userDto.Surname;
+            Patronymic = userDto.Patronymic;
+            //Department = userDto.Department;
+            //Role = userDto.Role;
+
+
+            //GetRoleData();
             //_dataBaseReadCommand = new RelayCommand(DataBaseRead);
         }
 
@@ -211,9 +211,6 @@ namespace LightCrm.ViewModels
                 using (var service = new RolesServiceClient())
                 {
                     RoleData = service.GetRoles();
-                    //var view = new MainWindow(user);
-                    //view.Show();
-                    //CloseAction();
                 }
             }
             catch (Exception ex)
@@ -235,7 +232,6 @@ namespace LightCrm.ViewModels
         public void ButtonOkClick(object commandParameter)
         {
             Password = ((PasswordBox)commandParameter).Password;
-            //PasswordConfirm = UserEditorWindow.PassConf();
 
             try
             {
@@ -266,18 +262,15 @@ namespace LightCrm.ViewModels
                             break;
 
                         case "Редактирование пользователя":
-                            UserDto = new UserDto()
-                            {
-                                Name = Name,
-                                Password = Password,
-                                Username = Username,
-                                Surname = Surname,
-                                Patronymic = Patronymic,
-                                //TODO
-                                Department = new DepartmentDto() { Id = 1 },
-                                Role = new RoleDto() { Id = 1 },
-                                Timetables = new List<TimetablesDto>(),
-                            };
+                            UserDto.Name = Name;
+                            UserDto.Password = Password;
+                            UserDto.Username = Username;
+                            UserDto.Surname = Surname;
+                            UserDto.Patronymic = Patronymic;
+                            //TODO
+                            UserDto.Department = new DepartmentDto() { Id = 1 };
+                            UserDto.Role = new RoleDto() { Id = 1 };
+                            UserDto.Timetables = new List<TimetablesDto>();
 
                             if (!PasswordVerify())
                             {
