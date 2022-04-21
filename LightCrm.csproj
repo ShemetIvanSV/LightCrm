@@ -82,9 +82,6 @@
     <Compile Include="Views\DoctorsPage.xaml.cs">
       <DependentUpon>DoctorsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\CreateOrderWindow.xaml.cs">
-      <DependentUpon>CreateOrderWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\UserOrderPage.xaml.cs">
       <DependentUpon>UserOrderPage.xaml</DependentUpon>
     </Compile>
@@ -93,10 +90,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DoctorsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\CreateOrderWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
