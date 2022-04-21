@@ -27,7 +27,7 @@ namespace LightCrmData.Models
         /// Фамилия Пациента 
         /// </summary>
         [Required]
-        public string Sername { get; set; }
+        public string Surname { get; set; }
 
         /// <summary>
         /// Отчество Пациента
