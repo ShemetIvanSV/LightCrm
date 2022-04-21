@@ -21,7 +21,7 @@ namespace CrmServices.Services
                 context.Patients.Add(new Patient
                 {
                     Name = patient.Name,
-                    Sername = patient.Sername,
+                    Surname = patient.Surname,
                     Patronymic = patient.Patronymic,
                     Birthday = patient.Birthday,
                     Gender = patient.Gender,
