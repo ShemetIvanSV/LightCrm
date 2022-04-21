@@ -7,10 +7,10 @@ using System.Runtime.Serialization;
 namespace CrmServices.Dtos
 {
     [DataContract]
-    public class PatientDto
+    public class DoctorDto
     {
         [DataMember]
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         [DataMember]
         public string Name { get; set; }
@@ -25,7 +25,7 @@ namespace CrmServices.Dtos
         public DateTime Birthday { get; set; }
 
         [DataMember]
-        public bool Gender { get; set; }
+        public bool Sex { get; set; }
 
         [DataMember]
         public string Phone { get; set; }
@@ -34,6 +34,6 @@ namespace CrmServices.Dtos
         public string Email { get; set; }
 
         [DataMember]
-        public string Allergies { get; set; }
+        public string Specialization { get; set; }
     }
 }
