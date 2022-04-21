@@ -65,16 +65,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\ModelOrder.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="ViewModels\AuthorizationViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\DoctorsViewModel.cs" />
     <Compile Include="ViewModels\Interfaces\IPageViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Views\DoctorsPage.xaml.cs">
+      <DependentUpon>DoctorsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserOrderPage.xaml.cs">
       <DependentUpon>UserOrderPage.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\AuthorizationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DoctorsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
