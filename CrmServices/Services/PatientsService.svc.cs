@@ -41,7 +41,7 @@ namespace CrmServices.Services
                 context.Patients.Remove(new Patient
                 {
                     Name = patient.Name,
-                    Sername = patient.Sername,
+                    //Sername = patient.Sername,
                     Patronymic = patient.Patronymic,
                     Birthday = patient.Birthday,
                     Gender = patient.Gender,
