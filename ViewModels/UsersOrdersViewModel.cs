@@ -73,14 +73,14 @@ namespace LightCrm.ViewModels
                   {
                       ModelOrder order = new ModelOrder()
                       {
-                          //Id = 1 ,
-                          //Patient = "Tom",
-                          //Servise = "Обсмотр",
-                          //Date = DateTime.Now,
-                          //Doctor = "Bob",
-                          //Paid = "no",
-                          //Price = 1000,
-                          //Status = "Complited"
+                          Id = 1,
+                          PatientName = "Tom",
+                          Servise = "Обсмотр",
+                          Date = DateTime.Now,
+                          DoctorName = "Bob",
+                          Paid = "no",
+                          Price = 1000,
+                          Status = "Complited"
                       };
                       Orders.Insert(0, order);
                   }));
@@ -116,9 +116,8 @@ namespace LightCrm.ViewModels
         {
             Orders = new ObservableCollection<ModelOrder> 
             {
-                
-                //new ModelOrder {Id = 1, Patient="Tom", Servise = "Обсмотр", Date=DateTime.Now, Doctor="Bob", Paid="no", Price=1000, Status="Complited"} // тестовые данные
-                
+                new ModelOrder {Id = 1, PatientName ="Tom", Servise = "Обсмотр", Date=DateTime.Now, DoctorName="Bob", Paid="no", Price=1000, Status="Complited"} // тестовые данные
+
             };
            
             OpenWindowCommand = new OpenWindowCommand();
