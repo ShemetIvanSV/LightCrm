@@ -8,7 +8,7 @@ namespace CrmServices.Services
 {
     public class TimeTableService : ITimeTableService
     {
-        public IEnumerable<TimeTableDto> GetTimeByUser (UserDto user)
+        public IEnumerable<TimeTableDto> GetTimeByUser (TimeTableDto user)
         {
             if (user == null)
             {

@@ -9,6 +9,6 @@ namespace CrmServices.Services
     public interface ITimeTableService
     {
         [OperationContract]
-        IEnumerable<TimeTableDto> GetTimeByUser(UserDto user);
+        IEnumerable<TimeTableDto> GetTimeByUser(TimeTableDto user);
     }
 }

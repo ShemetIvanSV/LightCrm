@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LightCrm.TimeTableServiceReference {
+namespace LightCrm.UserServiceReference {
     using System.Runtime.Serialization;
     using System;
     
@@ -23,7 +23,7 @@ namespace LightCrm.TimeTableServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private LightCrm.TimeTableServiceReference.Department DepartmentField;
+        private LightCrm.UserServiceReference.Department DepartmentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
@@ -38,13 +38,13 @@ namespace LightCrm.TimeTableServiceReference {
         private string PatronymicField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private LightCrm.TimeTableServiceReference.Role RoleField;
+        private LightCrm.UserServiceReference.Role RoleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SurnameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private LightCrm.TimeTableServiceReference.Timetables[] TimetablesField;
+        private LightCrm.UserServiceReference.Timetables[] TimetablesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string UsernameField;
@@ -60,7 +60,7 @@ namespace LightCrm.TimeTableServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public LightCrm.TimeTableServiceReference.Department Department {
+        public LightCrm.UserServiceReference.Department Department {
             get {
                 return this.DepartmentField;
             }
@@ -125,7 +125,7 @@ namespace LightCrm.TimeTableServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public LightCrm.TimeTableServiceReference.Role Role {
+        public LightCrm.UserServiceReference.Role Role {
             get {
                 return this.RoleField;
             }
@@ -151,7 +151,7 @@ namespace LightCrm.TimeTableServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public LightCrm.TimeTableServiceReference.Timetables[] Timetables {
+        public LightCrm.UserServiceReference.Timetables[] Timetables {
             get {
                 return this.TimetablesField;
             }
@@ -263,7 +263,7 @@ namespace LightCrm.TimeTableServiceReference {
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private LightCrm.TimeTableServiceReference.User[] UsersField;
+        private LightCrm.UserServiceReference.User[] UsersField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -302,7 +302,7 @@ namespace LightCrm.TimeTableServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public LightCrm.TimeTableServiceReference.User[] Users {
+        public LightCrm.UserServiceReference.User[] Users {
             get {
                 return this.UsersField;
             }
@@ -340,7 +340,7 @@ namespace LightCrm.TimeTableServiceReference {
         private bool DayOffField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private LightCrm.TimeTableServiceReference.Department DepartmentField;
+        private LightCrm.UserServiceReference.Department DepartmentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime EndTimeField;
@@ -352,7 +352,7 @@ namespace LightCrm.TimeTableServiceReference {
         private System.DateTime StartTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private LightCrm.TimeTableServiceReference.User UserField;
+        private LightCrm.UserServiceReference.User UserField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -391,7 +391,7 @@ namespace LightCrm.TimeTableServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public LightCrm.TimeTableServiceReference.Department Department {
+        public LightCrm.UserServiceReference.Department Department {
             get {
                 return this.DepartmentField;
             }
@@ -443,7 +443,7 @@ namespace LightCrm.TimeTableServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public LightCrm.TimeTableServiceReference.User User {
+        public LightCrm.UserServiceReference.User User {
             get {
                 return this.UserField;
             }
@@ -475,7 +475,7 @@ namespace LightCrm.TimeTableServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private LightCrm.TimeTableServiceReference.Department DepartmentField;
+        private LightCrm.UserServiceReference.Department DepartmentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
@@ -490,13 +490,13 @@ namespace LightCrm.TimeTableServiceReference {
         private string PatronymicField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private LightCrm.TimeTableServiceReference.Role RoleField;
+        private LightCrm.UserServiceReference.Role RoleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SurnameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private LightCrm.TimeTableServiceReference.Timetables[] TimetablesField;
+        private LightCrm.UserServiceReference.Timetables[] TimetablesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string UsernameField;
@@ -512,7 +512,7 @@ namespace LightCrm.TimeTableServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public LightCrm.TimeTableServiceReference.Department Department {
+        public LightCrm.UserServiceReference.Department Department {
             get {
                 return this.DepartmentField;
             }
@@ -577,7 +577,7 @@ namespace LightCrm.TimeTableServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public LightCrm.TimeTableServiceReference.Role Role {
+        public LightCrm.UserServiceReference.Role Role {
             get {
                 return this.RoleField;
             }
@@ -603,7 +603,7 @@ namespace LightCrm.TimeTableServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public LightCrm.TimeTableServiceReference.Timetables[] Timetables {
+        public LightCrm.UserServiceReference.Timetables[] Timetables {
             get {
                 return this.TimetablesField;
             }
@@ -638,191 +638,92 @@ namespace LightCrm.TimeTableServiceReference {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TimeTableDto", Namespace="http://schemas.datacontract.org/2004/07/CrmServices.Dtos")]
-    [System.SerializableAttribute()]
-    public partial class TimeTableDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UserServiceReference.IUsersService")]
+    public interface IUsersService {
         
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/AddNewUser", ReplyAction="http://tempuri.org/IUsersService/AddNewUserResponse")]
+        void AddNewUser(LightCrm.UserServiceReference.UserDto user);
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int DayOfWeekField;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/AddNewUser", ReplyAction="http://tempuri.org/IUsersService/AddNewUserResponse")]
+        System.Threading.Tasks.Task AddNewUserAsync(LightCrm.UserServiceReference.UserDto user);
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool DayOffField;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/UpdateUser", ReplyAction="http://tempuri.org/IUsersService/UpdateUserResponse")]
+        void UpdateUser(LightCrm.UserServiceReference.UserDto user);
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private LightCrm.TimeTableServiceReference.Department DepartmentField;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/UpdateUser", ReplyAction="http://tempuri.org/IUsersService/UpdateUserResponse")]
+        System.Threading.Tasks.Task UpdateUserAsync(LightCrm.UserServiceReference.UserDto user);
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime EndTimeField;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/DeleteUser", ReplyAction="http://tempuri.org/IUsersService/DeleteUserResponse")]
+        void DeleteUser(LightCrm.UserServiceReference.UserDto user);
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/DeleteUser", ReplyAction="http://tempuri.org/IUsersService/DeleteUserResponse")]
+        System.Threading.Tasks.Task DeleteUserAsync(LightCrm.UserServiceReference.UserDto user);
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime StartTimeField;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/GetUsers", ReplyAction="http://tempuri.org/IUsersService/GetUsersResponse")]
+        LightCrm.UserServiceReference.UserDto[] GetUsers();
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private LightCrm.TimeTableServiceReference.User UserField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DayOfWeek {
-            get {
-                return this.DayOfWeekField;
-            }
-            set {
-                if ((this.DayOfWeekField.Equals(value) != true)) {
-                    this.DayOfWeekField = value;
-                    this.RaisePropertyChanged("DayOfWeek");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool DayOff {
-            get {
-                return this.DayOffField;
-            }
-            set {
-                if ((this.DayOffField.Equals(value) != true)) {
-                    this.DayOffField = value;
-                    this.RaisePropertyChanged("DayOff");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public LightCrm.TimeTableServiceReference.Department Department {
-            get {
-                return this.DepartmentField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DepartmentField, value) != true)) {
-                    this.DepartmentField = value;
-                    this.RaisePropertyChanged("Department");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime EndTime {
-            get {
-                return this.EndTimeField;
-            }
-            set {
-                if ((this.EndTimeField.Equals(value) != true)) {
-                    this.EndTimeField = value;
-                    this.RaisePropertyChanged("EndTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime StartTime {
-            get {
-                return this.StartTimeField;
-            }
-            set {
-                if ((this.StartTimeField.Equals(value) != true)) {
-                    this.StartTimeField = value;
-                    this.RaisePropertyChanged("StartTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public LightCrm.TimeTableServiceReference.User User {
-            get {
-                return this.UserField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UserField, value) != true)) {
-                    this.UserField = value;
-                    this.RaisePropertyChanged("User");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/GetUsers", ReplyAction="http://tempuri.org/IUsersService/GetUsersResponse")]
+        System.Threading.Tasks.Task<LightCrm.UserServiceReference.UserDto[]> GetUsersAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="TimeTableServiceReference.ITimeTableService")]
-    public interface ITimeTableService {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITimeTableService/GetTimeByUser", ReplyAction="http://tempuri.org/ITimeTableService/GetTimeByUserResponse")]
-        LightCrm.TimeTableServiceReference.TimeTableDto[] GetTimeByUser(LightCrm.TimeTableServiceReference.UserDto user);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITimeTableService/GetTimeByUser", ReplyAction="http://tempuri.org/ITimeTableService/GetTimeByUserResponse")]
-        System.Threading.Tasks.Task<LightCrm.TimeTableServiceReference.TimeTableDto[]> GetTimeByUserAsync(LightCrm.TimeTableServiceReference.UserDto user);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ITimeTableServiceChannel : LightCrm.TimeTableServiceReference.ITimeTableService, System.ServiceModel.IClientChannel {
+    public interface IUsersServiceChannel : LightCrm.UserServiceReference.IUsersService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class TimeTableServiceClient : System.ServiceModel.ClientBase<LightCrm.TimeTableServiceReference.ITimeTableService>, LightCrm.TimeTableServiceReference.ITimeTableService {
+    public partial class UsersServiceClient : System.ServiceModel.ClientBase<LightCrm.UserServiceReference.IUsersService>, LightCrm.UserServiceReference.IUsersService {
         
-        public TimeTableServiceClient() {
+        public UsersServiceClient() {
         }
         
-        public TimeTableServiceClient(string endpointConfigurationName) : 
+        public UsersServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public TimeTableServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public UsersServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public TimeTableServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public UsersServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public TimeTableServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public UsersServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public LightCrm.TimeTableServiceReference.TimeTableDto[] GetTimeByUser(LightCrm.TimeTableServiceReference.UserDto user) {
-            return base.Channel.GetTimeByUser(user);
+        public void AddNewUser(LightCrm.UserServiceReference.UserDto user) {
+            base.Channel.AddNewUser(user);
         }
         
-        public System.Threading.Tasks.Task<LightCrm.TimeTableServiceReference.TimeTableDto[]> GetTimeByUserAsync(LightCrm.TimeTableServiceReference.UserDto user) {
-            return base.Channel.GetTimeByUserAsync(user);
+        public System.Threading.Tasks.Task AddNewUserAsync(LightCrm.UserServiceReference.UserDto user) {
+            return base.Channel.AddNewUserAsync(user);
+        }
+        
+        public void UpdateUser(LightCrm.UserServiceReference.UserDto user) {
+            base.Channel.UpdateUser(user);
+        }
+        
+        public System.Threading.Tasks.Task UpdateUserAsync(LightCrm.UserServiceReference.UserDto user) {
+            return base.Channel.UpdateUserAsync(user);
+        }
+        
+        public void DeleteUser(LightCrm.UserServiceReference.UserDto user) {
+            base.Channel.DeleteUser(user);
+        }
+        
+        public System.Threading.Tasks.Task DeleteUserAsync(LightCrm.UserServiceReference.UserDto user) {
+            return base.Channel.DeleteUserAsync(user);
+        }
+        
+        public LightCrm.UserServiceReference.UserDto[] GetUsers() {
+            return base.Channel.GetUsers();
+        }
+        
+        public System.Threading.Tasks.Task<LightCrm.UserServiceReference.UserDto[]> GetUsersAsync() {
+            return base.Channel.GetUsersAsync();
         }
     }
 }

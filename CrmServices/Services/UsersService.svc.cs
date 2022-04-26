@@ -15,7 +15,11 @@ namespace CrmServices
                 context.Users.Add(new User 
                 { 
                     Name = user.Name,
+                    Surname = user.Surname,
+                    Patronymic = user.Patronymic,
+
                     Password = user.Password,
+
                 });
 
                 context.SaveChanges();

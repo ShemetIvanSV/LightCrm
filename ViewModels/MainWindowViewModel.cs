@@ -22,6 +22,8 @@ namespace LightCrm.ViewModels
             PageViewModels.Add(new UsersAdministrationViewModel());
             PageViewModels.Add(new PatientsViewModel());
             PageViewModels.Add(new UsersOrdersViewModel());
+            PageViewModels.Add(new TimeTableViewModel());
+            PageViewModels.Add(new RegistrationViewModel());
             CurrentPageViewModel = PageViewModels[0];
         }
 

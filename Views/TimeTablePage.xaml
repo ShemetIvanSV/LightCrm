@@ -8,29 +8,39 @@
       d:DesignHeight="450" d:DesignWidth="800">
 
     <Grid>
-        <DataGrid HorizontalAlignment="Left" Height="430" Margin="10,10,0,0" VerticalAlignment="Top" Width="214" Background="#FFBFB7B7"/>
-        
-        <GroupBox Header="Понедельник" HorizontalAlignment="Left" Height="66" Margin="262,26,0,0" VerticalAlignment="Top" Width="218">
-            <Label Name="LabelMonday" Content="Выходной" HorizontalAlignment="Left" Height="23" Margin="84,10,0,0" VerticalAlignment="Top"/>
+        <ListView HorizontalAlignment="Left" Height="430" Margin="10,10,0,0" VerticalAlignment="Top" Width="350" ItemsSource="{Binding Path= TimeTableCollection}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}">Имя</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Surname}" Width="100">Фамилия</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Patronymic}">Отчество</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Role}">Должность</GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <GroupBox Header="Понедельник" HorizontalAlignment="Left" Height="66" Margin="396,26,0,0" VerticalAlignment="Top" Width="180">
+            <Label Name="LabelMonday" Content="{Binding Path=StartTime}" HorizontalAlignment="Left" Height="23" Margin="15,10,0,-5.8" VerticalAlignment="Top"/>
         </GroupBox>
-        <GroupBox Header="Вторник" HorizontalAlignment="Left" Height="66" Margin="530,26,0,0" VerticalAlignment="Top" Width="218">
-            <Label Name="LabelTuesday" Content="Выходной" HorizontalAlignment="Left" Height="23" Margin="84,10,0,0" VerticalAlignment="Top"/>
+        <GroupBox Header="Вторник" HorizontalAlignment="Left" Height="66" Margin="610,26,0,0" VerticalAlignment="Top" Width="180">
+            <Label Name="LabelTuesday" Content="Выходной" HorizontalAlignment="Left" Height="23" Margin="15,10,0,-5.8" VerticalAlignment="Top"/>
         </GroupBox>
-        <GroupBox  Header="Среда" HorizontalAlignment="Left" Height="66" Margin="262,137,0,0" VerticalAlignment="Top" Width="218">
-            <Label Name="LabelWednesday" Content="Выходной" HorizontalAlignment="Left" Height="23" Margin="84,10,0,0" VerticalAlignment="Top"/>
+        <GroupBox  Header="Среда" HorizontalAlignment="Left" Height="66" Margin="396,137,0,0" VerticalAlignment="Top" Width="180">
+            <Label Name="LabelWednesday" Content="Выходной" HorizontalAlignment="Left" Height="23" Margin="15,10,0,-5.8" VerticalAlignment="Top"/>
         </GroupBox>
-        <GroupBox Header="Четверг" HorizontalAlignment="Left" Height="66" Margin="530,137,0,0" VerticalAlignment="Top" Width="218">
-            <Label Name="LabelThursday" Content="Выходной" HorizontalAlignment="Left" Height="23" Margin="84,10,0,0" VerticalAlignment="Top"/>
+        <GroupBox Header="Четверг" HorizontalAlignment="Left" Height="66" Margin="610,137,0,0" VerticalAlignment="Top" Width="180">
+            <Label Name="LabelThursday" Content="Выходной" HorizontalAlignment="Left" Height="23" Margin="15,10,0,-5.8" VerticalAlignment="Top"/>
         </GroupBox>
-        <GroupBox Header="Пятница" HorizontalAlignment="Left" Height="66" Margin="262,250,0,0" VerticalAlignment="Top" Width="218">
-            <Label Name="LabelFriday" Content="Выходной" HorizontalAlignment="Left" Height="23" Margin="84,10,0,0" VerticalAlignment="Top"/>
+        <GroupBox Header="Пятница" HorizontalAlignment="Left" Height="66" Margin="396,250,0,0" VerticalAlignment="Top" Width="180">
+            <Label Name="LabelFriday" Content="Выходной" HorizontalAlignment="Left" Height="23" Margin="15,10,0,-5.8" VerticalAlignment="Top"/>
         </GroupBox>
-        <GroupBox Header="Суббота" HorizontalAlignment="Left" Height="66" Margin="530,250,0,0" VerticalAlignment="Top" Width="218">
-            <Label Name="LabelSaturday" Content="Выходной" HorizontalAlignment="Left" Height="23" Margin="84,10,0,0" VerticalAlignment="Top"/>
+        <GroupBox Header="Суббота" HorizontalAlignment="Left" Height="66" Margin="610,250,0,0" VerticalAlignment="Top" Width="180">
+            <Label Name="LabelSaturday" Content="Выходной" HorizontalAlignment="Left" Height="23" Margin="15,10,0,-5.8" VerticalAlignment="Top"/>
         </GroupBox>
-        <GroupBox Header="Воскресенье" HorizontalAlignment="Left" Height="66" Margin="396,342,0,0" VerticalAlignment="Top" Width="218">
-            <Label Name="LabelSunday" Content="Выходной" HorizontalAlignment="Left" Height="23" Margin="84,10,0,0" VerticalAlignment="Top"/>
+        <GroupBox Header="Воскресенье" HorizontalAlignment="Left" Height="66" Margin="503,345,0,0" VerticalAlignment="Top" Width="180">
+            <Label Name="LabelSunday" Content="Выходной" HorizontalAlignment="Left" Height="23" Margin="15,10,0,-5.8" VerticalAlignment="Top"/>
         </GroupBox>
+
 
     </Grid>
 </ContentControl>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5cb3ec79-4c09-46b0-af48-6d49d4093ccf" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2300338f-1b74-4a33-909a-e73b75ec55da" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,12 +22,12 @@
     <MetadataSource Address="http://localhost:55255/Services/TimeTableService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="TimeTableService.wsdl" MetadataType="Wsdl" ID="9b703821-6c20-484d-b630-caa39844c78c" SourceId="1" SourceUrl="http://localhost:55255/Services/TimeTableService.svc?wsdl" />
-    <MetadataFile FileName="TimeTableService.disco" MetadataType="Disco" ID="29c00a98-7c43-4565-b6c4-540856d0904f" SourceId="1" SourceUrl="http://localhost:55255/Services/TimeTableService.svc?disco" />
-    <MetadataFile FileName="TimeTableService.xsd" MetadataType="Schema" ID="17562441-32c6-469e-b860-b52f47be4d5e" SourceId="1" SourceUrl="http://localhost:55255/Services/TimeTableService.svc?xsd=xsd1" />
-    <MetadataFile FileName="TimeTableService1.xsd" MetadataType="Schema" ID="7fbda857-b2a5-4699-9282-e98b6d71aedf" SourceId="1" SourceUrl="http://localhost:55255/Services/TimeTableService.svc?xsd=xsd0" />
-    <MetadataFile FileName="TimeTableService2.xsd" MetadataType="Schema" ID="b3f2d495-1424-49c2-85e2-f7c65040346c" SourceId="1" SourceUrl="http://localhost:55255/Services/TimeTableService.svc?xsd=xsd3" />
-    <MetadataFile FileName="TimeTableService3.xsd" MetadataType="Schema" ID="8d7f5310-0e55-4f01-a74f-7973259b4929" SourceId="1" SourceUrl="http://localhost:55255/Services/TimeTableService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TimeTableService.wsdl" MetadataType="Wsdl" ID="aec862e3-dff9-427d-a593-2c44f2a38820" SourceId="1" SourceUrl="http://localhost:55255/Services/TimeTableService.svc?wsdl" />
+    <MetadataFile FileName="TimeTableService.disco" MetadataType="Disco" ID="6d39e39f-d926-4b3f-a999-f74c8c252368" SourceId="1" SourceUrl="http://localhost:55255/Services/TimeTableService.svc?disco" />
+    <MetadataFile FileName="TimeTableService.xsd" MetadataType="Schema" ID="769fcb35-9533-4d5f-bd5c-df3e9df7f073" SourceId="1" SourceUrl="http://localhost:55255/Services/TimeTableService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TimeTableService1.xsd" MetadataType="Schema" ID="b09048d7-0650-46e8-886f-8579cf34e846" SourceId="1" SourceUrl="http://localhost:55255/Services/TimeTableService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TimeTableService2.xsd" MetadataType="Schema" ID="e58b119f-4c33-4362-96ca-5313e05170df" SourceId="1" SourceUrl="http://localhost:55255/Services/TimeTableService.svc?xsd=xsd3" />
+    <MetadataFile FileName="TimeTableService3.xsd" MetadataType="Schema" ID="1a6a06be-4628-4bcf-b455-787102c0edc7" SourceId="1" SourceUrl="http://localhost:55255/Services/TimeTableService.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

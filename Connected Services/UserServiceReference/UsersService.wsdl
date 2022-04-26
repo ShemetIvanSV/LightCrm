@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:55255/Services/UsersService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:55255/Services/UsersService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:55255/Services/UsersService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CrmServices.Dtos" />
+      <xsd:import schemaLocation="http://localhost:55255/Services/UsersService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/LightCrmData.Models" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IUsersService_AddNewUser_InputMessage">

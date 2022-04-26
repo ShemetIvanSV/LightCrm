@@ -1,4 +1,5 @@
 ﻿using LightCrm.Commands;
+using LightCrm.Views;
 using System;
 using System.Windows.Input;
 

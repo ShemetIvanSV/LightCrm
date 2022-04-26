@@ -21,7 +21,7 @@ namespace LightCrmData.Models
         public int DayOfWeek { get; set; }
 
         /// <summary>
-        /// Время начала рабочего дня
+        /// Время начала рабочего дняя
         /// </summary>
         public DateTime StartTime { get; set; }
 
