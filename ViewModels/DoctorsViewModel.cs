@@ -7,49 +7,25 @@ namespace LightCrm.ViewModels
 {
     public class DoctorsViewModel : BaseViewModel, IPageViewModel
     {
-        private string _name;
-        public string Name
+        public string Name { get; set; }
+
+        public Conclusion Conclusion { get; set; }
+
+        public Patient CurrentPatient { get; set; }
+
+        public DoctorsViewModel(User user)
         {
-            get => _name;
-            set
-            {
-                _name = value;
-                OnPropertyChanged();
-            }
+            Doctor = user;
+            Name = "Окно врача";
+            Conclusion = new Conclusion();
+            Conclusion.Doctor = user;
         }
 
-        private string _diagnosis;   //диагноз
-        public string Diagnosis
+        public void Save()
         {
-            get => _diagnosis;
-            set
-            {
-                _diagnosis = value;
-                OnPropertyChanged();
-            }
+            
         }
 
-        private string _medicines;  //препараты
-        public string Medicines
-        {
-            get => _medicines;
-            set
-            {
-                _medicines = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private string _treatment;  //лечение
-        public string Treatment
-        {
-            get => _treatment;
-            set
-            {
-                _treatment = value;
-                OnPropertyChanged();
-            }
-        }
 
     }
 }

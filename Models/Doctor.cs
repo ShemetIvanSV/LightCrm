@@ -2,7 +2,6 @@
 using LightCrm.ViewModels;
 
 namespace LightCrm.Models
-
 {
     public class Doctor : BaseViewModel
     {

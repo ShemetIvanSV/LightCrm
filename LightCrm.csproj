@@ -65,9 +65,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Helper.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\ModelOrder.cs" />
     <Compile Include="Models\Patient.cs" />
+    <Compile Include="Models\Conclusion.cs" />
     <Compile Include="ViewModels\AuthorizationViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\DoctorsViewModel.cs" />
