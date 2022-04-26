@@ -259,6 +259,8 @@ namespace LightCrm.ViewModels
                             }
 
                             service.AddNewUser(UserDto);
+                            GetRoleData();
+                            CloseAction();
                             break;
 
                         case "Редактирование пользователя":
@@ -278,15 +280,16 @@ namespace LightCrm.ViewModels
                             }
 
                             service.UpdateUser(UserDto);
+                            GetRoleData();
+                            CloseAction();
                             break;
 
                         case "Удаление пользователя":
                             service.DeleteUser(UserDto);
+                            GetRoleData();
+                            CloseAction();
                             break;
-                    }
-
-                    GetRoleData();
-                    CloseAction();
+                    }                    
                 }
             }
             catch (Exception ex)

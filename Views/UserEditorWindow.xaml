@@ -52,7 +52,12 @@
             <TextBlock Text="{Binding Path=UserDto.Role.Name}" />
         </ComboBox>
 
-        <ComboBox IsEnabled ="{Binding Path=IsEnable}" IsSelected="True" ItemsSource="{Binding Path=RoleData}"
+        <ComboBox IsEnabled ="{Binding Path=IsEnable}" IsSelected="True" 
+                    DisplayMemberPath="UserDto.Role.Name"
+                    SelectedValuePath="UserDto.Role.Name"
+                    SelectedValue="{Binding Path=UserDto.Role.Name}"
+                  
+                  
                   Height="23"  Grid.Column="1" Grid.Row="5" Width="185" Margin="10,3">
         </ComboBox>
 

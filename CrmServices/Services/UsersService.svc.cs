@@ -25,7 +25,7 @@ namespace CrmServices.Services
                     context.Users.Add(new User
                     {
                         Name = userDto.Name,
-                        Password = userDto.Password,
+                        Password = Cripto.Sha256(userDto.Password),
                         Patronymic = userDto.Patronymic,
                         Surname = userDto.Surname,
                         Username = userDto.Username,
@@ -103,7 +103,7 @@ namespace CrmServices.Services
                     var user = context.Users.FirstOrDefault(u => u.Id == userDto.Id);
 
                     user.Name = userDto.Name;
-                    user.Password = userDto.Password;
+                    user.Password = Cripto.Sha256(userDto.Password);
                     user.Patronymic = userDto.Patronymic;
                     user.Surname = userDto.Surname;
                     user.Username = userDto.Username;
