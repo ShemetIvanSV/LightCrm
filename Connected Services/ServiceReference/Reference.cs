@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LightCrm.UserServiceReference {
+namespace LightCrm.ServiceReference {
     using System.Runtime.Serialization;
     using System;
     
@@ -23,7 +23,7 @@ namespace LightCrm.UserServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private LightCrm.UserServiceReference.Department DepartmentField;
+        private LightCrm.ServiceReference.Department DepartmentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
@@ -38,13 +38,13 @@ namespace LightCrm.UserServiceReference {
         private string PatronymicField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private LightCrm.UserServiceReference.Role RoleField;
+        private LightCrm.ServiceReference.Role RoleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SurnameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private LightCrm.UserServiceReference.Timetables[] TimetablesField;
+        private LightCrm.ServiceReference.Timetables[] TimetablesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string UsernameField;
@@ -60,7 +60,7 @@ namespace LightCrm.UserServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public LightCrm.UserServiceReference.Department Department {
+        public LightCrm.ServiceReference.Department Department {
             get {
                 return this.DepartmentField;
             }
@@ -125,7 +125,7 @@ namespace LightCrm.UserServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public LightCrm.UserServiceReference.Role Role {
+        public LightCrm.ServiceReference.Role Role {
             get {
                 return this.RoleField;
             }
@@ -151,7 +151,7 @@ namespace LightCrm.UserServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public LightCrm.UserServiceReference.Timetables[] Timetables {
+        public LightCrm.ServiceReference.Timetables[] Timetables {
             get {
                 return this.TimetablesField;
             }
@@ -263,7 +263,7 @@ namespace LightCrm.UserServiceReference {
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private LightCrm.UserServiceReference.User[] UsersField;
+        private LightCrm.ServiceReference.User[] UsersField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -302,7 +302,7 @@ namespace LightCrm.UserServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public LightCrm.UserServiceReference.User[] Users {
+        public LightCrm.ServiceReference.User[] Users {
             get {
                 return this.UsersField;
             }
@@ -340,7 +340,7 @@ namespace LightCrm.UserServiceReference {
         private bool DayOffField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private LightCrm.UserServiceReference.Department DepartmentField;
+        private LightCrm.ServiceReference.Department DepartmentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime EndTimeField;
@@ -352,7 +352,7 @@ namespace LightCrm.UserServiceReference {
         private System.DateTime StartTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private LightCrm.UserServiceReference.User UserField;
+        private LightCrm.ServiceReference.User UserField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -391,7 +391,7 @@ namespace LightCrm.UserServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public LightCrm.UserServiceReference.Department Department {
+        public LightCrm.ServiceReference.Department Department {
             get {
                 return this.DepartmentField;
             }
@@ -443,7 +443,7 @@ namespace LightCrm.UserServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public LightCrm.UserServiceReference.User User {
+        public LightCrm.ServiceReference.User User {
             get {
                 return this.UserField;
             }
@@ -475,7 +475,7 @@ namespace LightCrm.UserServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private LightCrm.UserServiceReference.Department DepartmentField;
+        private LightCrm.ServiceReference.Department DepartmentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
@@ -490,13 +490,13 @@ namespace LightCrm.UserServiceReference {
         private string PatronymicField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private LightCrm.UserServiceReference.Role RoleField;
+        private LightCrm.ServiceReference.Role RoleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SurnameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private LightCrm.UserServiceReference.Timetables[] TimetablesField;
+        private LightCrm.ServiceReference.Timetables[] TimetablesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string UsernameField;
@@ -512,7 +512,7 @@ namespace LightCrm.UserServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public LightCrm.UserServiceReference.Department Department {
+        public LightCrm.ServiceReference.Department Department {
             get {
                 return this.DepartmentField;
             }
@@ -577,7 +577,7 @@ namespace LightCrm.UserServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public LightCrm.UserServiceReference.Role Role {
+        public LightCrm.ServiceReference.Role Role {
             get {
                 return this.RoleField;
             }
@@ -603,7 +603,7 @@ namespace LightCrm.UserServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public LightCrm.UserServiceReference.Timetables[] Timetables {
+        public LightCrm.ServiceReference.Timetables[] Timetables {
             get {
                 return this.TimetablesField;
             }
@@ -639,41 +639,41 @@ namespace LightCrm.UserServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UserServiceReference.IUsersService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IUsersService")]
     public interface IUsersService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/AddNewUser", ReplyAction="http://tempuri.org/IUsersService/AddNewUserResponse")]
-        void AddNewUser(LightCrm.UserServiceReference.UserDto user);
+        void AddNewUser(LightCrm.ServiceReference.UserDto user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/AddNewUser", ReplyAction="http://tempuri.org/IUsersService/AddNewUserResponse")]
-        System.Threading.Tasks.Task AddNewUserAsync(LightCrm.UserServiceReference.UserDto user);
+        System.Threading.Tasks.Task AddNewUserAsync(LightCrm.ServiceReference.UserDto user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/UpdateUser", ReplyAction="http://tempuri.org/IUsersService/UpdateUserResponse")]
-        void UpdateUser(LightCrm.UserServiceReference.UserDto user);
+        void UpdateUser(LightCrm.ServiceReference.UserDto user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/UpdateUser", ReplyAction="http://tempuri.org/IUsersService/UpdateUserResponse")]
-        System.Threading.Tasks.Task UpdateUserAsync(LightCrm.UserServiceReference.UserDto user);
+        System.Threading.Tasks.Task UpdateUserAsync(LightCrm.ServiceReference.UserDto user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/DeleteUser", ReplyAction="http://tempuri.org/IUsersService/DeleteUserResponse")]
-        void DeleteUser(LightCrm.UserServiceReference.UserDto user);
+        void DeleteUser(LightCrm.ServiceReference.UserDto user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/DeleteUser", ReplyAction="http://tempuri.org/IUsersService/DeleteUserResponse")]
-        System.Threading.Tasks.Task DeleteUserAsync(LightCrm.UserServiceReference.UserDto user);
+        System.Threading.Tasks.Task DeleteUserAsync(LightCrm.ServiceReference.UserDto user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/GetUsers", ReplyAction="http://tempuri.org/IUsersService/GetUsersResponse")]
-        LightCrm.UserServiceReference.UserDto[] GetUsers();
+        LightCrm.ServiceReference.UserDto[] GetUsers();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/GetUsers", ReplyAction="http://tempuri.org/IUsersService/GetUsersResponse")]
-        System.Threading.Tasks.Task<LightCrm.UserServiceReference.UserDto[]> GetUsersAsync();
+        System.Threading.Tasks.Task<LightCrm.ServiceReference.UserDto[]> GetUsersAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IUsersServiceChannel : LightCrm.UserServiceReference.IUsersService, System.ServiceModel.IClientChannel {
+    public interface IUsersServiceChannel : LightCrm.ServiceReference.IUsersService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class UsersServiceClient : System.ServiceModel.ClientBase<LightCrm.UserServiceReference.IUsersService>, LightCrm.UserServiceReference.IUsersService {
+    public partial class UsersServiceClient : System.ServiceModel.ClientBase<LightCrm.ServiceReference.IUsersService>, LightCrm.ServiceReference.IUsersService {
         
         public UsersServiceClient() {
         }
@@ -694,35 +694,35 @@ namespace LightCrm.UserServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public void AddNewUser(LightCrm.UserServiceReference.UserDto user) {
+        public void AddNewUser(LightCrm.ServiceReference.UserDto user) {
             base.Channel.AddNewUser(user);
         }
         
-        public System.Threading.Tasks.Task AddNewUserAsync(LightCrm.UserServiceReference.UserDto user) {
+        public System.Threading.Tasks.Task AddNewUserAsync(LightCrm.ServiceReference.UserDto user) {
             return base.Channel.AddNewUserAsync(user);
         }
         
-        public void UpdateUser(LightCrm.UserServiceReference.UserDto user) {
+        public void UpdateUser(LightCrm.ServiceReference.UserDto user) {
             base.Channel.UpdateUser(user);
         }
         
-        public System.Threading.Tasks.Task UpdateUserAsync(LightCrm.UserServiceReference.UserDto user) {
+        public System.Threading.Tasks.Task UpdateUserAsync(LightCrm.ServiceReference.UserDto user) {
             return base.Channel.UpdateUserAsync(user);
         }
         
-        public void DeleteUser(LightCrm.UserServiceReference.UserDto user) {
+        public void DeleteUser(LightCrm.ServiceReference.UserDto user) {
             base.Channel.DeleteUser(user);
         }
         
-        public System.Threading.Tasks.Task DeleteUserAsync(LightCrm.UserServiceReference.UserDto user) {
+        public System.Threading.Tasks.Task DeleteUserAsync(LightCrm.ServiceReference.UserDto user) {
             return base.Channel.DeleteUserAsync(user);
         }
         
-        public LightCrm.UserServiceReference.UserDto[] GetUsers() {
+        public LightCrm.ServiceReference.UserDto[] GetUsers() {
             return base.Channel.GetUsers();
         }
         
-        public System.Threading.Tasks.Task<LightCrm.UserServiceReference.UserDto[]> GetUsersAsync() {
+        public System.Threading.Tasks.Task<LightCrm.ServiceReference.UserDto[]> GetUsersAsync() {
             return base.Channel.GetUsersAsync();
         }
     }

@@ -1,4 +1,5 @@
 ﻿using LightCrm.TimeTableServiceReference;
+using LightCrm.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LightCrm.Models
 {
-    class TimeTableControlModel
+    class TimeTableControlModel : BaseViewModel
     {
         /// <summary>
         /// Идентификатор графика

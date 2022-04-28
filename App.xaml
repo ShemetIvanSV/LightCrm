@@ -18,8 +18,5 @@
         <DataTemplate DataType="{x:Type viewModels:TimeTableViewModel}">
             <views:TimeTablePage/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewModels:RegistrationViewModel}">
-            <views:RegistrationPage/>
-        </DataTemplate>
     </Application.Resources>
 </Application>

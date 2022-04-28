@@ -82,12 +82,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\RelayCommand.cs" />
-    <Compile Include="Connected Services\TimeTableServiceReference\Reference.cs">
+    <Compile Include="Connected Services\ServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\UserServiceReference\Reference.cs">
+    <Compile Include="Connected Services\TimeTableServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -168,6 +168,22 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Connected Services\ServiceReference\LightCrm.ServiceReference.UserDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference\UsersService.wsdl" />
+    <None Include="Connected Services\ServiceReference\UsersService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference\UsersService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference\UsersService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference\UsersService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\TimeTableServiceReference\LightCrm.TimeTableServiceReference.TimeTableDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -184,22 +200,6 @@
     <None Include="Connected Services\TimeTableServiceReference\TimeTableService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\UserServiceReference\LightCrm.UserServiceReference.UserDto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\UserServiceReference\UsersService.wsdl" />
-    <None Include="Connected Services\UserServiceReference\UsersService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\UserServiceReference\UsersService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\UserServiceReference\UsersService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\UserServiceReference\UsersService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -212,23 +212,8 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReference\" />
     <WCFMetadataStorage Include="Connected Services\TimeTableServiceReference\" />
-    <WCFMetadataStorage Include="Connected Services\UserServiceReference\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\UserServiceReference\UsersService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\UserServiceReference\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\UserServiceReference\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\UserServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\TimeTableServiceReference\TimeTableService.disco" />
@@ -241,6 +226,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\TimeTableServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference\UsersService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
