@@ -27,6 +27,12 @@ namespace LightCrm.ServiceReferenceUsers {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/UpdateUser", ReplyAction="http://tempuri.org/IUsersService/UpdateUserResponse")]
         System.Threading.Tasks.Task UpdateUserAsync(CrmModels.UserDto userDto);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/UpdateUserPassword", ReplyAction="http://tempuri.org/IUsersService/UpdateUserPasswordResponse")]
+        void UpdateUserPassword(CrmModels.UserDto userDto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/UpdateUserPassword", ReplyAction="http://tempuri.org/IUsersService/UpdateUserPasswordResponse")]
+        System.Threading.Tasks.Task UpdateUserPasswordAsync(CrmModels.UserDto userDto);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersService/DeleteUser", ReplyAction="http://tempuri.org/IUsersService/DeleteUserResponse")]
         void DeleteUser(CrmModels.UserDto userDto);
         
@@ -87,6 +93,14 @@ namespace LightCrm.ServiceReferenceUsers {
         
         public System.Threading.Tasks.Task UpdateUserAsync(CrmModels.UserDto userDto) {
             return base.Channel.UpdateUserAsync(userDto);
+        }
+        
+        public void UpdateUserPassword(CrmModels.UserDto userDto) {
+            base.Channel.UpdateUserPassword(userDto);
+        }
+        
+        public System.Threading.Tasks.Task UpdateUserPasswordAsync(CrmModels.UserDto userDto) {
+            return base.Channel.UpdateUserPasswordAsync(userDto);
         }
         
         public void DeleteUser(CrmModels.UserDto userDto) {

@@ -86,7 +86,7 @@ namespace CrmServices.Services
             }
             catch (Exception ex)
             {
-                throw new Exception("Ошибка при получении данных пользователя", ex);
+                throw new Exception("Ошибка при получении данных пользователей", ex);
             }
         }
 
@@ -103,7 +103,7 @@ namespace CrmServices.Services
                     var user = context.Users.FirstOrDefault(u => u.Id == userDto.Id);
 
                     user.Name = userDto.Name;
-                    user.Password = Cripto.Sha256(userDto.Password);
+                    //user.Password = Cripto.Sha256(userDto.Password);
                     user.Patronymic = userDto.Patronymic;
                     user.Surname = userDto.Surname;
                     user.Username = userDto.Username;
@@ -116,7 +116,26 @@ namespace CrmServices.Services
             }
             catch (Exception ex)
             {
-                throw new Exception("Ошибка при редактировании пользователя", ex);
+                throw new Exception("Ошибка при изменении пользователя", ex);
+            }
+        }
+
+        public void UpdateUserPassword(UserDto userDto)
+        {
+            try
+            {
+                using (var context = new CrmContext())
+                {    
+                    var user = context.Users.FirstOrDefault(u => u.Id == userDto.Id);
+
+                    user.Password = Cripto.Sha256(userDto.Password);                    
+
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ошибка при изменении пароля", ex);
             }
         }
 

@@ -12,63 +12,103 @@ namespace CrmServices.Services
     {
         public void AddNewRole(RoleDto roleDto)
         {
-            using (var context = new CrmContext())
+            try
             {
-                context.Roles.Add(new Role
+                using (var context = new CrmContext())
                 {
-                    Id = roleDto.Id,
-                    Name = roleDto.Name
-                });
+                    context.Roles.Add(new Role
+                    {
+                        Id = roleDto.Id,
+                        Name = roleDto.Name
+                    });
 
-                context.SaveChanges();
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ошибка при добавлении роли", ex);
             }
         }
 
         public void DeleteRole(RoleDto roleDto)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var context = new CrmContext())
+                {
+
+                    Role role = context.Roles.FirstOrDefault(r => r.Id == roleDto.Id);
+                    context.Roles.Remove(role);
+
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ошибка при удалении роли", ex);
+            }
         }
 
         public RoleDto GetRoleById(int id)
         {
-            using (var context = new CrmContext())
+            try
             {
-                var role = context.Roles.FirstOrDefault(r => r.Id == id);
-                var users = context.Users.Where(u => u.RoleId == id).ToList();
-
-                return new RoleDto
+                using (var context = new CrmContext())
                 {
-                    Id = role.Id,
-                    Name = role.Name, 
-                    Users = users.Select(user => new UserDto ()).ToList()
-                };
-                
+                    var role = context.Roles.FirstOrDefault(r => r.Id == id);
+                    var users = context.Users.Where(u => u.RoleId == id).ToList();
+
+                    return new RoleDto
+                    {
+                        Id = role.Id,
+                        Name = role.Name,
+                        Users = users.Select(user => new UserDto()).ToList()
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ошибка при получении данных роли", ex);
             }
         }
 
         public IEnumerable<RoleDto> GetRoles()
         {
-            using (var context = new CrmContext())
+            try
             {
-                var roles = context.Roles.Select(u => new RoleDto
+                using (var context = new CrmContext())
                 {
-                    Id = u.Id,
-                    Name = u.Name,
-                }).ToList();
+                    var roles = context.Roles.Select(u => new RoleDto
+                    {
+                        Id = u.Id,
+                        Name = u.Name,
+                    }).ToList();
 
-                return (IEnumerable<RoleDto>)roles;
+                    return (IEnumerable<RoleDto>)roles;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ошибка при получении списка ролей", ex);
             }
         }
 
         public void UpdateRole(RoleDto roleDto)
         {
-            using (var context = new CrmContext())
+            try
             {
+                //TODO
+                using (var context = new CrmContext())
+                {
+                    
 
-                Role role = context.Roles.FirstOrDefault(r => r.Id == roleDto.Id);
-                context.Roles.Remove(role);
-
-                context.SaveChanges();
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ошибка при редактировании роли", ex);
             }
         }
     }

@@ -19,13 +19,13 @@ namespace LightCrm.ViewModels
         
         public Action CloseAction { get; set; }
         
-        private string _title;
-        public string Title
+        private string _name;
+        public string Name
         {
-            get => _title;
+            get => _name;
             set
             {
-                _title = value;
+                _name = value;
                 OnPropertyChanged();
             }
         }
@@ -51,13 +51,56 @@ namespace LightCrm.ViewModels
             }
         }
 
-        public UsersAdministrationViewModel()
+        private RoleDto _roleDto;
+        public RoleDto RoleDto
         {
-            Title = "Пользователи";
-            GetUserData();
-            //_dataBaseReadCommand = new RelayCommand(DataBaseRead);
+            get => _roleDto;
+            set
+            {
+                _roleDto = value;
+            }
         }
 
+        private IEnumerable<RoleDto> _roleData;
+        public IEnumerable<RoleDto> RoleData
+        {
+            get => _roleData;
+            set
+            {
+                _roleData = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private DepartmentDto _departmentDto;
+        public DepartmentDto DepartmentDto
+        {
+            get => _departmentDto;
+            set
+            {
+                _departmentDto = value;
+            }
+        }
+
+        private IEnumerable<DepartmentDto> _departmentData;
+        public IEnumerable<DepartmentDto> DepartmentData
+        {
+            get => _departmentData;
+            set
+            {
+                _departmentData = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public UsersAdministrationViewModel()
+        {
+            Name = "Пользователи";
+            GetUserData();
+            GetRoleData();
+            GetDepartmentData();
+        }
+        
         private void GetUserData(object obj = null)
         {
             try
@@ -65,9 +108,36 @@ namespace LightCrm.ViewModels
                 using (var service = new ServiceReferenceUsers.UsersServiceClient())
                 {
                     UserData = service.GetUsers();
-                    //var view = new MainWindow(user);
-                    //view.Show();
-                    //CloseAction();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void GetRoleData()
+        {
+            try
+            {
+                using (var service = new ServiceReferenceRoles.RolesServiceClient())
+                {
+                    RoleData = service.GetRoles();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void GetDepartmentData()
+        {
+            try
+            {
+                using (var service = new ServiceReferenceDepartments.DepartmentServiceClient())
+                {
+                    DepartmentData = service.GetDepartments();
                 }
             }
             catch (Exception ex)
@@ -120,7 +190,7 @@ namespace LightCrm.ViewModels
 
         public void ButtonCreateUserClick()
         {            
-            var view = new UserEditorWindow(Models.UserAction.Create);
+            var view = new UserEditorWindow(Models.UserAction.Create, RoleData, DepartmentData);
             view.ShowDialog();
             GetUserData();
         }
@@ -132,7 +202,7 @@ namespace LightCrm.ViewModels
                 MessageBox.Show("Пользователь для редактирования не выбран!", "Внимание!");
                 return;
             }
-            var view = new UserEditorWindow(Models.UserAction.Edit, UserDto);
+            var view = new UserEditorWindow(Models.UserAction.Edit, RoleData, DepartmentData, UserDto);
             view.ShowDialog();
             GetUserData();
         }
@@ -146,7 +216,7 @@ namespace LightCrm.ViewModels
                 return;
             }
 
-            var view = new UserEditorWindow(Models.UserAction.Delete, UserDto);
+            var view = new UserEditorWindow(Models.UserAction.Delete, RoleData, DepartmentData, UserDto);
             view.ShowDialog();
             GetUserData();
         }        

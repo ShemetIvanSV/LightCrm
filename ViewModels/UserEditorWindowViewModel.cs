@@ -2,14 +2,13 @@
 using LightCrm.Commands;
 using LightCrm.Models;
 using LightCrm.ServiceReferenceRoles;
+using LightCrm.ServiceReferenceDepartments;
 using LightCrm.ServiceReferenceUsers;
-using LightCrm.Views;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Input;
 
 
@@ -44,7 +43,7 @@ namespace LightCrm.ViewModels
             set
             {
                 _title = value;
-                OnPropertyChanged();
+                OnPropertyChanged("Title");
             }
         }
 
@@ -55,7 +54,7 @@ namespace LightCrm.ViewModels
             set
             {
                 _username = value;
-                OnPropertyChanged();
+                OnPropertyChanged("Username");
             }
         }
 
@@ -66,7 +65,7 @@ namespace LightCrm.ViewModels
             set
             {
                 _surname = value;
-                OnPropertyChanged();
+                OnPropertyChanged("Surname");
             }
         }
 
@@ -77,7 +76,7 @@ namespace LightCrm.ViewModels
             set
             {
                 _name = value;
-                OnPropertyChanged();
+                OnPropertyChanged("Name");
             }
         }
 
@@ -88,10 +87,9 @@ namespace LightCrm.ViewModels
             set
             {
                 _patronymic = value;
-                OnPropertyChanged();
+                OnPropertyChanged("Patronymic");
             }
         }
-
 
         private string _password;
         public string Password
@@ -100,7 +98,7 @@ namespace LightCrm.ViewModels
             set
             {
                 _password = value;
-                OnPropertyChanged();
+                OnPropertyChanged("Password");
             }
         }
 
@@ -115,7 +113,7 @@ namespace LightCrm.ViewModels
             set
             {
                 _passwordConfirm = value;
-                OnPropertyChanged();
+                OnPropertyChanged("PasswordConfirm");
             }
         }
 
@@ -146,7 +144,54 @@ namespace LightCrm.ViewModels
             set
             {
                 _roleData = value;
-                OnPropertyChanged();
+                OnPropertyChanged("RoleData");
+            }
+        }
+
+        private DepartmentDto _departmentDto;
+        public DepartmentDto DepartmentDto
+        {
+            get => _departmentDto;
+            set
+            {
+                _departmentDto = value;
+            }
+        }
+
+        private IEnumerable<DepartmentDto> _departmentData;
+        public IEnumerable<DepartmentDto> DepartmentData
+        {
+            get => _departmentData;
+            set
+            {
+                _departmentData = value;
+                OnPropertyChanged("DepartmentData");
+            }
+        }        
+
+        private bool _isEnableLogin = false;
+        public bool IsEnableLogin
+        {
+
+            get { return _isEnableLogin; }
+
+            set
+            {
+                _isEnableLogin = value;
+                OnPropertyChanged("IsEnableLogin");
+            }
+        }
+
+        private bool _isEnableChecked;
+        public bool IsEnableChecked 
+        {
+
+            get { return _isEnableChecked; }
+
+            set
+            {
+                _isEnableChecked = value;
+                OnPropertyChanged("IsEnableChecked");
             }
         }
 
@@ -163,28 +208,53 @@ namespace LightCrm.ViewModels
             }
         }
 
-        public UserEditorWindowViewModel(UserAction title, UserDto userDto)
+        private bool _isCheckedPassword = false;
+        public bool IsCheckedPassword
+        {
+
+            get { return _isCheckedPassword; }
+
+            set
+            {
+                _isCheckedPassword = value;
+                OnPropertyChanged("IsCheckedPassword");
+            }
+        }
+
+        public UserEditorWindowViewModel(UserAction title, IEnumerable<RoleDto> roleData, IEnumerable<DepartmentDto> departmentData, UserDto userDto)
         {
             switch (title)
             {
                 case UserAction.Create:
                     Title = "Создание пользователя";
                     IsEnable = true;
+                    IsEnableLogin = true;
+                    IsCheckedPassword = true;
+                    IsEnableChecked = false;
                     ButtonOk = "Сохранить";
                     break;
 
                 case UserAction.Edit:
                     Title = "Редактирование пользователя";
                     IsEnable = true;
+                    IsEnableLogin = false;
+                    IsCheckedPassword = false;
+                    IsEnableChecked = true;
                     ButtonOk = "Сохранить";
                     break;
 
                 case UserAction.Delete:
                     Title = "Удаление пользователя";
                     IsEnable = false;
+                    IsEnableLogin = false;
+                    IsCheckedPassword = false;
+                    IsEnableChecked = false;
                     ButtonOk = "Удалить";
                     break;
             }
+
+            GetRoleData();
+            GetDepartmentData();
 
             if (userDto == null)
             {
@@ -196,12 +266,23 @@ namespace LightCrm.ViewModels
             Name = userDto.Name;
             Surname = userDto.Surname;
             Patronymic = userDto.Patronymic;
-            //Department = userDto.Department;
-            //Role = userDto.Role;
+            RoleDto = RoleData.Where(i => i.Id == UserDto.Role.Id).FirstOrDefault();
+            DepartmentDto = DepartmentData.Where(i => i.Id == UserDto.Department.Id).FirstOrDefault();    
+        }
 
-
-            //GetRoleData();
-            //_dataBaseReadCommand = new RelayCommand(DataBaseRead);
+        private void GetDepartmentData()
+        {
+            try
+            {
+                using (var service = new DepartmentServiceClient())
+                {
+                    DepartmentData = service.GetDepartments();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void GetRoleData(object obj = null)
@@ -217,7 +298,7 @@ namespace LightCrm.ViewModels
             {
                 MessageBox.Show(ex.Message);
             }
-        }
+        }               
 
         public ICommand ButtonOkClickCommand
         {
@@ -236,10 +317,30 @@ namespace LightCrm.ViewModels
             try
             {
                 using (var service = new UsersServiceClient())
-                {
+                {                    
                     switch (Title)
                     {
                         case "Создание пользователя":
+                            if (service.GetUsers().Select(n => n.Username).Contains(Username))
+                            {
+                                throw new Exception("Этот логин уже занят");
+                            }
+
+                            if (RoleDto == null)
+                            {
+                                throw new Exception("Выберите роль пользователя");
+                            }
+
+                            if (String.IsNullOrEmpty(Password))
+                            {
+                                throw new Exception("Пароль не может быть пустым");
+                            }
+
+                            if (Password != _passwordConfirm)
+                            {
+                                throw new Exception("Подтверждение пароля не совпадает");
+                            }
+
                             UserDto = new UserDto()
                             {
                                 Name = Name,
@@ -247,39 +348,49 @@ namespace LightCrm.ViewModels
                                 Username = Username,
                                 Surname = Surname,
                                 Patronymic = Patronymic,
-                                //TODO
-                                Department = new DepartmentDto() { Id = 1 },
-                                Role = new RoleDto() { Id = 1 },
-                                Timetables = new List<TimetablesDto>(),
+                                Department = DepartmentDto,
+                                Role = RoleDto,
+                                Timetables = new List<TimetablesDto>(),//TODO
                             };
 
-                            if (!PasswordVerify())
-                            {
-                                break;
-                            }
-
                             service.AddNewUser(UserDto);
+                            
                             GetRoleData();
                             CloseAction();
                             break;
 
                         case "Редактирование пользователя":
-                            UserDto.Name = Name;
+                            if (RoleDto == null)
+                            {
+                                throw new Exception("Выберите роль пользователя");
+                            }                            
+
+                            UserDto.Name = Name;                            
                             UserDto.Password = Password;
                             UserDto.Username = Username;
                             UserDto.Surname = Surname;
-                            UserDto.Patronymic = Patronymic;
-                            //TODO
-                            UserDto.Department = new DepartmentDto() { Id = 1 };
-                            UserDto.Role = new RoleDto() { Id = 1 };
-                            UserDto.Timetables = new List<TimetablesDto>();
+                            UserDto.Patronymic = Patronymic;                            
+                            UserDto.Department = DepartmentDto;
+                            UserDto.Role = RoleDto;
+                            UserDto.Timetables = new List<TimetablesDto>();//TODO
+                                                        
+                            service.UpdateUser(UserDto);
 
-                            if (!PasswordVerify())
+                            if (IsCheckedPassword)
                             {
-                                break;
+                                if (String.IsNullOrEmpty(Password))
+                                {
+                                    throw new Exception("Пароль не может быть пустым");
+                                }
+
+                                if (Password != _passwordConfirm)
+                                {
+                                    throw new Exception("Подтверждение пароля не совпадает");
+                                }
+
+                                service.UpdateUserPassword(UserDto);
                             }
 
-                            service.UpdateUser(UserDto);
                             GetRoleData();
                             CloseAction();
                             break;
@@ -296,30 +407,6 @@ namespace LightCrm.ViewModels
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private bool PasswordVerify()
-        {
-            if (String.IsNullOrEmpty(Password))
-            {
-                MessageBox.Show("Пароль не может быть пустым", "Внимание!");
-                return false;
-            }
-
-            if (Password != _passwordConfirm)
-            {
-                MessageBox.Show("Подтверждение пароля не совпадает", "Внимание!");
-                return false;
-            }
-
-            return true;
-        }
-
-        private void ComboBox_Selected(object sender, RoutedEventArgs e)
-        {
-            ComboBox comboBox = (ComboBox)sender;
-            ComboBoxItem selectedItem = (ComboBoxItem)comboBox.SelectedItem;
-            MessageBox.Show(selectedItem.Content.ToString());
-        }
+        }        
     }
 }

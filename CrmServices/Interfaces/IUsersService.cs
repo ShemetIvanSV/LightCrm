@@ -15,6 +15,9 @@ namespace CrmServices.Interfaces
         void UpdateUser(UserDto userDto);
 
         [OperationContract]
+        void UpdateUserPassword(UserDto userDto);
+
+        [OperationContract]
         void DeleteUser(UserDto userDto);
 
         [OperationContract]

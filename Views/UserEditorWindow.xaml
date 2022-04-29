@@ -2,7 +2,8 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        
         mc:Ignorable="d"
         Title="{Binding Title}" Height="303.878" Width="625.431" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" BorderThickness="1">
     <Grid>
@@ -21,20 +22,20 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <Label Content="Логин"                HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" />
-        <Label Content="Пароль"               HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" />
-        <Label Content="Подтверждение пароля" HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="2" Grid.Row="0" />
+        <TextBlock Text="Логин"                HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" />
+        <TextBlock Text="Пароль"               HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" />
+        <TextBlock Text="Подтверждение пароля" HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="2" Grid.Row="0" />
 
-        <Label Content="Фамилия"  HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2" />
-        <Label Content="Имя"      HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" />
-        <Label Content="Отчество" HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2" />
+        <TextBlock Text="Фамилия"  HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2" />
+        <TextBlock Text="Имя"      HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" />
+        <TextBlock Text="Отчество" HorizontalAlignment="Left" Margin="10,3,0,3" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2" />
 
-        <TextBox     x:Name="Username"        IsEnabled ="{Binding Path=IsEnable}" 
+        <TextBox     x:Name="Username"        IsEnabled ="{Binding Path=IsEnableLogin}" 
                      Text ="{Binding Path=Username}"
                      Height="23" Grid.Column="0" Grid.Row="1" Margin="10,3" />
-        <PasswordBox x:Name="Password"        IsEnabled ="{Binding Path=IsEnable}" 
+        <PasswordBox x:Name="Password"        IsEnabled ="{Binding Path=IsCheckedPassword}" 
                      Height="23" Grid.Column="1" Grid.Row="1" Margin="10,3" />
-        <TextBox     x:Name="PasswordConfirm" IsEnabled ="{Binding Path=IsEnable}" Text="{Binding PasswordConfirm}"                  
+        <TextBox     x:Name="PasswordConfirm" IsEnabled ="{Binding Path=IsCheckedPassword}" Text="{Binding PasswordConfirm}"                  
                      Height="23" Grid.Column="2" Grid.Row="1" Margin="10,3" />
         <!--, UpdateSourceTrigger=PropertyChanged-->
 
@@ -47,27 +48,36 @@
 
 
         <ComboBox IsEnabled ="{Binding Path=IsEnable}" IsSelected="True" 
-                  Height="23"  Grid.Column="0" Grid.Row="5" Width="185" Margin="10,3">
-
-            <TextBlock Text="{Binding Path=UserDto.Role.Name}" />
-        </ComboBox>
+                  Height="23"  Grid.Column="0" Grid.Row="5" Width="185" Margin="10,3"                  
+                  
+                  ItemsSource="{Binding Path=RoleData}" 
+                  DisplayMemberPath="Name" 
+                  Text="{Binding Path=RoleDto.Name}"
+                  SelectedValue="{Binding Path=RoleDto}"
+                  
+        />
 
         <ComboBox IsEnabled ="{Binding Path=IsEnable}" IsSelected="True" 
-                    DisplayMemberPath="UserDto.Role.Name"
-                    SelectedValuePath="UserDto.Role.Name"
-                    SelectedValue="{Binding Path=UserDto.Role.Name}"
+                  Height="23"  Grid.Column="1" Grid.Row="5" Width="185" Margin="10,3"
                   
-                  
-                  Height="23"  Grid.Column="1" Grid.Row="5" Width="185" Margin="10,3">
-        </ComboBox>
+                  ItemsSource="{Binding Path=DepartmentData}" 
+                  DisplayMemberPath="Name" 
+                  Text="{Binding Path=DepartmentDto.Name}"
+                  SelectedValue="{Binding Path=DepartmentDto}" 
+        />
+
 
         <Button x:Name="ButtonOk"     Content="{Binding Path=ButtonOk}" IsDefault="True"  
                 Grid.Column="2" HorizontalAlignment="Left" Margin="40,0,0,0" Grid.Row="6" VerticalAlignment="Center" Width="75"
                 Command="{Binding ButtonOkClickCommand}" CommandParameter="{Binding ElementName=Password}" Height="20" />
 
 
-        <Button x:Name="ButtonCancel" Content="Отмена"                  IsCancel="True" 
+        <Button x:Name="ButtonCancel" Content="Отмена" IsCancel="True" 
                 Grid.Column="2" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="6" VerticalAlignment="Center" Width="75" Height="20" />
+
+        <CheckBox Content="Изменить пароль" IsThreeState="False" 
+                  IsEnabled ="{Binding Path=IsEnableChecked}" IsChecked="{Binding Path=IsCheckedPassword}" 
+                  Grid.Column="2" HorizontalAlignment="Left" Margin="16,12,0,0" Grid.Row="5" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

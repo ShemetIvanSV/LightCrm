@@ -7,7 +7,7 @@
         Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <DockPanel>
-            <Border DockPanel.Dock="Left" BorderBrush="Black" BorderThickness="0,0,1,0">
+            <Border DockPanel.Dock="Left" BorderBrush="Black" BorderThickness="0,0,1,0" Width="100">
                 <ItemsControl ItemsSource="{Binding PageViewModels}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>

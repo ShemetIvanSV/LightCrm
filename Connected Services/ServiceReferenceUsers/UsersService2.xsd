@@ -25,10 +25,22 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="DeleteUser">
+  <xs:element name="UpdateUserPassword">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CrmModels" minOccurs="0" name="userDto" nillable="true" type="q3:UserDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserPasswordResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CrmModels" minOccurs="0" name="userDto" nillable="true" type="q4:UserDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -45,7 +57,7 @@
   <xs:element name="GetUsersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CrmModels" minOccurs="0" name="GetUsersResult" nillable="true" type="q4:ArrayOfUserDto" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CrmModels" minOccurs="0" name="GetUsersResult" nillable="true" type="q5:ArrayOfUserDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -60,7 +72,7 @@
   <xs:element name="GetUserByLoginDataResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CrmModels" minOccurs="0" name="GetUserByLoginDataResult" nillable="true" type="q5:UserDto" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CrmModels" minOccurs="0" name="GetUserByLoginDataResult" nillable="true" type="q6:UserDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

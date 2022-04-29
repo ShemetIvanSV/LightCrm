@@ -23,5 +23,11 @@ namespace CrmModels
         /// </summary>
         [DataMember]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Пользователи которые закреплены за данным рабочим местом
+        /// </summary>
+        [DataMember]
+        public List<UserDto> Users { get; set; }
     }
 }

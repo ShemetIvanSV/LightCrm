@@ -18,7 +18,9 @@
         <DataGrid Name="DataGrigUser" Margin="8,73,10,10" AutoGenerateColumns="False"
                   ItemsSource="{Binding UserData}" SelectedItem="{Binding UserDto}"
                   RowBackground="#FFCDC8C8" AlternatingRowBackground="White" 
-                  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" CanUserResizeRows="False" SelectionMode="Single" RowHeight="NaN">
+                  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
+                  CanUserResizeRows="False" SelectionMode="Single" RowHeight="NaN"
+                  IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Имя пользователя" Binding="{Binding Path=Name}" />
                 <DataGridTextColumn Header="Фамилия" Binding="{Binding Path=Surname}" />
