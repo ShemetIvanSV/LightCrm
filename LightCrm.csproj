@@ -75,7 +75,7 @@
     </ApplicationDefinition>
     <Compile Include="Commands\OpenWindowCommand.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
-    <Compile Include="Connected Services\DepartmentService\Reference.cs">
+    <Compile Include="Connected Services\DepartmentsService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -178,21 +178,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\DepartmentService\DepartmentService.wsdl" />
-    <None Include="Connected Services\DepartmentService\DepartmentService.xsd">
+    <None Include="Connected Services\DepartmentsService\DepartmentsService.wsdl" />
+    <None Include="Connected Services\DepartmentsService\DepartmentsService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\DepartmentService\DepartmentService1.xsd">
+    <None Include="Connected Services\DepartmentsService\DepartmentsService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\DepartmentService\DepartmentService2.xsd">
+    <None Include="Connected Services\DepartmentsService\DepartmentsService2.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\DepartmentService\LightCrm.DepartmentService.DepartmentDto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\PatientsService\LightCrm.PatientsService.PatientDto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\PatientsService\PatientsService.wsdl" />
     <None Include="Connected Services\PatientsService\PatientsService.xsd">
@@ -204,9 +198,6 @@
     <None Include="Connected Services\PatientsService\PatientsService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\RolesService\LightCrm.RolesService.RoleDto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\RolesService\RolesService.wsdl" />
     <None Include="Connected Services\RolesService\RolesService.xsd">
       <SubType>Designer</SubType>
@@ -216,9 +207,6 @@
     </None>
     <None Include="Connected Services\RolesService\RolesService2.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\UsersService\LightCrm.UsersService.UserDto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\UsersService\UsersService.wsdl" />
     <None Include="Connected Services\UsersService\UsersService.xsd">
@@ -232,6 +220,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CrmModels.DepartmentDto.datasource" />
+    <None Include="Properties\DataSources\CrmModels.PatientDto.datasource" />
     <None Include="Properties\DataSources\CrmModels.RoleDto.datasource" />
     <None Include="Properties\DataSources\CrmModels.UserDto.datasource" />
     <None Include="Properties\Settings.settings">
@@ -246,37 +235,28 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\DepartmentService\" />
+    <WCFMetadataStorage Include="Connected Services\DepartmentsService\" />
     <WCFMetadataStorage Include="Connected Services\PatientsService\" />
     <WCFMetadataStorage Include="Connected Services\RolesService\" />
     <WCFMetadataStorage Include="Connected Services\UsersService\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\DepartmentService\DepartmentService.disco" />
+    <ProjectReference Include="CrmModels\CrmModels.csproj">
+      <Project>{4cd6802c-85ee-4f86-8cd1-a57fd265a298}</Project>
+      <Name>CrmModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\DepartmentService\configuration91.svcinfo" />
+    <None Include="Connected Services\DepartmentsService\DepartmentsService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\DepartmentService\configuration.svcinfo" />
+    <None Include="Connected Services\DepartmentsService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\DepartmentService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    <None Include="Connected Services\DepartmentsService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\PatientsService\PatientsService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\PatientsService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\PatientsService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\PatientsService\Reference.svcmap">
+    <None Include="Connected Services\DepartmentsService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -307,6 +287,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\UsersService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PatientsService\PatientsService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PatientsService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PatientsService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PatientsService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

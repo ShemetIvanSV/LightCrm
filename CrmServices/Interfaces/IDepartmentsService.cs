@@ -8,7 +8,7 @@ using System.Web;
 namespace CrmServices.Interfaces
 {
     [ServiceContract]
-    public interface IDepartmentService
+    public interface IDepartmentsService
     {
         [OperationContract]
         void AddNewDepartment(DepartmentDto departmentDto);

@@ -1,4 +1,5 @@
-﻿using LightCrm.Commands;
+﻿using CrmModels;
+using LightCrm.Commands;
 using LightCrm.UsersService;
 using System.Collections.Generic;
 using System.Linq;

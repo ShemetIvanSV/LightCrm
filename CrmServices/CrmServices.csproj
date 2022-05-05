@@ -74,7 +74,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Services\DepartmentService.svc" />
+    <Content Include="Services\DepartmentsService.svc" />
     <Content Include="Services\RolesService.svc" />
     <Content Include="Services\PatientsService.svc" />
     <Content Include="Services\DoctorsService.svc" />
@@ -83,13 +83,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\Cripto.cs" />
-    <Compile Include="Interfaces\IDepartmentService.cs" />
+    <Compile Include="Interfaces\IDepartmentsService.cs" />
     <Compile Include="Interfaces\IRolesService.cs" />
     <Compile Include="Interfaces\IDoctorsService.cs" />
     <Compile Include="Interfaces\IUsersService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\DepartmentService.svc.cs">
-      <DependentUpon>DepartmentService.svc</DependentUpon>
+    <Compile Include="Services\DepartmentsService.svc.cs">
+      <DependentUpon>DepartmentsService.svc</DependentUpon>
     </Compile>
     <Compile Include="Services\RolesService.svc.cs">
       <DependentUpon>RolesService.svc</DependentUpon>

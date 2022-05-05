@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fcae106f-fc33-4f84-85e9-10932b5877f5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55255/Services/DepartmentsService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DepartmentsService.xsd" MetadataType="Schema" ID="d459537c-4034-42d1-8d07-8baf1680223c" SourceId="1" SourceUrl="http://localhost:55255/Services/DepartmentsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DepartmentsService.wsdl" MetadataType="Wsdl" ID="3304e20b-9620-4a72-bd98-fe01955da41c" SourceId="1" SourceUrl="http://localhost:55255/Services/DepartmentsService.svc?wsdl" />
+    <MetadataFile FileName="DepartmentsService1.xsd" MetadataType="Schema" ID="afbdb292-fcdb-4356-924e-baffc168fddf" SourceId="1" SourceUrl="http://localhost:55255/Services/DepartmentsService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DepartmentsService.disco" MetadataType="Disco" ID="49fbdfe1-8a75-43d1-a088-a2ca7dcf05df" SourceId="1" SourceUrl="http://localhost:55255/Services/DepartmentsService.svc?disco" />
+    <MetadataFile FileName="DepartmentsService2.xsd" MetadataType="Schema" ID="e8ca43f1-67ad-44c5-a53b-133a672dd365" SourceId="1" SourceUrl="http://localhost:55255/Services/DepartmentsService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

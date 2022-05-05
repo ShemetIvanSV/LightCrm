@@ -1,13 +1,8 @@
-﻿
-using CrmModels;
+﻿using CrmModels;
 using LightCrmData;
 using LightCrmData.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
 
 namespace CrmServices.Services
 {

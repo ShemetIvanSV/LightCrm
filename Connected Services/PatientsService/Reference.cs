@@ -9,210 +9,35 @@
 //------------------------------------------------------------------------------
 
 namespace LightCrm.PatientsService {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PatientDto", Namespace="http://schemas.datacontract.org/2004/07/CrmModels")]
-    [System.SerializableAttribute()]
-    public partial class PatientDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AllergiesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime BirthdayField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool GenderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PatronymicField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PhoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SurnameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Allergies {
-            get {
-                return this.AllergiesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AllergiesField, value) != true)) {
-                    this.AllergiesField = value;
-                    this.RaisePropertyChanged("Allergies");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime Birthday {
-            get {
-                return this.BirthdayField;
-            }
-            set {
-                if ((this.BirthdayField.Equals(value) != true)) {
-                    this.BirthdayField = value;
-                    this.RaisePropertyChanged("Birthday");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Email {
-            get {
-                return this.EmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool Gender {
-            get {
-                return this.GenderField;
-            }
-            set {
-                if ((this.GenderField.Equals(value) != true)) {
-                    this.GenderField = value;
-                    this.RaisePropertyChanged("Gender");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IdField, value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Patronymic {
-            get {
-                return this.PatronymicField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PatronymicField, value) != true)) {
-                    this.PatronymicField = value;
-                    this.RaisePropertyChanged("Patronymic");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Phone {
-            get {
-                return this.PhoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
-                    this.PhoneField = value;
-                    this.RaisePropertyChanged("Phone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Surname {
-            get {
-                return this.SurnameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SurnameField, value) != true)) {
-                    this.SurnameField = value;
-                    this.RaisePropertyChanged("Surname");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PatientsService.IPatientsService")]
     public interface IPatientsService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientsService/AddNewPatient", ReplyAction="http://tempuri.org/IPatientsService/AddNewPatientResponse")]
-        void AddNewPatient(LightCrm.PatientsService.PatientDto patient);
+        void AddNewPatient(CrmModels.PatientDto patient);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientsService/AddNewPatient", ReplyAction="http://tempuri.org/IPatientsService/AddNewPatientResponse")]
-        System.Threading.Tasks.Task AddNewPatientAsync(LightCrm.PatientsService.PatientDto patient);
+        System.Threading.Tasks.Task AddNewPatientAsync(CrmModels.PatientDto patient);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientsService/DeletePatient", ReplyAction="http://tempuri.org/IPatientsService/DeletePatientResponse")]
-        void DeletePatient(LightCrm.PatientsService.PatientDto patient);
+        void DeletePatient(CrmModels.PatientDto patient);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientsService/DeletePatient", ReplyAction="http://tempuri.org/IPatientsService/DeletePatientResponse")]
-        System.Threading.Tasks.Task DeletePatientAsync(LightCrm.PatientsService.PatientDto patient);
+        System.Threading.Tasks.Task DeletePatientAsync(CrmModels.PatientDto patient);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientsService/UpdatePatient", ReplyAction="http://tempuri.org/IPatientsService/UpdatePatientResponse")]
-        void UpdatePatient(LightCrm.PatientsService.PatientDto patient);
+        void UpdatePatient(CrmModels.PatientDto patient);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientsService/UpdatePatient", ReplyAction="http://tempuri.org/IPatientsService/UpdatePatientResponse")]
-        System.Threading.Tasks.Task UpdatePatientAsync(LightCrm.PatientsService.PatientDto patient);
+        System.Threading.Tasks.Task UpdatePatientAsync(CrmModels.PatientDto patient);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientsService/GetPatients", ReplyAction="http://tempuri.org/IPatientsService/GetPatientsResponse")]
-        LightCrm.PatientsService.PatientDto[] GetPatients();
+        CrmModels.PatientDto[] GetPatients();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientsService/GetPatients", ReplyAction="http://tempuri.org/IPatientsService/GetPatientsResponse")]
-        System.Threading.Tasks.Task<LightCrm.PatientsService.PatientDto[]> GetPatientsAsync();
+        System.Threading.Tasks.Task<CrmModels.PatientDto[]> GetPatientsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -242,35 +67,35 @@ namespace LightCrm.PatientsService {
                 base(binding, remoteAddress) {
         }
         
-        public void AddNewPatient(LightCrm.PatientsService.PatientDto patient) {
+        public void AddNewPatient(CrmModels.PatientDto patient) {
             base.Channel.AddNewPatient(patient);
         }
         
-        public System.Threading.Tasks.Task AddNewPatientAsync(LightCrm.PatientsService.PatientDto patient) {
+        public System.Threading.Tasks.Task AddNewPatientAsync(CrmModels.PatientDto patient) {
             return base.Channel.AddNewPatientAsync(patient);
         }
         
-        public void DeletePatient(LightCrm.PatientsService.PatientDto patient) {
+        public void DeletePatient(CrmModels.PatientDto patient) {
             base.Channel.DeletePatient(patient);
         }
         
-        public System.Threading.Tasks.Task DeletePatientAsync(LightCrm.PatientsService.PatientDto patient) {
+        public System.Threading.Tasks.Task DeletePatientAsync(CrmModels.PatientDto patient) {
             return base.Channel.DeletePatientAsync(patient);
         }
         
-        public void UpdatePatient(LightCrm.PatientsService.PatientDto patient) {
+        public void UpdatePatient(CrmModels.PatientDto patient) {
             base.Channel.UpdatePatient(patient);
         }
         
-        public System.Threading.Tasks.Task UpdatePatientAsync(LightCrm.PatientsService.PatientDto patient) {
+        public System.Threading.Tasks.Task UpdatePatientAsync(CrmModels.PatientDto patient) {
             return base.Channel.UpdatePatientAsync(patient);
         }
         
-        public LightCrm.PatientsService.PatientDto[] GetPatients() {
+        public CrmModels.PatientDto[] GetPatients() {
             return base.Channel.GetPatients();
         }
         
-        public System.Threading.Tasks.Task<LightCrm.PatientsService.PatientDto[]> GetPatientsAsync() {
+        public System.Threading.Tasks.Task<CrmModels.PatientDto[]> GetPatientsAsync() {
             return base.Channel.GetPatientsAsync();
         }
     }

@@ -1,4 +1,5 @@
-﻿using LightCrm.UsersService;
+﻿using CrmModels;
+using LightCrm.UsersService;
 using LightCrm.ViewModels;
 using System.Windows;
 

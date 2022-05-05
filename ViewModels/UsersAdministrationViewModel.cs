@@ -1,6 +1,8 @@
-﻿using LightCrm.Commands;
-using LightCrm.DepartmentService;
+﻿using CrmModels;
+using LightCrm.Commands;
+using LightCrm.DepartmentsService;
 using LightCrm.RolesService;
+using LightCrm.UsersService;
 using LightCrm.Views;
 using System;
 using System.Collections.Generic;
@@ -136,7 +138,7 @@ namespace LightCrm.ViewModels
         {
             try
             {
-                using (var service = new DepartmentServiceClient())
+                using (var service = new DepartmentsServiceClient())
                 {
                     DepartmentData = service.GetDepartments();
                 }
