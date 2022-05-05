@@ -1,0 +1,44 @@
+﻿<Window x:Class="LightCrm.Views.CreateOrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LightCrm.Views"
+        mc:Ignorable="d"
+        Title="CreateOrderWindow" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <GroupBox Header="Пациент" Margin="64,46,549,138">
+            <StackPanel>
+                <TextBox x:Name="PatientName" Height="20" Margin="10,10,10,10" Text=""/>
+                <ListBox Height="171" d:ItemsSource="{d:SampleData ItemCount=4}" Width="145"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Дата и Услуга" Margin="303,46,303,138">
+            <StackPanel>
+                <DatePicker Width="150" Height="26" Margin="8,8,8,8"/>
+                <ComboBox Width="151" Height="20"/>
+                <ListBox Height="151" d:ItemsSource="{d:SampleData ItemCount=5}" Width="147" Margin="8,8,8,8"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Доктор" Margin="564,46,42,138">
+            <StackPanel>
+                <TextBox Width="147" Height="20" Margin="8,8,8,8" Text=""/>
+                <ListBox Height="171" d:ItemsSource="{d:SampleData ItemCount=4}" Width="149"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Отчет услуги" Margin="10,301,10,23">
+            <Grid>
+                <Button Margin="589,23,10,21" Content="Сохранить"/>
+                <Label Content="Пациент:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+                <Label Content="Услуга:" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top"/>
+                <Label Content="Доктор:" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top"/>
+                <Label Content="Дата:" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top"/>
+                <Label Content="test" HorizontalAlignment="Left" Margin="76,0,0,0" VerticalAlignment="Top"/>
+                <Label Content="test" HorizontalAlignment="Left" Margin="76,13,0,0" VerticalAlignment="Top"/>
+                <Label Content="test" HorizontalAlignment="Left" Margin="76,26,0,0" VerticalAlignment="Top"/>
+                <Label Content="test" HorizontalAlignment="Left" Margin="76,39,0,0" VerticalAlignment="Top"/>
+            </Grid>
+        </GroupBox>
+        <Label Content="Бронирование" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="31" Width="141" FontWeight="Bold" FontSize="14"/>
+    </Grid>
+</Window>

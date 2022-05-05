@@ -32,6 +32,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Users" nillable="true" type="tns:ArrayOfUserDto" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DepartmentDto" nillable="true" type="tns:DepartmentDto" />

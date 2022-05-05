@@ -1,5 +1,6 @@
-﻿using CrmModels;
-using LightCrm.Commands;
+﻿using LightCrm.Commands;
+using LightCrm.DepartmentService;
+using LightCrm.RolesService;
 using LightCrm.Views;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,9 @@ namespace LightCrm.ViewModels
         private ICommand _buttonCreateClickCommand;
         private ICommand _buttonEditeClickCommand;
         private ICommand _buttonDeleteClickCommand;
-        
+
         public Action CloseAction { get; set; }
-        
+
         private string _name;
         public string Name
         {
@@ -47,7 +48,7 @@ namespace LightCrm.ViewModels
             set
             {
                 _userData = value;
-                OnPropertyChanged();                
+                OnPropertyChanged();
             }
         }
 
@@ -100,12 +101,12 @@ namespace LightCrm.ViewModels
             GetRoleData();
             GetDepartmentData();
         }
-        
+
         private void GetUserData(object obj = null)
         {
             try
             {
-                using (var service = new ServiceReferenceUsers.UsersServiceClient())
+                using (var service = new UsersServiceClient())
                 {
                     UserData = service.GetUsers();
                 }
@@ -120,7 +121,7 @@ namespace LightCrm.ViewModels
         {
             try
             {
-                using (var service = new ServiceReferenceRoles.RolesServiceClient())
+                using (var service = new RolesServiceClient())
                 {
                     RoleData = service.GetRoles();
                 }
@@ -135,7 +136,7 @@ namespace LightCrm.ViewModels
         {
             try
             {
-                using (var service = new ServiceReferenceDepartments.DepartmentServiceClient())
+                using (var service = new DepartmentServiceClient())
                 {
                     DepartmentData = service.GetDepartments();
                 }
@@ -189,7 +190,7 @@ namespace LightCrm.ViewModels
         }
 
         public void ButtonCreateUserClick()
-        {            
+        {
             var view = new UserEditorWindow(Models.UserAction.Create, RoleData, DepartmentData);
             view.ShowDialog();
             GetUserData();
@@ -210,7 +211,7 @@ namespace LightCrm.ViewModels
 
         public void ButtonDeleteUserClick()
         {
-            if (UserDto==null)
+            if (UserDto == null)
             {
                 MessageBox.Show("Пользователь для удаления не выбран!", "Внимание!");
                 return;
@@ -219,6 +220,6 @@ namespace LightCrm.ViewModels
             var view = new UserEditorWindow(Models.UserAction.Delete, RoleData, DepartmentData, UserDto);
             view.ShowDialog();
             GetUserData();
-        }        
+        }
     }
 }

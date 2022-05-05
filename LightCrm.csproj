@@ -73,35 +73,49 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\OpenWindowCommand.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
-    <Compile Include="Connected Services\ServiceReferenceDepartments\Reference.cs">
+    <Compile Include="Connected Services\DepartmentService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\ServiceReferenceRoles\Reference.cs">
+    <Compile Include="Connected Services\PatientsService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\ServiceReferenceUsers\Reference.cs">
+    <Compile Include="Connected Services\RolesService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\UsersService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Doctor.cs" />
+    <Compile Include="Models\ModelOrder.cs" />
+    <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\UserAction.cs" />
     <Compile Include="ViewModels\AuthorizationViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\DoctorsViewModel.cs" />
     <Compile Include="ViewModels\Interfaces\IPageViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="ViewModels\UserEditorWindowViewModel.cs" />
-    <Compile Include="Views\UserEditorWindow.xaml.cs">
-      <DependentUpon>UserEditorWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\UserOrderPage.xaml.cs">
       <DependentUpon>UserOrderPage.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\AuthorizationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DoctorsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateOrderWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -164,34 +178,56 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\ServiceReferenceDepartments\DepartmentService.wsdl" />
-    <None Include="Connected Services\ServiceReferenceDepartments\DepartmentService.xsd">
+    <None Include="Connected Services\DepartmentService\DepartmentService.wsdl" />
+    <None Include="Connected Services\DepartmentService\DepartmentService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReferenceDepartments\DepartmentService1.xsd">
+    <None Include="Connected Services\DepartmentService\DepartmentService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReferenceDepartments\DepartmentService2.xsd">
+    <None Include="Connected Services\DepartmentService\DepartmentService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReferenceRoles\RolesService.wsdl" />
-    <None Include="Connected Services\ServiceReferenceRoles\RolesService.xsd">
+    <None Include="Connected Services\DepartmentService\LightCrm.DepartmentService.DepartmentDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PatientsService\LightCrm.PatientsService.PatientDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PatientsService\PatientsService.wsdl" />
+    <None Include="Connected Services\PatientsService\PatientsService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReferenceRoles\RolesService1.xsd">
+    <None Include="Connected Services\PatientsService\PatientsService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReferenceRoles\RolesService2.xsd">
+    <None Include="Connected Services\PatientsService\PatientsService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReferenceUsers\UsersService.wsdl" />
-    <None Include="Connected Services\ServiceReferenceUsers\UsersService.xsd">
+    <None Include="Connected Services\RolesService\LightCrm.RolesService.RoleDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RolesService\RolesService.wsdl" />
+    <None Include="Connected Services\RolesService\RolesService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReferenceUsers\UsersService1.xsd">
+    <None Include="Connected Services\RolesService\RolesService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReferenceUsers\UsersService2.xsd">
+    <None Include="Connected Services\RolesService\RolesService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UsersService\LightCrm.UsersService.UserDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UsersService\UsersService.wsdl" />
+    <None Include="Connected Services\UsersService\UsersService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UsersService\UsersService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UsersService\UsersService2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
@@ -210,57 +246,67 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="CrmModels\CrmModels.csproj">
-      <Project>{4cd6802c-85ee-4f86-8cd1-a57fd265a298}</Project>
-      <Name>CrmModels</Name>
-    </ProjectReference>
+    <WCFMetadataStorage Include="Connected Services\DepartmentService\" />
+    <WCFMetadataStorage Include="Connected Services\PatientsService\" />
+    <WCFMetadataStorage Include="Connected Services\RolesService\" />
+    <WCFMetadataStorage Include="Connected Services\UsersService\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ServiceReferenceDepartments\" />
-    <WCFMetadataStorage Include="Connected Services\ServiceReferenceRoles\" />
-    <WCFMetadataStorage Include="Connected Services\ServiceReferenceUsers\" />
+    <None Include="Connected Services\DepartmentService\DepartmentService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReferenceRoles\RolesService.disco" />
+    <None Include="Connected Services\DepartmentService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReferenceRoles\configuration91.svcinfo" />
+    <None Include="Connected Services\DepartmentService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReferenceRoles\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReferenceRoles\Reference.svcmap">
+    <None Include="Connected Services\DepartmentService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReferenceDepartments\DepartmentService.disco" />
+    <None Include="Connected Services\PatientsService\PatientsService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReferenceDepartments\configuration91.svcinfo" />
+    <None Include="Connected Services\PatientsService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReferenceDepartments\configuration.svcinfo" />
+    <None Include="Connected Services\PatientsService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReferenceDepartments\Reference.svcmap">
+    <None Include="Connected Services\PatientsService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReferenceUsers\UsersService.disco" />
+    <None Include="Connected Services\RolesService\RolesService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReferenceUsers\configuration91.svcinfo" />
+    <None Include="Connected Services\RolesService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReferenceUsers\configuration.svcinfo" />
+    <None Include="Connected Services\RolesService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReferenceUsers\Reference.svcmap">
+    <None Include="Connected Services\RolesService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UsersService\UsersService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UsersService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UsersService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UsersService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

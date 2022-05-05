@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3cf361f3-24e2-48ad-86ee-6e69e3e8120e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="629fee01-26a2-41fe-9488-0496f463f6fe" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:55255/Services/RolesService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="RolesService.wsdl" MetadataType="Wsdl" ID="b4dbe30c-fe4e-40b6-9d68-ca9c77b656cf" SourceId="1" SourceUrl="http://localhost:55255/Services/RolesService.svc?wsdl" />
-    <MetadataFile FileName="RolesService.xsd" MetadataType="Schema" ID="dbee3f6c-495f-42a5-8993-4f9ac5650aa9" SourceId="1" SourceUrl="http://localhost:55255/Services/RolesService.svc?xsd=xsd1" />
-    <MetadataFile FileName="RolesService1.xsd" MetadataType="Schema" ID="9f66ab50-ef9f-44b1-99dd-ed76235ac73a" SourceId="1" SourceUrl="http://localhost:55255/Services/RolesService.svc?xsd=xsd2" />
-    <MetadataFile FileName="RolesService.disco" MetadataType="Disco" ID="4f8ac85d-eb71-4e17-bf54-21f8b5d8edd2" SourceId="1" SourceUrl="http://localhost:55255/Services/RolesService.svc?disco" />
-    <MetadataFile FileName="RolesService2.xsd" MetadataType="Schema" ID="fb301e1a-06ea-4e49-9d16-91b45b8c94d2" SourceId="1" SourceUrl="http://localhost:55255/Services/RolesService.svc?xsd=xsd0" />
+    <MetadataFile FileName="RolesService.wsdl" MetadataType="Wsdl" ID="28970618-d1dc-4091-b4df-73ef2a872a0c" SourceId="1" SourceUrl="http://localhost:55255/Services/RolesService.svc?wsdl" />
+    <MetadataFile FileName="RolesService.xsd" MetadataType="Schema" ID="17420e60-fbac-4787-a9f1-1abb2be239b2" SourceId="1" SourceUrl="http://localhost:55255/Services/RolesService.svc?xsd=xsd1" />
+    <MetadataFile FileName="RolesService1.xsd" MetadataType="Schema" ID="b64655e2-9655-4bf7-bc65-70729f93a5d8" SourceId="1" SourceUrl="http://localhost:55255/Services/RolesService.svc?xsd=xsd2" />
+    <MetadataFile FileName="RolesService.disco" MetadataType="Disco" ID="e73c19b4-5c8d-4282-9d58-56d944f6a21d" SourceId="1" SourceUrl="http://localhost:55255/Services/RolesService.svc?disco" />
+    <MetadataFile FileName="RolesService2.xsd" MetadataType="Schema" ID="018778b0-1421-467c-801f-ea82f136290c" SourceId="1" SourceUrl="http://localhost:55255/Services/RolesService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

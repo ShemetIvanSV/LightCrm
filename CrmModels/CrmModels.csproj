@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DepartmentDto.cs" />
+    <Compile Include="DoctorDto.cs" />
+    <Compile Include="PatientDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleDto.cs" />
     <Compile Include="TimetablesDto.cs" />

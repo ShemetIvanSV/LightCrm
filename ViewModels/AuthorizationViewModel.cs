@@ -1,5 +1,5 @@
 ﻿using LightCrm.Commands;
-using LightCrm.ServiceReferenceUsers;
+using LightCrm.UsersService;
 using System;
 using System.Windows;
 using System.Windows.Controls;

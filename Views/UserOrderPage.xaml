@@ -3,11 +3,46 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:LightCrm.Views"
-      mc:Ignorable="d" 
+                xmlns:viewmodels="clr-namespace:LightCrm.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:UsersOrdersViewModel}"
+                mc:Ignorable="d" 
+      xmlns:l="clr-namespace:LightCrm.Views"
       d:DesignHeight="450" d:DesignWidth="800">
-
+   
+    <ContentControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+    </ContentControl.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="101*"/>
+            <RowDefinition Height="349*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="{Binding Path=Title}"></Label>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Command="{Binding OpenWindowCommand}" CommandParameter="{x:Type l:CreateOrderWindow }" Height="32">Добавить</Button>
+            <Button Command="" Height="32">Изменить</Button>
+            <Button Command="{Binding RemoveOrderCommand}" CommandParameter="{Binding SelectedOrder}" Height="32">Удалить</Button>
+        </StackPanel>
+
+        <ListView Grid.Row="2" ItemsSource="{Binding Path= Orders}" SelectedItem="{Binding SelectedOrder}">
+            <ListView.View>
+                <GridView >
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Id}" Header="Id"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path= Patient}" Header="Пациент"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path= Servise}" Header="Сервис"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path= Date}" Header="Дата"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Doctor}" Header="Доктор/Медсестра"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Paid}" Header="Проплаченный"/>
+                    <GridViewColumn Width="90" DisplayMemberBinding="{Binding Path=Status}" Header="Выполненый"/>
+                    <GridViewColumn Width="90" DisplayMemberBinding="{Binding Path=Price}" Header="Цена"/> 
+                </GridView>
+            </ListView.View>
+            <ListView.Resources></ListView.Resources>
+        </ListView>
         <TextBlock Text="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="10,0,0,0"/>
     </Grid>
 </ContentControl>
