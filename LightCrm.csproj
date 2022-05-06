@@ -104,6 +104,10 @@
     <Compile Include="ViewModels\DoctorsViewModel.cs" />
     <Compile Include="ViewModels\Interfaces\IPageViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\UserEditorViewModel.cs" />
+    <Compile Include="Views\UserEditorWindow.xaml.cs">
+      <DependentUpon>UserEditorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserOrderPage.xaml.cs">
       <DependentUpon>UserOrderPage.xaml</DependentUpon>
     </Compile>

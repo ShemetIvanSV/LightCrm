@@ -6,9 +6,9 @@
              xmlns:views="clr-namespace:LightCrm.Views"
              StartupUri="Views/AuthorizationWindow.xaml">
     <Application.Resources>
-        <!--<DataTemplate DataType="{x:Type viewModels:UsersAdministrationViewModel}">
+        <DataTemplate DataType="{x:Type viewModels:UsersAdministrationViewModel}">
             <views:UserAdministrationPage />
-        </DataTemplate>-->
+        </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:PatientsViewModel}">
             <views:PatientsPage />
         </DataTemplate>
