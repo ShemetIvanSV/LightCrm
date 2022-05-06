@@ -22,7 +22,7 @@ namespace LightCrm.ViewModels
         {
             
             // Здесь будет логика того - какие окна отображать конкретному пользователю
-            //PageViewModels.Add(new UsersAdministrationViewModel());
+            PageViewModels.Add(new UsersAdministrationViewModel());
             PageViewModels.Add(new PatientsViewModel());
             PageViewModels.Add(new UsersOrdersViewModel());
             CurrentPageViewModel = PageViewModels[0];
