@@ -61,6 +61,30 @@ namespace LightCrm.ViewModels
         }
         #endregion
 
+        private  string _title;
+        public string Title
+        {
+            get => _title;
+            set
+            {
+                _title = value;
+                OnPropertyChanged();
+            }
+        }
+        #endregion
+        #region Выделение заказа
+        private ModelOrder _selectedOrder;
+        public ModelOrder SelectedOrder
+        {
+            get { return _selectedOrder; }
+            set
+            {
+                _selectedOrder = value;
+                OnPropertyChanged("SelectedOrder");
+            }
+        }
+        #endregion
+
         #region Команда Добавление закакза 
         private RelayCommand _addOrderCommand;
         public RelayCommand AddOrderCommand
