@@ -48,30 +48,8 @@ namespace LightCrm.ViewModels
             }
         }
         #endregion
-        #region Выделение заказа
-        private ModelOrder _selectedOrder;
-        public ModelOrder SelectedOrder
-        {
-            get { return _selectedOrder; }
-            set
-            {
-                _selectedOrder = value;
-                OnPropertyChanged("SelectedOrder");
-            }
-        }
-        #endregion
-
-        private  string _title;
-        public string Title
-        {
-            get => _title;
-            set
-            {
-                _title = value;
-                OnPropertyChanged();
-            }
-        }
-        #endregion
+        
+        
         #region Выделение заказа
         private ModelOrder _selectedOrder;
         public ModelOrder SelectedOrder
