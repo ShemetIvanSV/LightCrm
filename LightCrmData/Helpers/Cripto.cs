@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 
-namespace CrmServices.Helpers
+namespace LightCrmData.Helpers
 {
     public static class Cripto
     {

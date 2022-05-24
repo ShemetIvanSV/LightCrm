@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CrmContext.cs" />
+    <Compile Include="Helpers\Cripto.cs" />
     <Compile Include="Migrations\202202121450328_AddUserTable.cs" />
     <Compile Include="Migrations\202202121450328_AddUserTable.designer.cs">
       <DependentUpon>202202121450328_AddUserTable.cs</DependentUpon>
