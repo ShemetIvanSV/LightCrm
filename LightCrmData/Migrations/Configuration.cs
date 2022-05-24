@@ -16,35 +16,57 @@
 
         protected override void Seed(LightCrmData.CrmContext context)
         {
-            /*if (!context.Users.Any())
+            if (!context.Roles.Any())
             {
-                User c = new User
+                Role role = new Role
                 {
                     Id = 1,
-                    Name = "admin", Surname = "", Patronymic = "",
-                    Password = Cripto.Sha256("admin"),
+                    Name = "Администратор"
                 };
 
-                context.Users.Add(c);
+                context.Roles.Add(role);
                 context.SaveChanges();
-            }*/
+            }
 
-           /* try
+            if (!context.Departments.Any())
             {
-                context.IncomesCategories.AddOrUpdate(
+                Department department = new Department
+                {
+                    Id = 1,
+                    Name = "Администратор"
+                };
+
+                context.Departments.Add(department);
+                context.SaveChanges();
+            }
+
+            if (!context.Users.Any())
+            {
+                User user = new User
+                {
+                    Id = 1, 
+                    Username = "admin",
+                    Name = "Администратор",
+                    Surname = "",
+                    Patronymic = "",
+                    Password = Cripto.Sha256("admin"), 
+                    RoleId = 1,
+                    DepartmentId = 1
+                };
+
+                context.Users.Add(user);
+                context.SaveChanges();
+            }
+
+
+
+            try
+            {
+                context.Roles.AddOrUpdate(
                     p => p.Name,
-                    new IncomesCategory { Name = "Аренда", Id = Guid.NewGuid() },
-                    new IncomesCategory { Name = "Бизнес", Id = Guid.NewGuid() },
-                    new IncomesCategory { Name = "Дивиденды", Id = Guid.NewGuid() },
-                    new IncomesCategory { Name = "Зарплата", Id = Guid.NewGuid() },
-                    new IncomesCategory { Name = "Иное", Id = Guid.NewGuid() },
-                    new IncomesCategory { Name = "Корректировка", Id = Guid.NewGuid() },
-                    new IncomesCategory { Name = "Кредит", Id = Guid.NewGuid() },
-                    new IncomesCategory { Name = "Пенсия", Id = Guid.NewGuid() },
-                    new IncomesCategory { Name = "Подарки", Id = Guid.NewGuid() },
-                    new IncomesCategory { Name = "Премия", Id = Guid.NewGuid() },
-                    new IncomesCategory { Name = "Проценты", Id = Guid.NewGuid() },
-                    new IncomesCategory { Name = "Фриланс", Id = Guid.NewGuid() }
+                    new Role { Name = "Оператор", Id = 2 },
+                    new Role { Name = "Врач", Id = 3 },
+                    new Role { Name = "Медсестра", Id = 4 }
                 );
             }
             catch
@@ -54,46 +76,31 @@
 
             try
             {
-                context.ExpensesCategories.AddOrUpdate(
+                context.Departments.AddOrUpdate(
                     p => p.Name,
-                    new ExpensesCategory { Name = "Авто", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Автозапчасти", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Алкоголь", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Бары", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Бензин", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Бизнес", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Благотворительность", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Сбережения", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Гигиена", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Для дома", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Домашние животные", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Еда", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Здоровье", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Иное", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Интернет", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Кафе", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Косметика", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Лекарства", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Образование", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Одежа", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Отдых", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Подарки", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Развлечения", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Ремонт", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Рестораны", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Саморазвитие", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Сладости", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Такси", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Телефон", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Техника", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Транспорт", Id = Guid.NewGuid() },
-                    new ExpensesCategory { Name = "Хотелки", Id = Guid.NewGuid() }
+                    new Department { Name = "Хирургия", Id = 2 },
+                    new Department { Name = "Гинекология", Id = 3 },
+                    new Department { Name = "Гастроэнтерология", Id = 4 },
+                    new Department { Name = "Гематология", Id = 5 },
+                    new Department { Name = "Детская хирургия", Id = 6 },
+                    new Department { Name = "Дерматовенерология", Id = 7 },
+                    new Department { Name = "Комбустиология", Id = 8 },
+                    new Department { Name = "Нейрохирургия", Id = 9 },
+                    new Department { Name = "Неонатология", Id = 10 },
+                    new Department { Name = "Онкология", Id = 11 },
+                    new Department { Name = "Оториноларингология", Id = 12 },
+                    new Department { Name = "Офтальмология", Id = 13 },
+                    new Department { Name = "Педиатрия", Id = 14 },
+                    new Department { Name = "Ревматология", Id = 15 },
+                    new Department { Name = "Сердечно-сосудистая хирургия", Id = 16 },
+                    new Department { Name = "Травматология", Id = 17 },
+                    new Department { Name = "Урология", Id = 18 }
                 );
             }
             catch
             {
 
-            }*/
+            }
         }
     }
 }

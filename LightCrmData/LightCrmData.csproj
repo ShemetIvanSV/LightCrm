@@ -61,6 +61,18 @@
     <Compile Include="Migrations\202202181748334_MoreEx.designer.cs">
       <DependentUpon>202202181748334_MoreEx.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205241257217_DefaultValues.cs" />
+    <Compile Include="Migrations\202205241257217_DefaultValues.designer.cs">
+      <DependentUpon>202205241257217_DefaultValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205241303544_UsersTabeValuesIsNull.cs" />
+    <Compile Include="Migrations\202205241303544_UsersTabeValuesIsNull.designer.cs">
+      <DependentUpon>202205241303544_UsersTabeValuesIsNull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205241309256_UsersTabeValuesNameIsNull.cs" />
+    <Compile Include="Migrations\202205241309256_UsersTabeValuesNameIsNull.designer.cs">
+      <DependentUpon>202205241309256_UsersTabeValuesNameIsNull.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Doctor.cs" />
@@ -81,6 +93,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202181748334_MoreEx.resx">
       <DependentUpon>202202181748334_MoreEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205241257217_DefaultValues.resx">
+      <DependentUpon>202205241257217_DefaultValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205241303544_UsersTabeValuesIsNull.resx">
+      <DependentUpon>202205241303544_UsersTabeValuesIsNull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205241309256_UsersTabeValuesNameIsNull.resx">
+      <DependentUpon>202205241309256_UsersTabeValuesNameIsNull.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

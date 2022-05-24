@@ -16,19 +16,16 @@ namespace LightCrmData.Models
         /// <summary>
         /// Имя Пользователя
         /// </summary>
-        [Required]
         public string Name { get; set; }
 
         /// <summary>
         /// Фамилия Пользователя
-        /// </summary>
-        [Required]
+        /// </summary>        
         public string Surname { get; set; }
 
         /// <summary>
         /// Отчество Пользователя
-        /// </summary>
-        [Required]
+        /// </summary>       
         public string Patronymic { get; set; }
 
         /// <summary>
